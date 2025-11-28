@@ -651,1993 +651,1655 @@ function getClassByCode(num){
 
 /* ---------- TOPIC COLORS ---------- */
 
-const topicColors = {
-  1: "#FF7A00",  // оранжевый
-  2: "#FF2400",  // красный алый
-  3: "#2ECC71",  // зеленый
-  4: "#FF00A8",  // фуксия
-  5: "#8B4513",  // коричневый
-  6: "#007BFF",  // синий
-  7: "#FFD500",  // желтый
-  8: "#006D77",  // темно бирюзовый
-  9: "#800020",  // бордовый
-  10:"#C7F000",  // лайм
-  11:"#9D4EDD",  // фиолетовый
-  12:"#FF6F61",  // коралловый
-  13:"#009B77",  // изумрудный
-  14:"#E2725B",  // терракотовый
-  15:"#4A4A4A",  // темно серый
-  16:"#4C5866",  // маренго
-  17:"#0A5C5A",  // мурена
-  18:"#8E4585",  // сливовый
-  19:"#0B6623",  // темно-зеленый
-  20:"#B22222"   // кирпичный
-};
+<h1>ENGLISH WITH AI BAYAN – Intermediate Grammar Pack (20 Topics)</h1>
 
-/* ---------- TOPICS DATA (1–20) ---------- */
+<!-- TOPIC 1 -->
+<div class="topic" id="topic1">
+  <h2>1. Present Perfect vs Past Simple</h2>
+  <div class="meta">Level: Intermediate · Experience vs finished past</div>
 
-const topics = [
-  /* ===== 1. TO BE ===== */
-  {
-    id:1,
-    title:"To be (am / is / are)",
-    level:"Beginner",
-    explanation:
-      "We use the verb to be to talk about who or what someone or something is, how they feel and where they are.",
-    ruleRu:"<b>Глагол to be</b> = «быть, являться, находиться».",
-    usageRu:`
-      <b>Когда используем:</b><br>
-      1) Кто человек: I am a student.<br>
-      2) Состояние: She is happy.<br>
-      3) Место: They are at school.<br>
-      <b>Формы:</b> I am, You/We/They are, He/She/It is.<br>
-      Отрицание: am not / isn't / aren't. Вопрос: Am/Is/Are + подлежащее?
-    `,
-    formulas:[
-      "I am (I'm)",
-      "You / We / They are",
-      "He / She / It is"
-    ],
-    examples:[
-      "I am a student.",
-      "She is happy today.",
-      "They are at school."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Positive sentences.",
-        questions:[
-          {text:"I ___ a beginner at English.", options:["am","is","are"], correct:0},
-          {text:"She ___ my best friend.", options:["am","is","are"], correct:1},
-          {text:"They ___ in the classroom.", options:["am","is","are"], correct:2},
-          {text:"We ___ from Kazakhstan.", options:["am","is","are"], correct:2},
-          {text:"He ___ twelve years old.", options:["am","is","are"], correct:1},
-          {text:"It ___ Monday today.", options:["am","is","are"], correct:1},
-          {text:"You ___ a good student.", options:["am","is","are"], correct:2}
-        ]
-      },
-      {
-        title:"Ex.2 – Negative sentences.",
-        questions:[
-          {text:"I ___ tired. (not)", options:["am not","isn't","aren't"], correct:0},
-          {text:"She ___ a teacher. (not)", options:["am not","isn't","aren't"], correct:1},
-          {text:"They ___ in the library. (not)", options:["am not","isn't","aren't"], correct:2},
-          {text:"We ___ late for the lesson. (not)", options:["am not","isn't","aren't"], correct:2},
-          {text:"He ___ sixteen. (not)", options:["am not","isn't","aren't"], correct:1},
-          {text:"It ___ cold today. (not)", options:["isn't","aren't","am not"], correct:0},
-          {text:"You ___ from London. (not)", options:["aren't","isn't","am not"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions (Am / Is / Are).",
-        questions:[
-          {text:"___ you from Kazakhstan?", options:["Are","Is","Am"], correct:0},
-          {text:"___ she your sister?", options:["Are","Is","Am"], correct:1},
-          {text:"___ they at home?", options:["Are","Is","Am"], correct:0},
-          {text:"___ it cold today?", options:["Are","Is","Am"], correct:1},
-          {text:"___ we late?", options:["Are","Is","Am"], correct:0},
-          {text:"___ I in Grade 7?", options:["Am","Is","Are"], correct:0},
-          {text:"___ he your teacher?", options:["Is","Are","Am"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Sentence re-ordering (positive).",
-        questions:[
-          {text:"(a / I / student / am)", options:["I am a student.","Am student I a."], correct:0},
-          {text:"(is / she / happy / today)", options:["She is happy today.","Is happy she today."], correct:0},
-          {text:"(at school / they / are)", options:["They are at school.","Are they at school."], correct:0},
-          {text:"(from / we / Kazakhstan / are)", options:["We are from Kazakhstan.","Are from Kazakhstan we."], correct:0},
-          {text:"(is / my / teacher / kind)", options:["My teacher is kind.","Is kind my teacher."], correct:0},
-          {text:"(is / this / interesting / lesson)", options:["This lesson is interesting.","Lesson this interesting is."], correct:0},
-          {text:"(tired / am / not / I)", options:["I am not tired.","Am not I tired."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Sentence re-ordering (negative).",
-        questions:[
-          {text:"(not / I / am / late)", options:["I am not late.","I not am late."], correct:0},
-          {text:"(isn't / happy / she / today)", options:["She isn't happy today.","Isn't she happy today."], correct:0},
-          {text:"(at school / aren't / they)", options:["They aren't at school.","Aren't they at school."], correct:0},
-          {text:"(from / we / aren't / London)", options:["We aren't from London.","Aren't we from London."], correct:0},
-          {text:"(cold / it / isn't / today)", options:["It isn't cold today.","Isn't it cold today."], correct:0},
-          {text:"(am / not / I / tired)", options:["I am not tired.","Am I not tired?"], correct:0},
-          {text:"(isn't / my / teacher / sad)", options:["My teacher isn't sad.","Isn't my teacher sad."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Sentence re-ordering (questions).",
-        questions:[
-          {text:"(you / are / from / Aktau)", options:["Are you from Aktau?","You are from Aktau?"], correct:0},
-          {text:"(your / is / she / sister)", options:["Is she your sister?","She is your sister?"], correct:0},
-          {text:"(at home / are / they)", options:["Are they at home?","They are at home?"], correct:0},
-          {text:"(late / are / we)", options:["Are we late?","We are late?"], correct:0},
-          {text:"(your teacher / he / is)", options:["Is he your teacher?","He is your teacher?"], correct:0},
-          {text:"(cold / is / it / today)", options:["Is it cold today?","It is cold today?"], correct:0},
-          {text:"(in Grade 7 / you / are)", options:["Are you in Grade 7?","You are in Grade 7?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"My teacher ___ very kind.", options:["is","are","am"], correct:0},
-          {text:"Our school ___ big and modern.", options:["is","are","am"], correct:0},
-          {text:"The students ___ in the gym now.", options:["is","are","am"], correct:1},
-          {text:"My friends and I ___ online.", options:["are","is","am"], correct:0},
-          {text:"This lesson ___ interesting.", options:["is","are","am"], correct:0},
-          {text:"I ___ not tired.", options:["am","is","are"], correct:0},
-          {text:"___ they from Kazakhstan?", options:["Are","Is","Am"], correct:0}
-        ]
-      }
-    ]
-  },
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    We use <b>Present Perfect</b> for experience and results connected with now (no exact past time).
+    We use <b>Past Simple</b> for finished actions in the past with a clear time (yesterday, last week, in 2019).
+  </div>
 
-  /* ===== 2. PLURALS ===== */
-  {
-    id:2,
-    title:"Plurals (singular → plural)",
-    level:"Beginner",
-    explanation:"Plural nouns show that there is more than one person, animal, thing or place. We usually add -s or -es, but some plurals are irregular.",
-    ruleRu:"<b>Множественное число существительных</b> — говорим не об одном, а о нескольких предметах.",
-    usageRu:`
-      <b>-s:</b> book → books, pen → pens<br>
-      <b>-es</b> после -s, -sh, -ch, -x, -o: bus → buses, box → boxes<br>
-      <b>y → ies</b> после согласной: baby → babies<br>
-      Нерегулярные: child → children, man → men, woman → women, tooth → teeth, mouse → mice
-    `,
-    formulas:[
-      "book → books",
-      "bus → buses",
-      "baby → babies",
-      "child → children"
-    ],
-    examples:[
-      "I have three books.",
-      "There are two boxes on the table.",
-      "Those children are in the yard.",
-      "There are many mice in the house."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Add -s (regular plurals).",
-        questions:[
-          {text:"one book → two ___", options:["books","bookes","book"], correct:0},
-          {text:"one pen → three ___", options:["pens","pennes","penes"], correct:0},
-          {text:"one apple → five ___", options:["apples","appless","apple"], correct:0},
-          {text:"one chair → four ___", options:["chairs","chairies","chairss"], correct:0},
-          {text:"one dog → three ___", options:["dogs","doges","dogies"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Add -es.",
-        questions:[
-          {text:"one bus → two ___", options:["buses","buss","busies"], correct:0},
-          {text:"one box → three ___", options:["boxes","boxs","boxies"], correct:0},
-          {text:"one dish → many ___", options:["dishes","dishs","dishies"], correct:0},
-          {text:"one watch → five ___", options:["watches","watchs","watchies"], correct:0},
-          {text:"one tomato → two ___", options:["tomatoes","tomatos","tomatoses"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – y → ies.",
-        questions:[
-          {text:"one baby → two ___", options:["babies","babys","babyies"], correct:0},
-          {text:"one lady → three ___", options:["ladies","ladys","ladyes"], correct:0},
-          {text:"one city → many ___", options:["cities","citys","citises"], correct:0},
-          {text:"one story → five ___", options:["stories","storys","storries"], correct:0},
-          {text:"one country → two ___", options:["countries","countrys","countriess"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Irregular plurals.",
-        questions:[
-          {text:"one child → two ___", options:["children","childs","childes"], correct:0},
-          {text:"one man → five ___", options:["men","mans","manes"], correct:0},
-          {text:"one woman → three ___", options:["women","womans","womanes"], correct:0},
-          {text:"one tooth → two ___", options:["teeth","tooths","teeths"], correct:0},
-          {text:"one mouse → many ___", options:["mice","mouses","mices"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Complete the sentences.",
-        questions:[
-          {text:"There are three ___ on the table. (book)", options:["books","book","bookes"], correct:0},
-          {text:"I have two ___ in my bag. (pen)", options:["pens","pen","penes"], correct:0},
-          {text:"There are many ___ in the park. (child)", options:["children","childs","child"], correct:0},
-          {text:"We saw five ___ in the field. (fox)", options:["foxes","foxs","fox"], correct:0},
-          {text:"She likes long ___. (story)", options:["stories","storys","story"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Sentence re-ordering (plural).",
-        questions:[
-          {text:"(books / are / there / three)", options:["There are three books.","There three books are."], correct:0},
-          {text:"(many / in the yard / children / are)", options:["There are many children in the yard.","There many children are in the yard."], correct:0},
-          {text:"(in the box / pens / are / two)", options:["There are two pens in the box.","There two pens are in the box."], correct:0},
-          {text:"(on the table / apples / are / five)", options:["There are five apples on the table.","Five apples there are on the table."], correct:0},
-          {text:"(in the classroom / students / are / twenty)", options:["There are twenty students in the classroom.","Twenty students are there in the classroom."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"I have two ___ in my room. (chair)", options:["chairs","chair","chairies"], correct:0},
-          {text:"There are many ___ in the zoo. (animal)", options:["animals","animal","animales"], correct:0},
-          {text:"We saw three ___ in the kitchen. (mouse)", options:["mice","mouses","mouse"], correct:0},
-          {text:"My sister has four ___ in her class. (baby)", options:["babies","babys","babyes"], correct:0},
-          {text:"Those ___ are my friends. (man)", options:["men","mans","manes"], correct:0}
-        ]
-      }
-    ]
-  },
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>Present Perfect</b> – опыт и результат, связанный с настоящим, без точного указания времени.  
+    <b>Past Simple</b> – завершённое действие в прошлом с указанием времени (yesterday, last year…).
+  </div>
 
-  /* ===== 3. ARTICLES ===== */
-  {
-    id:3,
-    title:"Articles (a / an / the / ∅)",
-    level:"Beginner",
-    explanation:"We use a/an with singular countable nouns, the when the listener knows which thing we mean, and no article (∅) for general ideas or plurals.",
-    ruleRu:"<b>Артикли</b> ставятся перед существительными: a/an (неопределённый), the (определённый), ∅ (без артикля).",
-    usageRu:`
-      <b>a</b> – перед согласным звуком: a bag, a cat<br>
-      <b>an</b> – перед гласным звуком: an apple, an orange<br>
-      <b>the</b> – когда предмет уже известен или единственный: the sun, the teacher<br>
-      <b>∅</b> – множественное число и неисчисляемые в общем смысле: I like apples. Milk is healthy.
-    `,
-    formulas:[
-      "a + consonant sound: a cat",
-      "an + vowel sound: an egg",
-      "the + specific thing",
-      "∅ + plural / uncountable"
-    ],
-    examples:[
-      "This is a cat. The cat is black.",
-      "I have an orange.",
-      "She likes milk. Milk is cold."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – a or an?",
-        questions:[
-          {text:"___ apple", options:["a","an","the"], correct:1},
-          {text:"___ orange", options:["a","an","the"], correct:1},
-          {text:"___ bag", options:["a","an","the"], correct:0},
-          {text:"___ elephant", options:["a","an","the"], correct:1},
-          {text:"___ pencil", options:["a","an","the"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – a / an / the.",
-        questions:[
-          {text:"I have ___ cat. ___ cat is white.", options:["a / The","the / A","an / The"], correct:0},
-          {text:"She is ___ teacher. ___ teacher is kind.", options:["a / The","the / A","an / A"], correct:0},
-          {text:"He eats ___ egg in the morning.", options:["an","a","the"], correct:0},
-          {text:"We live in ___ house. ___ house is big.", options:["a / The","the / A","an / The"], correct:0},
-          {text:"This is ___ interesting book.", options:["an","a","the"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – the or ∅ (no article).",
-        questions:[
-          {text:"___ sun is hot today.", options:["The","A","∅"], correct:0},
-          {text:"I like ___ apples.", options:["∅","the","a"], correct:0},
-          {text:"___ water is cold.", options:["The","A","An"], correct:0},
-          {text:"Children go to ___ school.", options:["∅","the","a"], correct:0},
-          {text:"He plays ___ football every day.", options:["∅","the","a"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Complete the sentences.",
-        questions:[
-          {text:"She is ___ doctor.", options:["a","the","an"], correct:0},
-          {text:"He is ___ engineer.", options:["an","a","the"], correct:0},
-          {text:"Close ___ window, please.", options:["the","a","∅"], correct:0},
-          {text:"I need ___ umbrella.", options:["an","a","the"], correct:0},
-          {text:"___ stars are beautiful tonight.", options:["The","A","∅"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Choose the best option.",
-        questions:[
-          {text:"We have ___ dog. ___ dog is very funny.", options:["a / The","the / A","an / The"], correct:0},
-          {text:"He drinks ___ milk every morning.", options:["∅","the","a"], correct:0},
-          {text:"Open ___ door, please.", options:["the","a","an"], correct:0},
-          {text:"Aidar is ___ best student in the class.", options:["the","a","an"], correct:0},
-          {text:"They went to ___ cinema yesterday.", options:["the","a","an"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Sentence re-ordering.",
-        questions:[
-          {text:"(is / a / this / book)", options:["This is a book.","A book this is."], correct:0},
-          {text:"(an / apple / this / is)", options:["This is an apple.","Is this an apple."], correct:0},
-          {text:"(the / open / door / please)", options:["Please open the door.","Open please the door."], correct:0},
-          {text:"(teacher / the / kind / is)", options:["The teacher is kind.","Teacher is kind the."], correct:0},
-          {text:"(in the sky / are / stars / the)", options:["The stars are in the sky.","Stars are in the sky the."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"He is ___ pilot.", options:["a","the","an"], correct:0},
-          {text:"This is ___ orange.", options:["an","a","the"], correct:0},
-          {text:"___ moon is bright.", options:["The","A","An"], correct:0},
-          {text:"I love ___ music.", options:["∅","the","a"], correct:0},
-          {text:"We went to ___ park yesterday.", options:["the","a","an"], correct:0}
-        ]
-      }
-    ]
-  },
+  <div class="formula">
+    Present Perfect: have/has + V3 · Past Simple: V2 / V-ed
+  </div>
 
-  /* ===== 4. PRESENT SIMPLE ===== */
-  {
-    id:4,
-    title:"Present Simple (habits & routines)",
-    level:"Beginner",
-    explanation:"We use Present Simple to talk about routines, habits, facts and schedules.",
-    ruleRu:"Present Simple — время для привычек, расписаний и фактов.",
-    usageRu:`
-      <b>Утвердительные:</b> I/you/we/they + V, he/she/it + V-s<br>
-      <b>Отрицание:</b> don't / doesn't + V<br>
-      <b>Вопросы:</b> Do/Does + подлежащее + V?
-    `,
-    formulas:[
-      "I play",
-      "He plays",
-      "We don't play",
-      "Does she play?"
-    ],
-    examples:[
-      "I go to school every day.",
-      "She likes English.",
-      "We don't watch TV at night."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Choose the correct form.",
-        questions:[
-          {text:"I ___ to school every day.", options:["go","goes","going"], correct:0},
-          {text:"She ___ breakfast at 7.", options:["has","have","haves"], correct:0},
-          {text:"They ___ in Aktau.", options:["live","lives","living"], correct:0},
-          {text:"He ___ football on Sundays.", options:["plays","play","playing"], correct:0},
-          {text:"My sister ___ very hard.", options:["studies","study","studys"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Negative sentences (don't / doesn't).",
-        questions:[
-          {text:"I ___ like black tea.", options:["don't","doesn't","not"], correct:0},
-          {text:"She ___ watch TV in the morning.", options:["doesn't","don't","isn't"], correct:0},
-          {text:"They ___ go to school on Sunday.", options:["don't","doesn't","aren't"], correct:0},
-          {text:"He ___ play computer games every day.", options:["doesn't","don't","isn't"], correct:0},
-          {text:"We ___ eat meat.", options:["don't","doesn't","aren't"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions (Do / Does).",
-        questions:[
-          {text:"___ you like English?", options:["Do","Does","Are"], correct:0},
-          {text:"___ she live in Astana?", options:["Do","Does","Is"], correct:1},
-          {text:"___ they play football after school?", options:["Do","Does","Are"], correct:0},
-          {text:"___ he go to bed late?", options:["Does","Do","Is"], correct:0},
-          {text:"___ we have a test today?", options:["Do","Does","Are"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order (positive).",
-        questions:[
-          {text:"(every day / to school / go / I)", options:["I go to school every day.","Every day I to school go."], correct:0},
-          {text:"(at 7 / has / she / breakfast)", options:["She has breakfast at 7.","Has breakfast at 7 she."], correct:0},
-          {text:"(live / they / in Aktau)", options:["They live in Aktau.","Live they in Aktau."], correct:0},
-          {text:"(football / plays / he / on Sundays)", options:["He plays football on Sundays.","Plays he football on Sundays."], correct:0},
-          {text:"(likes / my brother / maths)", options:["My brother likes maths.","Likes maths my brother."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Word order (negative).",
-        questions:[
-          {text:"(don't / I / tea / like)", options:["I don't like tea.","Don't tea I like."], correct:0},
-          {text:"(doesn't / watch TV / she / in the morning)", options:["She doesn't watch TV in the morning.","Doesn't she watch TV in the morning."], correct:0},
-          {text:"(go / on Sunday / they / to school / don't)", options:["They don't go to school on Sunday.","Don't they go to school on Sunday."], correct:0},
-          {text:"(doesn't / play / computer games / he)", options:["He doesn't play computer games.","Doesn't he play computer games."], correct:0},
-          {text:"(don't / we / meat / eat)", options:["We don't eat meat.","Don't we eat meat."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Question word order.",
-        questions:[
-          {text:"(you / do / like / chocolate)", options:["Do you like chocolate?","You do like chocolate?"], correct:0},
-          {text:"(she / does / live / here)", options:["Does she live here?","She does live here?"], correct:0},
-          {text:"(they / do / go / to school / by bus)", options:["Do they go to school by bus?","They do go to school by bus?"], correct:0},
-          {text:"(he / does / speak / English)", options:["Does he speak English?","He does speak English?"], correct:0},
-          {text:"(do / you / have / brothers or sisters)", options:["Do you have brothers or sisters?","You have do brothers or sisters?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"She ___ to bed at 10 o'clock.", options:["goes","go","going"], correct:0},
-          {text:"They ___ football on Fridays.", options:["play","plays","playing"], correct:0},
-          {text:"He ___ not like coffee.", options:["does","doesn't","don't"], correct:1},
-          {text:"___ you get up early?", options:["Do","Does","Are"], correct:0},
-          {text:"We ___ watch TV in the evening.", options:["don't","doesn't","aren't"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I ___ (visit) London many times.</li>
+    <li>She ___ (already finish) her homework.</li>
+    <li>They ___ (see) this film three times.</li>
+    <li>We ___ (go) to Paris last summer.</li>
+    <li>He ___ (meet) his best friend in 2018.</li>
+    <li>I ___ (just write) an email to my teacher.</li>
+  </ol>
 
-  /* ===== 5. CAN / CAN'T ===== */
-  {
-    id:5,
-    title:"Can / can't (ability)",
-    level:"Beginner",
-    explanation:"We use can to talk about ability and possibility. We use can't to say that something is not possible.",
-    ruleRu:"<b>Can / can't</b> — «уметь, мочь». После can всегда идёт глагол без to.",
-    usageRu:`
-      <b>Утвердительные:</b> S + can + V – I can swim.<br>
-      <b>Отрицание:</b> S + can't + V – She can't drive.<br>
-      <b>Вопрос:</b> Can + S + V? – Can you help me?
-    `,
-    formulas:[
-      "I can swim.",
-      "She can speak English.",
-      "He can't sing.",
-      "Can they help you?"
-    ],
-    examples:[
-      "I can play the guitar.",
-      "They can't speak French.",
-      "Can you ride a bike?"
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – can or can't?",
-        questions:[
-          {text:"I ___ ride a bike.", options:["can","can't","am"], correct:0},
-          {text:"She ___ swim very well.", options:["can","can't","is"], correct:0},
-          {text:"They ___ speak Chinese.", options:["can","can't","are"], correct:1},
-          {text:"My little brother ___ read.", options:["can","can't","is"], correct:1},
-          {text:"We ___ play football after school.", options:["can","can't","are"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Complete the sentences.",
-        questions:[
-          {text:"He ___ draw very well.", options:["can","can't","isn't"], correct:0},
-          {text:"I ___ sing, but I ___ dance.", options:["can't / can","can / can","can / can't"], correct:0},
-          {text:"She ___ speak English and Russian.", options:["can","can't","is"], correct:0},
-          {text:"They ___ come to the party. They are busy.", options:["can't","can","are"], correct:0},
-          {text:"We ___ help you with your homework.", options:["can","can't","are"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions with can.",
-        questions:[
-          {text:"___ you help me?", options:["Can","Do","Are"], correct:0},
-          {text:"___ she play the piano?", options:["Can","Does","Is"], correct:0},
-          {text:"___ they swim?", options:["Can","Do","Are"], correct:0},
-          {text:"___ he speak French?", options:["Can","Does","Is"], correct:0},
-          {text:"___ we sit here?", options:["Can","Do","Are"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(can / I / swim)", options:["I can swim.","Can I swim."], correct:0},
-          {text:"(play / she / can / tennis)", options:["She can play tennis.","Can she play tennis."], correct:0},
-          {text:"(ride a bike / can / they)", options:["They can ride a bike.","Can they ride a bike."], correct:0},
-          {text:"(English / speak / he / can)", options:["He can speak English.","Can he speak English."], correct:0},
-          {text:"(can / we / help / you)", options:["We can help you.","Can we help you."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Negative word order.",
-        questions:[
-          {text:"(can / not / I / drive)", options:["I can't drive.","Can't I drive."], correct:0},
-          {text:"(can't / swim / she)", options:["She can't swim.","Can't she swim."], correct:0},
-          {text:"(can / play the guitar / not / he)", options:["He can't play the guitar.","He can play the guitar not."], correct:0},
-          {text:"(can't / they / come / today)", options:["They can't come today.","Can't they come today."], correct:0},
-          {text:"(can / we / not / go / there)", options:["We can't go there.","Can't we go there."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Questions re-ordering.",
-        questions:[
-          {text:"(you / can / swim)", options:["Can you swim?","You can swim?"], correct:0},
-          {text:"(play / she / can / chess)", options:["Can she play chess?","She can play chess?"], correct:0},
-          {text:"(can / they / help / us)", options:["Can they help us?","They can help us?"], correct:0},
-          {text:"(ride a horse / can / he)", options:["Can he ride a horse?","He can ride a horse?"], correct:0},
-          {text:"(can / we / sit / here)", options:["Can we sit here?","We can sit here?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"I ___ play the dombra.", options:["can","can't","am"], correct:0},
-          {text:"She ___ sing, but she ___ dance.", options:["can / can't","can't / can","can / can"], correct:0},
-          {text:"___ you help me with this task?", options:["Can","Do","Are"], correct:0},
-          {text:"They ___ come today. They are ill.", options:["can't","can","are"], correct:0},
-          {text:"My brother ___ speak three languages.", options:["can","can't","is"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>I ___ (not finish) my project yet.</li>
+    <li>She ___ (never be) to London.</li>
+    <li>They ___ (not see) him yesterday.</li>
+    <li>We ___ (not visit) this museum last year.</li>
+    <li>He ___ (not do) his homework yet.</li>
+    <li>I ___ (not watch) this film in 2020.</li>
+  </ol>
 
-  /* ===== 6. THERE IS / THERE ARE ===== */
-  {
-    id:6,
-    title:"There is / There are",
-    level:"Beginner",
-    explanation:"We use there is / there are to say that something exists in a place.",
-    ruleRu:"<b>There is / There are</b> — «есть, имеется» в каком-то месте.",
-    usageRu:`
-      There is + ед.ч./неисчисл.: There is a book on the table.<br>
-      There are + мн.ч.: There are three books on the table.<br>
-      Отрицание: There isn't / There aren't.<br>
-      Вопрос: Is there...? / Are there...?
-    `,
-    formulas:[
-      "There is a cat in the room.",
-      "There are two chairs in the kitchen.",
-      "Is there a park near here?",
-      "There aren't any apples."
-    ],
-    examples:[
-      "There is a big window in my room.",
-      "There are many students in the classroom.",
-      "Is there a bank near your house?"
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – there is / there are.",
-        questions:[
-          {text:"___ a book on the table.", options:["There is","There are","Is there"], correct:0},
-          {text:"___ two cats in the garden.", options:["There is","There are","Is there"], correct:1},
-          {text:"___ a teacher in the classroom.", options:["There is","There are","Are there"], correct:0},
-          {text:"___ three windows in my room.", options:["There is","There are","Is there"], correct:1},
-          {text:"___ some milk in the fridge.", options:["There is","There are","Are there"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Negative (isn't / aren't).",
-        questions:[
-          {text:"There ___ any apples on the table.", options:["aren't","isn't","don't"], correct:0},
-          {text:"There ___ a TV in my room.", options:["isn't","aren't","don't"], correct:0},
-          {text:"There ___ any students in the gym.", options:["aren't","isn't","don't"], correct:0},
-          {text:"There ___ a bus stop near my house.", options:["isn't","aren't","doesn't"], correct:0},
-          {text:"There ___ any water in the glass.", options:["isn't","aren't","don't"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions (Is there / Are there).",
-        questions:[
-          {text:"___ a park near here?", options:["Is there","Are there","There is"], correct:0},
-          {text:"___ any students in the classroom?", options:["Are there","Is there","There are"], correct:0},
-          {text:"___ a cinema in your town?", options:["Is there","Are there","There is"], correct:0},
-          {text:"___ any shops in this street?", options:["Are there","Is there","There are"], correct:0},
-          {text:"___ a computer in your room?", options:["Is there","Are there","There is"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(a / there / is / book / on the table)", options:["There is a book on the table.","Is there a book on the table."], correct:0},
-          {text:"(are / students / many / there / in the classroom)", options:["There are many students in the classroom.","Are there many students in the classroom."], correct:0},
-          {text:"(is / a / there / park / near here)", options:["There is a park near here.","Is there a park near here."], correct:0},
-          {text:"(in my room / a big window / there / is)", options:["There is a big window in my room.","Is there a big window in my room."], correct:0},
-          {text:"(aren't / there / any / chairs / here)", options:["There aren't any chairs here.","Aren't there any chairs here."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Complete the sentences.",
-        questions:[
-          {text:"___ a big table in the kitchen.", options:["There is","There are","Is there"], correct:0},
-          {text:"___ three pictures on the wall.", options:["There are","There is","Are there"], correct:0},
-          {text:"___ any juice in the fridge.", options:["There isn't","There aren't","Isn't there"], correct:0},
-          {text:"___ a bus stop near the school.", options:["There is","There are","Is there"], correct:0},
-          {text:"___ many trees in the park.", options:["There are","There is","Are there"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Questions re-ordering.",
-        questions:[
-          {text:"(a bank / is / there / near here)", options:["Is there a bank near here?","There is a bank near here?"], correct:0},
-          {text:"(any students / are / there / in the yard)", options:["Are there any students in the yard?","There are any students in the yard?"], correct:0},
-          {text:"(a cinema / is / in your town / there)", options:["Is there a cinema in your town?","There is a cinema in your town?"], correct:0},
-          {text:"(any shops / there / are / in this street)", options:["Are there any shops in this street?","There are any shops in this street?"], correct:0},
-          {text:"(a computer / there / is / in your room)", options:["Is there a computer in your room?","There is a computer in your room?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"___ a cat on the sofa.", options:["There is","There are","Is there"], correct:0},
-          {text:"___ three books on the desk.", options:["There are","There is","Are there"], correct:0},
-          {text:"There ___ any milk in the fridge.", options:["isn't","aren't","don't"], correct:0},
-          {text:"___ any chairs in the room?", options:["Are there","Is there","There are"], correct:0},
-          {text:"___ a lamp next to the bed.", options:["There is","There are","Is there"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>___ you ever ___ (try) sushi?</li>
+    <li>When ___ you ___ (go) to London?</li>
+    <li>How many times ___ she ___ (be) to Italy?</li>
+    <li>___ they ___ (see) him yesterday?</li>
+    <li>What ___ you ___ (do) last weekend?</li>
+    <li>___ he ___ (finish) his homework yet?</li>
+  </ol>
 
-  /* ===== 7. PRONOUNS & POSSESSIVE ADJECTIVES ===== */
-  {
-    id:7,
-    title:"Pronouns & Possessive Adjectives (my / your / his / her / our / their)",
-    level:"Beginner",
-    explanation:"Possessive adjectives show who something belongs to. They always go before a noun.",
-    ruleRu:`<b>Притяжательные прилагательные</b> показывают, кому что принадлежит и используются <b>перед существительным</b>.`,
-    usageRu:`
-      my – мой/моя/моё<br>
-      your – твой/ваш<br>
-      his – его<br>
-      her – её<br>
-      its – его (для предметов/животных)<br>
-      our – наш<br>
-      their – их
-    `,
-    formulas:[
-      "my book",
-      "your bag",
-      "his sister",
-      "her brother",
-      "our school",
-      "their house"
-    ],
-    examples:[
-      "This is my school.",
-      "His name is Arman.",
-      "Their house is big."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Choose the correct option.",
-        questions:[
-          {text:"This is ___ book.", options:["my","his","their"], correct:0},
-          {text:"That is ___ sister.", options:["her","their","its"], correct:0},
-          {text:"These are ___ bags.", options:["our","my","its"], correct:0},
-          {text:"He loves ___ dog.", options:["your","her","his"], correct:2},
-          {text:"They’re in ___ classroom.", options:["their","its","my"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Complete with my / your / his / her / our / their.",
-        questions:[
-          {text:"Aika and I live with ___ parents.", options:["our","their","his"], correct:0},
-          {text:"Aruzhan is talking to ___ friend Dana.", options:["my","her","their"], correct:1},
-          {text:"The dog is eating ___ food.", options:["its","his","their"], correct:0},
-          {text:"This is ___ new backpack. (I)", options:["my","your","her"], correct:0},
-          {text:"Is this ___ phone? (you)", options:["your","its","our"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Subject pronouns & possessives.",
-        questions:[
-          {text:"I → ___ book.", options:["my","mine","me"], correct:0},
-          {text:"He → ___ sister.", options:["his","her","him"], correct:0},
-          {text:"They → ___ house.", options:["their","them","our"], correct:0},
-          {text:"We → ___ teacher.", options:["our","us","their"], correct:0},
-          {text:"She → ___ cat.", options:["her","his","she"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(book / my / this / is)", options:["This is my book.","My book this is."], correct:0},
-          {text:"(sister / his / that / is)", options:["That is his sister.","His sister that is."], correct:0},
-          {text:"(our / school / this / is)", options:["This is our school.","Our school this is."], correct:0},
-          {text:"(their / house / big / is)", options:["Their house is big.","Is big their house."], correct:0},
-          {text:"(her / name / Aika / is)", options:["Her name is Aika.","Is her name Aika."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Choose the correct possessive.",
-        questions:[
-          {text:"We like ___ English teacher.", options:["our","their","her"], correct:0},
-          {text:"He often helps ___ brother.", options:["his","her","their"], correct:0},
-          {text:"They love ___ little dog.", options:["their","our","its"], correct:0},
-          {text:"I can't find ___ pen.", options:["my","mine","me"], correct:0},
-          {text:"She is doing ___ homework.", options:["her","his","their"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Correct / wrong.",
-        questions:[
-          {text:"This is me book.", options:["Wrong","Correct"], correct:0},
-          {text:"This is my book.", options:["Correct","Wrong"], correct:0},
-          {text:"He likes he dog.", options:["Wrong","Correct"], correct:0},
-          {text:"They are in their classroom.", options:["Correct","Wrong"], correct:0},
-          {text:"We love us school.", options:["Wrong","Correct"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"___ name is Arai. (I)", options:["My","Her","His"], correct:0},
-          {text:"___ parents are teachers. (We)", options:["Our","Their","My"], correct:0},
-          {text:"Is this ___ desk? (you)", options:["your","my","our"], correct:0},
-          {text:"They live with ___ grandparents.", options:["their","our","his"], correct:0},
-          {text:"The cat is eating ___ food.", options:["its","her","their"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>already / I / my homework / have / finished</li>
+    <li>went / last year / to Spain / we</li>
+    <li>ever / you / have / this film / seen</li>
+    <li>not / yet / has / finished / she</li>
+    <li>yesterday / met / I / him</li>
+    <li>has / he / just / left</li>
+  </ol>
 
-  /* ===== 8. DEMONSTRATIVES ===== */
-  {
-    id:8,
-    title:"This / That / These / Those",
-    level:"Beginner",
-    explanation:"We use this/these for things that are near us, and that/those for things that are far.",
-    ruleRu:"this/these — близко; that/those — далеко.",
-    usageRu:`
-      this + ед.ч. (близко): this book<br>
-      these + мн.ч. (близко): these books<br>
-      that + ед.ч. (далеко): that car<br>
-      those + мн.ч. (далеко): those cars
-    `,
-    formulas:[
-      "this book",
-      "that book",
-      "these books",
-      "those books"
-    ],
-    examples:[
-      "This is my bag.",
-      "Those are my friends.",
-      "That car is very old."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – this or that?",
-        questions:[
-          {text:"(near) ___ is my pencil.", options:["This","That","These"], correct:0},
-          {text:"(far) ___ is my school.", options:["That","This","These"], correct:0},
-          {text:"(near) ___ is my teacher.", options:["This","That","Those"], correct:0},
-          {text:"(far) ___ is our house.", options:["That","This","Those"], correct:0},
-          {text:"(near) ___ is my friend Aika.", options:["This","That","These"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – these or those?",
-        questions:[
-          {text:"(near) ___ are my books.", options:["These","Those","This"], correct:0},
-          {text:"(far) ___ are my friends.", options:["Those","These","That"], correct:0},
-          {text:"(near) ___ are my shoes.", options:["These","Those","This"], correct:0},
-          {text:"(far) ___ are our teachers.", options:["Those","These","That"], correct:0},
-          {text:"(near) ___ are my pens.", options:["These","Those","This"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Choose this / that / these / those.",
-        questions:[
-          {text:"(near) ___ is my bag.", options:["This","That","These"], correct:0},
-          {text:"(far) ___ are my cousins.", options:["Those","These","This"], correct:0},
-          {text:"(near) ___ are my notebooks.", options:["These","Those","That"], correct:0},
-          {text:"(far) ___ is our bus.", options:["That","This","Those"], correct:0},
-          {text:"(near) ___ is my desk.", options:["This","That","These"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(my / is / this / book)", options:["This is my book.","My book this is."], correct:0},
-          {text:"(are / my friends / those)", options:["Those are my friends.","My friends those are."], correct:0},
-          {text:"(our school / that / is)", options:["That is our school.","Our school that is."], correct:0},
-          {text:"(these / are / my pencils)", options:["These are my pencils.","My pencils these are."], correct:0},
-          {text:"(is / this / my / pen)", options:["This is my pen.","Is this my pen."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Complete the sentences.",
-        questions:[
-          {text:"___ is my English teacher. (near)", options:["This","That","These"], correct:0},
-          {text:"___ are my parents. (near)", options:["These","Those","This"], correct:0},
-          {text:"___ is our classroom. (far)", options:["That","This","Those"], correct:0},
-          {text:"___ are my shoes. (far)", options:["Those","These","That"], correct:0},
-          {text:"___ is my favourite book. (near)", options:["This","That","These"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Questions with demonstratives.",
-        questions:[
-          {text:"___ is your brother? (near)", options:["Who is this?","Who is that?","Who are these?"], correct:0},
-          {text:"___ are your friends? (far)", options:["Who are those?","Who are these?","Who is that?"], correct:0},
-          {text:"What is ___? (near, singular)", options:["this","that","these"], correct:0},
-          {text:"What are ___? (near, plural)", options:["these","those","this"], correct:0},
-          {text:"Where is ___ school? (far)", options:["that","this","these"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"(near) ___ is my pen.", options:["This","That","These"], correct:0},
-          {text:"(far) ___ are my cousins.", options:["Those","These","This"], correct:0},
-          {text:"(near) ___ are my books.", options:["These","Those","That"], correct:0},
-          {text:"(far) ___ is our bus.", options:["That","This","Those"], correct:0},
-          {text:"(near) ___ is my phone.", options:["This","That","These"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>I _________ (never / see) this city before.</li>
+    <li>She _________ (already / do) her homework.</li>
+    <li>They _________ (go) to the park yesterday.</li>
+    <li>We _________ (visit) that museum in 2019.</li>
+    <li>He _________ (not / finish) the test yet.</li>
+    <li>When _________ you _________ (meet) him?</li>
+  </ol>
 
-  /* ===== 9. PRESENT CONTINUOUS ===== */
-  {
-    id:9,
-    title:"Present Continuous (now)",
-    level:"Beginner",
-    explanation:"We use Present Continuous to talk about actions happening now or around now.",
-    ruleRu:"Present Continuous: am/is/are + V-ing — действие происходит сейчас.",
-    usageRu:`
-      I am + V-ing<br>
-      He/She/It is + V-ing<br>
-      You/We/They are + V-ing<br>
-      Отрицание: am not / isn't / aren't + V-ing<br>
-      Вопрос: Am/Is/Are + подлежащее + V-ing?
-    `,
-    formulas:[
-      "I am reading.",
-      "She is playing.",
-      "They are watching TV."
-    ],
-    examples:[
-      "I am doing my homework now.",
-      "She is talking on the phone.",
-      "They are playing football in the yard."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Make Present Continuous.",
-        questions:[
-          {text:"I ___ (read) a book now.", options:["am reading","read","is reading"], correct:0},
-          {text:"She ___ (play) tennis at the moment.", options:["is playing","plays","are playing"], correct:0},
-          {text:"They ___ (watch) TV now.", options:["are watching","watch","is watching"], correct:0},
-          {text:"We ___ (do) our homework.", options:["are doing","do","is doing"], correct:0},
-          {text:"He ___ (eat) lunch now.", options:["is eating","eats","are eating"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Negative sentences.",
-        questions:[
-          {text:"I ___ (not / sleep) now.", options:["am not sleeping","don't sleep","not sleeping"], correct:0},
-          {text:"She ___ (not / watch) TV.", options:["isn't watching","doesn't watch","not watching"], correct:0},
-          {text:"They ___ (not / play) football now.", options:["aren't playing","don't play","not playing"], correct:0},
-          {text:"He ___ (not / eat) pizza at the moment.", options:["isn't eating","doesn't eat","not eating"], correct:0},
-          {text:"We ___ (not / write) a test now.", options:["aren't writing","don't write","not writing"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions.",
-        questions:[
-          {text:"___ you (do) your homework now?", options:["Are / doing","Do / do","Is / doing"], correct:0},
-          {text:"___ she (read) a book?", options:["Is / reading","Does / read","Are / reading"], correct:0},
-          {text:"___ they (play) football in the yard?", options:["Are / playing","Do / play","Is / playing"], correct:0},
-          {text:"___ he (sleep) now?", options:["Is / sleeping","Does / sleep","Are / sleeping"], correct:0},
-          {text:"___ we (write) a test?", options:["Are / writing","Do / write","Is / writing"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(am / I / now / reading / a book)", options:["I am reading a book now.","Am I reading a book now."], correct:0},
-          {text:"(is / she / lunch / having / now)", options:["She is having lunch now.","Is she having lunch now."], correct:0},
-          {text:"(are / playing / they / football)", options:["They are playing football.","Are they playing football."], correct:0},
-          {text:"(homework / we / doing / are)", options:["We are doing homework.","Are we doing homework."], correct:0},
-          {text:"(the teacher / is / speaking / now)", options:["The teacher is speaking now.","Is speaking now the teacher."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Choose the correct tense (Present Simple or Continuous).",
-        questions:[
-          {text:"I ___ to school every day.", options:["go","am going","are going"], correct:0},
-          {text:"I ___ to school now.", options:["am going","go","is going"], correct:0},
-          {text:"She ___ English every day.", options:["studies","is studying","are studying"], correct:0},
-          {text:"She ___ English now.", options:["is studying","studies","are studying"], correct:0},
-          {text:"We ___ TV at the moment.", options:["are watching","watch","is watching"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Questions re-ordering.",
-        questions:[
-          {text:"(you / are / now / studying)", options:["Are you studying now?","You are studying now?"], correct:0},
-          {text:"(she / is / now / reading / a book)", options:["Is she reading a book now?","She is reading a book now?"], correct:0},
-          {text:"(they / are / playing / football / now)", options:["Are they playing football now?","They are playing football now?"], correct:0},
-          {text:"(he / is / sleeping / now)", options:["Is he sleeping now?","He is sleeping now?"], correct:0},
-          {text:"(we / are / doing / a test / now)", options:["Are we doing a test now?","We are doing a test now?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"I ___ (not / watch) TV now.", options:["am not watching","don't watch","not watching"], correct:0},
-          {text:"She ___ (read) a book at the moment.", options:["is reading","reads","are reading"], correct:0},
-          {text:"___ they (play) basketball now?", options:["Are / playing","Do / play","Is / playing"], correct:0},
-          {text:"We ___ (have) lunch now.", options:["are having","have","is having"], correct:0},
-          {text:"He ___ (not / listen) to music now.", options:["isn't listening","doesn't listen","not listening"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>I (have seen / saw) this film three times.</li>
+    <li>She (has already finished / finished) her homework yesterday.</li>
+    <li>We (have visited / visited) London last year.</li>
+    <li>They (have just arrived / arrived just) home.</li>
+    <li>He (didn’t finish / hasn’t finished) his work yet.</li>
+    <li>___ you (have ever been / were ever) to Paris?</li>
+  </ol>
+</div>
 
-  /* ===== 10. HAVE GOT / HAS GOT ===== */
-  {
-    id:10,
-    title:"Have got / Has got",
-    level:"Beginner",
-    explanation:"We use have got / has got to talk about possession and relationships.",
-    ruleRu:"Have got / has got — «иметь, обладать»: I have got, he has got.",
-    usageRu:`
-      I/you/we/they have got<br>
-      He/she/it has got<br>
-      Отрицание: haven't got / hasn't got<br>
-      Вопрос: Have/Has + подлежащее + got?
-    `,
-    formulas:[
-      "I have got a bike.",
-      "She has got a cat.",
-      "We haven't got homework.",
-      "Has he got a sister?"
-    ],
-    examples:[
-      "I have got a new phone.",
-      "My friend has got a big family.",
-      "We haven't got any questions."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Have got / has got.",
-        questions:[
-          {text:"I ___ a big family.", options:["have got","has got","got"], correct:0},
-          {text:"She ___ two brothers.", options:["has got","have got","got"], correct:0},
-          {text:"They ___ a new car.", options:["have got","has got","got"], correct:0},
-          {text:"He ___ a computer.", options:["has got","have got","got"], correct:0},
-          {text:"We ___ a test today.", options:["have got","has got","got"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Negative (haven't got / hasn't got).",
-        questions:[
-          {text:"I ___ any sisters.", options:["haven't got","hasn't got","don't have got"], correct:0},
-          {text:"He ___ a car.", options:["hasn't got","haven't got","not has got"], correct:0},
-          {text:"They ___ a dog.", options:["haven't got","hasn't got","don't has got"], correct:0},
-          {text:"She ___ a bike.", options:["hasn't got","haven't got","not have got"], correct:0},
-          {text:"We ___ any homework today.", options:["haven't got","hasn't got","don't got"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions (Have / Has ... got?).",
-        questions:[
-          {text:"___ you got a pen?", options:["Have","Has","Do"], correct:0},
-          {text:"___ she got any brothers?", options:["Has","Have","Does"], correct:0},
-          {text:"___ they got a car?", options:["Have","Has","Do"], correct:0},
-          {text:"___ he got a sister?", options:["Has","Have","Does"], correct:0},
-          {text:"___ we got English today?", options:["Have","Has","Do"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order (positive).",
-        questions:[
-          {text:"(got / I / have / a bike)", options:["I have got a bike.","Have got I a bike."], correct:0},
-          {text:"(has / a dog / got / she)", options:["She has got a dog.","Has she got a dog."], correct:0},
-          {text:"(got / they / have / a car)", options:["They have got a car.","Have got they a car."], correct:0},
-          {text:"(has / two sisters / got / he)", options:["He has got two sisters.","Has he got two sisters."], correct:0},
-          {text:"(got / we / have / a new teacher)", options:["We have got a new teacher.","Have we got a new teacher."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Word order (negative).",
-        questions:[
-          {text:"(got / haven't / I / any brothers)", options:["I haven't got any brothers.","Haven't I got any brothers."], correct:0},
-          {text:"(hasn't / she / got / a bike)", options:["She hasn't got a bike.","Hasn't she got a bike."], correct:0},
-          {text:"(haven't / they / got / a car)", options:["They haven't got a car.","Haven't they got a car."], correct:0},
-          {text:"(got / we / any homework / haven't)", options:["We haven't got any homework.","Haven't we got any homework."], correct:0},
-          {text:"(hasn't / he / got / a sister)", options:["He hasn't got a sister.","Hasn't he got a sister."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Questions re-ordering.",
-        questions:[
-          {text:"(you / got / have / a pen)", options:["Have you got a pen?","You have got a pen?"], correct:0},
-          {text:"(has / she / got / a cat)", options:["Has she got a cat?","She has got a cat?"], correct:0},
-          {text:"(got / they / have / a car)", options:["Have they got a car?","They have got a car?"], correct:0},
-          {text:"(has / he / got / any brothers)", options:["Has he got any brothers?","He has got any brothers?"], correct:0},
-          {text:"(got / we / have / a test today)", options:["Have we got a test today?","We have got a test today?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"I ___ a new phone.", options:["have got","has got","got"], correct:0},
-          {text:"She ___ any brothers.", options:["hasn't got","haven't got","doesn't got"], correct:0},
-          {text:"___ they got a dog?", options:["Have","Has","Do"], correct:0},
-          {text:"We ___ a big house.", options:["have got","has got","got"], correct:0},
-          {text:"He ___ any sisters.", options:["hasn't got","haven't got","doesn't got"], correct:0}
-        ]
-      }
-    ]
-  },
+<!-- TOPIC 2 -->
+<div class="topic" id="topic2">
+  <h2>2. Present Perfect Continuous</h2>
+  <div class="meta">Level: Intermediate · Long actions until now</div>
 
-  /* ===== 11. QUESTION WORDS ===== */
-  {
-    id:11,
-    title:"Question words (What / Where / When / Who / How / Why)",
-    level:"Beginner",
-    explanation:"We use question words to ask for information: about things, people, time, place, reasons and ways.",
-    ruleRu:"Вопросительные слова помогают спросить: что, где, когда, кто, почему, как.",
-    usageRu:`
-      <b>What</b> – что? какой?<br>
-      <b>Where</b> – где? куда?<br>
-      <b>When</b> – когда?<br>
-      <b>Who</b> – кто?<br>
-      <b>Why</b> – почему?<br>
-      <b>How</b> – как?<br>
-      Используем: Question word + do/does + подлежащее + V?
-    `,
-    formulas:[
-      "What is your name?",
-      "Where do you live?",
-      "When do you get up?",
-      "Who is your best friend?",
-      "Why do you like English?",
-      "How old are you?"
-    ],
-    examples:[
-      "Where do you go after school?",
-      "When do you have English?",
-      "Who is your English teacher?"
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Choose the correct question word.",
-        questions:[
-          {text:"___ is your name?", options:["What","Where","When"], correct:0},
-          {text:"___ do you live?", options:["Where","Who","Why"], correct:0},
-          {text:"___ is your birthday?", options:["When","Where","How"], correct:0},
-          {text:"___ is your best friend?", options:["Who","What","Where"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – More question words.",
-        questions:[
-          {text:"___ old are you?", options:["How","What","Why"], correct:0},
-          {text:"___ do you like English?", options:["Why","Where","Who"], correct:0},
-          {text:"___ is this in English?", options:["What","Who","When"], correct:0},
-          {text:"___ is your school?", options:["Where","How","When"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Complete the questions.",
-        questions:[
-          {text:"___ do you have English lessons? (time)", options:["When","Where","Who"], correct:0},
-          {text:"___ do you go after school? (place)", options:["Where","What","Why"], correct:0},
-          {text:"___ is playing football with you? (person)", options:["Who","What","How"], correct:0},
-          {text:"___ do you feel today? (in what way)", options:["How","Where","When"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order with question words.",
-        questions:[
-          {text:"(you / live / where / do)", options:["Where do you live?","Do you live where?"], correct:0},
-          {text:"(do / why / like / you / English)", options:["Why do you like English?","You like English why?"], correct:0},
-          {text:"(is / your / when / birthday)", options:["When is your birthday?","Your birthday when is?"], correct:0},
-          {text:"(who / your / is / teacher)", options:["Who is your teacher?","Your teacher who is?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Choose the best question.",
-        questions:[
-          {text:"You want to know a friend's age.", options:["How old are you?","Where are you?","Who are you?"], correct:0},
-          {text:"You want to know a friend's favourite sport.", options:["What is your favourite sport?","Where is your sport?","Who is your sport?"], correct:0},
-          {text:"You want to know the reason.", options:["Why are you late?","Where are you late?","What are you late?"], correct:0},
-          {text:"You want to know the place of school.", options:["Where is your school?","When is your school?","What is your school?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Correct or wrong?",
-        questions:[
-          {text:"Where do you live?", options:["Correct","Wrong"], correct:0},
-          {text:"What do you live?", options:["Correct","Wrong"], correct:1},
-          {text:"Why are you sad?", options:["Correct","Wrong"], correct:0},
-          {text:"Who do you name?", options:["Correct","Wrong"], correct:1}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"___ is your favourite subject?", options:["What","Where","Who"], correct:0},
-          {text:"___ do you go to bed?", options:["When","Where","How"], correct:0},
-          {text:"___ is that boy?", options:["Who","What","Why"], correct:0},
-          {text:"___ are you from?", options:["Where","When","How"], correct:0}
-        ]
-      }
-    ]
-  },
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    We use <b>Present Perfect Continuous</b> for actions that started in the past and continue until now or have a visible result now.
+  </div>
 
-  /* ===== 12. PREPOSITIONS OF TIME (IN / ON / AT) ===== */
-  {
-    id:12,
-    title:"Prepositions of time (in / on / at)",
-    level:"Beginner",
-    explanation:"We use in, on, at with time expressions: months, days, dates, clock times, parts of the day.",
-    ruleRu:"in / on / at с выражениями времени.",
-    usageRu:`
-      <b>in</b> – месяцы, годы, время дня: in May, in 2025, in the evening<br>
-      <b>on</b> – дни и даты: on Monday, on 1st May<br>
-      <b>at</b> – точное время, праздники: at 7 o'clock, at night, at the weekend
-    `,
-    formulas:[
-      "in June",
-      "on Monday",
-      "at 7 o'clock"
-    ],
-    examples:[
-      "I get up at 7 o'clock.",
-      "We have English on Monday.",
-      "I visit my grandparents in summer."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Choose in / on / at.",
-        questions:[
-          {text:"I get up ___ 7 o'clock.", options:["at","on","in"], correct:0},
-          {text:"We have English ___ Monday.", options:["on","at","in"], correct:0},
-          {text:"My birthday is ___ May.", options:["in","on","at"], correct:0},
-          {text:"We watch TV ___ the evening.", options:["in","on","at"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – More practice.",
-        questions:[
-          {text:"School starts ___ 8:30.", options:["at","on","in"], correct:0},
-          {text:"We don't go to school ___ Sunday.", options:["on","in","at"], correct:0},
-          {text:"It is cold here ___ winter.", options:["in","on","at"], correct:0},
-          {text:"We visit our relatives ___ the weekend.", options:["at","on","in"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Mixed sentences.",
-        questions:[
-          {text:"He plays football ___ Saturdays.", options:["on","in","at"], correct:0},
-          {text:"We go to the lake ___ summer.", options:["in","on","at"], correct:0},
-          {text:"The lesson finishes ___ 10:15.", options:["at","on","in"], correct:0},
-          {text:"My brother was born ___ 2012.", options:["in","on","at"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(in summer / we / travel)", options:["We travel in summer.","In summer travel we."], correct:0},
-          {text:"(on Monday / have / English / we)", options:["We have English on Monday.","On Monday we English have."], correct:0},
-          {text:"(at 6 o'clock / gets up / he)", options:["He gets up at 6 o'clock.","At 6 o'clock gets up he."], correct:0},
-          {text:"(in the morning / I / study)", options:["I study in the morning.","Study I in the morning."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Correct the mistake.",
-        questions:[
-          {text:"We go to school in Monday.", options:["Wrong","Correct"], correct:0},
-          {text:"My birthday is on 3rd March.", options:["Correct","Wrong"], correct:0},
-          {text:"I get up in 7 o'clock.", options:["Wrong","Correct"], correct:0},
-          {text:"We ski in winter.", options:["Correct","Wrong"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Short choices.",
-        questions:[
-          {text:"___ the afternoon", options:["in","on","at"], correct:0},
-          {text:"___ night", options:["at","in","on"], correct:0},
-          {text:"___ Friday morning", options:["on","at","in"], correct:0},
-          {text:"___ 2009", options:["in","on","at"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"We have PE ___ Tuesday.", options:["on","in","at"], correct:0},
-          {text:"I go to bed ___ 11 o'clock.", options:["at","on","in"], correct:0},
-          {text:"We visit Almaty ___ summer.", options:["in","on","at"], correct:0},
-          {text:"I was born ___ 16th March.", options:["on","in","at"], correct:0}
-        ]
-      }
-    ]
-  },
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>Present Perfect Continuous</b> – действие началось в прошлом и длится до сих пор или дало видимый результат сейчас.  
+    Часто с: for, since, recently, lately.
+  </div>
 
-  /* ===== 13. PREPOSITIONS OF PLACE ===== */
-  {
-    id:13,
-    title:"Prepositions of place (in / on / under / next to / behind / in front of)",
-    level:"Beginner",
-    explanation:"We use prepositions of place to say where things and people are.",
-    ruleRu:"Предлоги места показывают, где находится предмет.",
-    usageRu:`
-      <b>in</b> – внутри: in the box<br>
-      <b>on</b> – на поверхности: on the table<br>
-      <b>under</b> – под: under the chair<br>
-      <b>next to</b> – рядом: next to the door<br>
-      <b>behind</b> – позади: behind the house<br>
-      <b>in front of</b> – перед: in front of the school
-    `,
-    formulas:[
-      "in the room",
-      "on the table",
-      "under the bed",
-      "next to the window"
-    ],
-    examples:[
-      "The book is on the desk.",
-      "The cat is under the chair.",
-      "The students are in front of the school."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Choose the correct preposition.",
-        questions:[
-          {text:"The book is ___ the table.", options:["on","in","under"], correct:0},
-          {text:"The cat is ___ the box.", options:["in","on","behind"], correct:0},
-          {text:"The ball is ___ the chair.", options:["under","in front of","on"], correct:0},
-          {text:"The car is ___ the house. (сзади)", options:["behind","in","on"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – next to / in front of / behind.",
-        questions:[
-          {text:"The school is ___ the park. (рядом)", options:["next to","behind","in"], correct:0},
-          {text:"The boy is standing ___ the class. (перед классом)", options:["in front of","behind","under"], correct:0},
-          {text:"The tree is ___ the house. (за домом)", options:["behind","next to","on"], correct:0},
-          {text:"The bus stop is ___ the shop. (рядом)", options:["next to","under","in"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Complete the sentences.",
-        questions:[
-          {text:"There is a picture ___ the wall.", options:["on","under","behind"], correct:0},
-          {text:"My bag is ___ the desk.", options:["under","on","behind"], correct:0},
-          {text:"The teacher is standing ___ the students.", options:["in front of","behind","under"], correct:0},
-          {text:"Our house is ___ the river.", options:["next to","under","on"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(on the table / is / the book)", options:["The book is on the table.","Is on the table the book."], correct:0},
-          {text:"(in the box / is / the cat)", options:["The cat is in the box.","In the box is the cat."], correct:0},
-          {text:"(under the bed / are / the shoes)", options:["The shoes are under the bed.","Under the bed are the shoes."], correct:0},
-          {text:"(next to the window / is / my desk)", options:["My desk is next to the window.","My desk next to the window is."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Correct or wrong?",
-        questions:[
-          {text:"The book is in the table.", options:["Wrong","Correct"], correct:0},
-          {text:"The pen is on the desk.", options:["Correct","Wrong"], correct:0},
-          {text:"The cat is under the chair.", options:["Correct","Wrong"], correct:0},
-          {text:"The school is behind of the park.", options:["Wrong","Correct"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Short choices.",
-        questions:[
-          {text:"The board is ___ the teacher.", options:["behind","next to","under"], correct:0},
-          {text:"The window is ___ my desk.", options:["next to","on","in"], correct:0},
-          {text:"The ball is ___ the bed.", options:["under","in front of","behind"], correct:0},
-          {text:"The car is ___ the garage.", options:["in","on","under"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"The dog is ___ the door. (перед)", options:["in front of","behind","under"], correct:0},
-          {text:"The park is ___ our house. (рядом)", options:["next to","on","under"], correct:0},
-          {text:"The picture is ___ the wall.", options:["on","in","under"], correct:0},
-          {text:"My books are ___ my bag.", options:["in","on","behind"], correct:0}
-        ]
-      }
-    ]
-  },
+  <div class="formula">
+    have/has + been + V-ing
+  </div>
 
-  /* ===== 14. ADJECTIVES: COMPARATIVES & SUPERLATIVES ===== */
-  {
-    id:14,
-    title:"Adjectives: comparative & superlative (bigger / the biggest)",
-    level:"Beginner",
-    explanation:"We use comparative adjectives to compare two things and superlative adjectives to compare three or more.",
-    ruleRu:"Сравнительная степень (bigger) – сравниваем два предмета. Превосходная (the biggest) – самый-самая.",
-    usageRu:`
-      Короткие прилагательные: tall → taller → the tallest<br>
-      one-syllable + e: nice → nicer → the nicest<br>
-      прилагательные на -y: happy → happier → the happiest<br>
-      длинные: interesting → more interesting → the most interesting<br>
-      Нерегулярные: good → better → the best; bad → worse → the worst
-    `,
-    formulas:[
-      "A is taller than B.",
-      "A is the tallest in the class.",
-      "Maths is more interesting than PE."
-    ],
-    examples:[
-      "My house is bigger than your house.",
-      "English is the most interesting subject.",
-      "Aigerim is taller than Dana."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Make comparative adjectives.",
-        questions:[
-          {text:"tall → ___", options:["taller","more tall","tallest"], correct:0},
-          {text:"big → ___", options:["bigger","more big","biggest"], correct:0},
-          {text:"short → ___", options:["shorter","more short","shortest"], correct:0},
-          {text:"happy → ___", options:["happier","more happy","happyer"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Make superlative adjectives.",
-        questions:[
-          {text:"tall → ___", options:["the tallest","the taller","most tall"], correct:0},
-          {text:"big → ___", options:["the biggest","the bigger","most big"], correct:0},
-          {text:"happy → ___", options:["the happiest","the happyest","most happy"], correct:0},
-          {text:"interesting → ___", options:["the most interesting","the interestest","the more interesting"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Comparative in sentences.",
-        questions:[
-          {text:"My bag is ___ than your bag.", options:["bigger","the biggest","big"], correct:0},
-          {text:"Kazakh is ___ than English for me.", options:["easier","the easiest","easy"], correct:0},
-          {text:"Maths is ___ than art for me.", options:["more difficult","difficulter","most difficult"], correct:0},
-          {text:"Today is ___ than yesterday.", options:["colder","the coldest","more cold"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Superlative in sentences.",
-        questions:[
-          {text:"Aruzhan is ___ girl in the class.", options:["the tallest","taller","tall"], correct:0},
-          {text:"This is ___ film I know.", options:["the best","better","good"], correct:0},
-          {text:"Winter is ___ season for me.", options:["the worst","worse","bad"], correct:0},
-          {text:"English is ___ subject for me.", options:["the most interesting","more interesting","interesting"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Good / bad (irregular).",
-        questions:[
-          {text:"English is ___ than History.", options:["better","the best","gooder"], correct:0},
-          {text:"This mark is ___ than that mark.", options:["worse","the worst","bader"], correct:0},
-          {text:"This is ___ day of my life.", options:["the best","better","good"], correct:0},
-          {text:"That was ___ test this year.", options:["the worst","worse","bad"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Word order.",
-        questions:[
-          {text:"(than / taller / is / he / me)", options:["He is taller than me.","He taller is than me."], correct:0},
-          {text:"(the / in our class / is / she / smartest)", options:["She is the smartest in our class.","She the smartest is in our class."], correct:0},
-          {text:"(subject / English / the most interesting / is)", options:["English is the most interesting subject.","Is English the most interesting subject."], correct:0},
-          {text:"(my / bigger / is / than / your / house)", options:["My house is bigger than your house.","House my bigger is than your house."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"This phone is ___ than that phone.", options:["cheaper","the cheapest","cheap"], correct:0},
-          {text:"January is ___ month of the year.", options:["the first","the best","the most first"], correct:0},
-          {text:"My sister is ___ than me.", options:["younger","the youngest","young"], correct:0},
-          {text:"Summer is ___ season for me.", options:["the best","better","good"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I ___ (study) English for three years.</li>
+    <li>She ___ (work) here since 2020.</li>
+    <li>They ___ (wait) for you for an hour.</li>
+    <li>He ___ (play) football all afternoon.</li>
+    <li>We ___ (talk) about this problem for a long time.</li>
+    <li>It ___ (rain) since morning.</li>
+  </ol>
 
-  /* ===== 15. ADVERBS OF FREQUENCY ===== */
-  {
-    id:15,
-    title:"Adverbs of frequency (always / usually / often / sometimes / never)",
-    level:"Beginner",
-    explanation:"We use adverbs of frequency to say how often something happens.",
-    ruleRu:"Наречия частоты показывают, как часто что-то происходит.",
-    usageRu:`
-      always – всегда (100%)<br>
-      usually – обычно<br>
-      often – часто<br>
-      sometimes – иногда<br>
-      never – никогда (0%)<br>
-      Обычно ставим перед обычным глаголом: I often play.<br>
-      После глагола to be: She is always late.
-    `,
-    formulas:[
-      "I always do my homework.",
-      "He is often tired.",
-      "We sometimes play football.",
-      "They never watch TV."
-    ],
-    examples:[
-      "I usually get up at 7 o'clock.",
-      "She is always happy.",
-      "We never go to school on Sunday."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Choose the correct adverb.",
-        questions:[
-          {text:"I ___ do my homework. (всегда)", options:["always","never","sometimes"], correct:0},
-          {text:"He ___ plays football on Fridays. (обычно)", options:["usually","always","never"], correct:0},
-          {text:"We ___ go to the cinema, maybe once a month. (иногда)", options:["sometimes","always","never"], correct:0},
-          {text:"They ___ watch TV. They hate it. (никогда)", options:["never","often","always"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Word order with normal verbs.",
-        questions:[
-          {text:"(do / my homework / always / I)", options:["I always do my homework.","I do always my homework."], correct:0},
-          {text:"(often / we / play / football)", options:["We often play football.","We play often football."], correct:0},
-          {text:"(sometimes / they / go / to the park)", options:["They sometimes go to the park.","They go sometimes to the park."], correct:0},
-          {text:"(never / I / drink / coffee)", options:["I never drink coffee.","Never I drink coffee."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – With to be.",
-        questions:[
-          {text:"She is ___ tired.", options:["often","never","always"], correct:0},
-          {text:"He is ___ late. (никогда)", options:["never","sometimes","usually"], correct:0},
-          {text:"We are ___ happy at school.", options:["usually","never","always"], correct:0},
-          {text:"They are ___ hungry in the evening.", options:["often","never","always"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Complete the sentences.",
-        questions:[
-          {text:"I ___ get up at 6 o'clock. Only on Mondays. (иногда)", options:["sometimes","always","never"], correct:0},
-          {text:"My parents ___ watch TV at night. (никогда)", options:["never","often","usually"], correct:0},
-          {text:"We ___ play computer games after school. (часто)", options:["often","never","always"], correct:0},
-          {text:"She ___ goes to bed early. (обычно)", options:["usually","never","sometimes"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Match frequency.",
-        questions:[
-          {text:"100%", options:["always","never","sometimes"], correct:0},
-          {text:"0%", options:["never","always","often"], correct:0},
-          {text:"about 70%", options:["usually","never","always"], correct:0},
-          {text:"about 40%", options:["sometimes","always","never"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Correct or wrong?",
-        questions:[
-          {text:"I always do my homework.", options:["Correct","Wrong"], correct:0},
-          {text:"I do always my homework.", options:["Correct","Wrong"], correct:1},
-          {text:"She is always late.", options:["Correct","Wrong"], correct:0},
-          {text:"She always is late.", options:["Correct","Wrong"], correct:1}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"We ___ eat breakfast at 7 o'clock. (обычно)", options:["usually","never","sometimes"], correct:0},
-          {text:"He ___ plays basketball after school. (часто)", options:["often","never","always"], correct:0},
-          {text:"They ___ go to the cinema. (никогда)", options:["never","sometimes","always"], correct:0},
-          {text:"I ___ visit my grandparents on Sundays. (иногда)", options:["sometimes","always","never"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>I ___ (not sleep) well recently.</li>
+    <li>She ___ (not study) much this week.</li>
+    <li>They ___ (not work) here for long.</li>
+    <li>We ___ (not wait) for you for very long.</li>
+    <li>He ___ (not feel) well lately.</li>
+    <li>It ___ (not rain) for two weeks.</li>
+  </ol>
 
-  /* ===== 16. PAST SIMPLE (REGULAR & IRREGULAR) ===== */
-  {
-    id:16,
-    title:"Past Simple (regular & irregular verbs)",
-    level:"Beginner",
-    explanation:"We use Past Simple to talk about finished actions in the past.",
-    ruleRu:"Past Simple – прошедшее время: действие завершилось в прошлом.",
-    usageRu:`
-      <b>Регулярные</b>: work → worked, play → played<br>
-      <b>На -y</b>: study → studied<br>
-      <b>Нерегулярные</b>: go → went, have → had, see → saw<br>
-      Утвердит.: S + V2<br>
-      Отрицание: did not (didn't) + V1<br>
-      Вопрос: Did + S + V1?
-    `,
-    formulas:[
-      "I played football yesterday.",
-      "She went to school.",
-      "We didn't watch TV.",
-      "Did you do your homework?"
-    ],
-    examples:[
-      "I visited my grandparents last weekend.",
-      "She watched a film yesterday.",
-      "They went to the park on Sunday."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Regular verbs (+ed).",
-        questions:[
-          {text:"Yesterday I ___ (play) football.", options:["played","play","plays"], correct:0},
-          {text:"She ___ (watch) TV last night.", options:["watched","watch","watchs"], correct:0},
-          {text:"We ___ (visit) Astana last year.", options:["visited","visit","visitted"], correct:0},
-          {text:"They ___ (clean) the classroom.", options:["cleaned","clean","cleans"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Irregular verbs (V2).",
-        questions:[
-          {text:"Yesterday he ___ (go) to school.", options:["went","go","goed"], correct:0},
-          {text:"We ___ (have) a test on Monday.", options:["had","have","haved"], correct:0},
-          {text:"I ___ (see) my friend at the mall.", options:["saw","see","seed"], correct:0},
-          {text:"They ___ (eat) pizza last night.", options:["ate","eat","eated"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Negative (didn't).",
-        questions:[
-          {text:"I ___ (not / play) football yesterday.", options:["didn't play","didn't played","don't play"], correct:0},
-          {text:"She ___ (not / go) to school.", options:["didn't go","didn't went","doesn't go"], correct:0},
-          {text:"We ___ (not / watch) TV last night.", options:["didn't watch","didn't watched","don't watch"], correct:0},
-          {text:"They ___ (not / have) a test.", options:["didn't have","didn't had","don't have"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Questions with Did.",
-        questions:[
-          {text:"___ you (do) your homework yesterday?", options:["Did / do","Did / did","Do / do"], correct:0},
-          {text:"___ she (watch) the film?", options:["Did / watch","Does / watch","Did / watched"], correct:0},
-          {text:"___ they (go) to the park?", options:["Did / go","Did / went","Do / go"], correct:0},
-          {text:"___ he (have) a test?", options:["Did / have","Did / had","Does / have"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Word order.",
-        questions:[
-          {text:"(yesterday / I / did / homework / my)", options:["I did my homework yesterday.","Yesterday I my homework did."], correct:0},
-          {text:"(went / we / to the park / on Sunday)", options:["We went to the park on Sunday.","Went we to the park on Sunday."], correct:0},
-          {text:"(didn't / they / watch / TV)", options:["They didn't watch TV.","Didn't they watch TV."], correct:0},
-          {text:"(did / you / see / your friend)", options:["Did you see your friend?","You did see your friend?"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Correct or wrong?",
-        questions:[
-          {text:"Yesterday I goed to school.", options:["Wrong","Correct"], correct:0},
-          {text:"Yesterday I went to school.", options:["Correct","Wrong"], correct:0},
-          {text:"She didn't went to the park.", options:["Wrong","Correct"], correct:0},
-          {text:"She didn't go to the park.", options:["Correct","Wrong"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"They ___ (visit) their grandparents last month.", options:["visited","visit","visitted"], correct:0},
-          {text:"I ___ (not / see) that film.", options:["didn't see","didn't saw","don't see"], correct:0},
-          {text:"___ you (have) English yesterday?", options:["Did / have","Did / had","Do / have"], correct:0},
-          {text:"We ___ (eat) soup for dinner.", options:["ate","eat","eated"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>How long ___ you ___ (wait) here?</li>
+    <li>What ___ she ___ (do) all day?</li>
+    <li>___ they ___ (study) for the exam?</li>
+    <li>How long ___ he ___ (work) in this company?</li>
+    <li>___ it ___ (rain) since morning?</li>
+    <li>Why ___ you ___ (cry)?</li>
+  </ol>
 
-  /* ===== 17. WAS / WERE ===== */
-  {
-    id:17,
-    title:"Was / were (Past of be)",
-    level:"Beginner",
-    explanation:"Was / were are past forms of the verb to be.",
-    ruleRu:"was / were – прошедшая форма глагола to be.",
-    usageRu:`
-      I / he / she / it – was<br>
-      you / we / they – were<br>
-      Отрицание: was not (wasn't) / were not (weren't)<br>
-      Вопрос: Was / Were + подлежащее?
-    `,
-    formulas:[
-      "I was at school yesterday.",
-      "They were happy.",
-      "He wasn't tired.",
-      "Were you at home?"
-    ],
-    examples:[
-      "I was in Almaty last summer.",
-      "They were in the park yesterday.",
-      "She wasn't at school on Monday."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – was or were?",
-        questions:[
-          {text:"I ___ at home yesterday.", options:["was","were","am"], correct:0},
-          {text:"They ___ in the gym.", options:["were","was","are"], correct:0},
-          {text:"She ___ tired after the test.", options:["was","were","is"], correct:0},
-          {text:"We ___ in Grade 6 last year.", options:["were","was","are"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Negative (wasn't / weren't).",
-        questions:[
-          {text:"I ___ at school on Sunday.", options:["wasn't","weren't","not was"], correct:0},
-          {text:"They ___ happy with the mark.", options:["weren't","wasn't","not were"], correct:0},
-          {text:"He ___ ill yesterday.", options:["wasn't","weren't","isn't"], correct:0},
-          {text:"We ___ in Aktau last summer.", options:["weren't","wasn't","aren't"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions.",
-        questions:[
-          {text:"___ you at home yesterday?", options:["Were","Was","Are"], correct:0},
-          {text:"___ she in Astana last week?", options:["Was","Were","Is"], correct:0},
-          {text:"___ they at the cinema?", options:["Were","Was","Are"], correct:0},
-          {text:"___ it cold yesterday?", options:["Was","Were","Is"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(at school / yesterday / I / was)", options:["I was at school yesterday.","Was I at school yesterday."], correct:0},
-          {text:"(were / they / in the park)", options:["Were they in the park?","They were in the park?"], correct:0},
-          {text:"(happy / was / very / she)", options:["She was very happy.","Was she very happy."], correct:0},
-          {text:"(weren't / we / late)", options:["We weren't late.","Weren't we late."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Choose the correct form.",
-        questions:[
-          {text:"Last year I ___ 12.", options:["was","were","am"], correct:0},
-          {text:"They ___ in Grade 5.", options:["were","was","are"], correct:0},
-          {text:"He ___ not at the lesson.", options:["was","wasn't","weren't"], correct:1},
-          {text:"We ___ very busy yesterday.", options:["were","was","are"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Correct or wrong?",
-        questions:[
-          {text:"You was at home yesterday.", options:["Wrong","Correct"], correct:0},
-          {text:"You were at home yesterday.", options:["Correct","Wrong"], correct:0},
-          {text:"They wasn't happy.", options:["Wrong","Correct"], correct:0},
-          {text:"They weren't happy.", options:["Correct","Wrong"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"___ you in Almaty last summer?", options:["Were","Was","Are"], correct:0},
-          {text:"I ___ not tired after the test.", options:["was","wasn't","weren't"], correct:1},
-          {text:"They ___ at school on Saturday.", options:["weren't","wasn't","aren't"], correct:0},
-          {text:"She ___ my best friend in Grade 5.", options:["was","were","is"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>been / I / for two hours / have / studying</li>
+    <li>has / working / all day / she / been</li>
+    <li>have / waiting / we / for you / been</li>
+    <li>been / playing / he / football / has</li>
+    <li>has / raining / since morning / been / it</li>
+    <li>they / been / talking / have / for a long time</li>
+  </ol>
 
-  /* ===== 18. PAST SIMPLE – NEGATIVES & QUESTIONS ===== */
-  {
-    id:18,
-    title:"Past Simple – negatives & questions",
-    level:"Beginner",
-    explanation:"We use didn't and Did ...? to make negatives and questions in Past Simple.",
-    ruleRu:"В Past Simple отрицание и вопрос строятся с did / didn't + V1.",
-    usageRu:`
-      Отрицание: S + didn't + V1 – I didn't go.<br>
-      Вопрос: Did + S + V1? – Did you go?<br>
-      В кратких ответах: Yes, I did. / No, I didn't.
-    `,
-    formulas:[
-      "I didn't watch TV.",
-      "Did you play football?",
-      "Yes, I did.",
-      "No, I didn't."
-    ],
-    examples:[
-      "I didn't eat breakfast yesterday.",
-      "Did she call you?",
-      "They didn't go to school on Sunday."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Make negative sentences.",
-        questions:[
-          {text:"I watched TV yesterday. (negative)", options:[
-            "I didn't watch TV yesterday.",
-            "I don't watch TV yesterday."
-          ], correct:0},
-          {text:"She went to school. (negative)", options:[
-            "She didn't go to school.",
-            "She didn't went to school."
-          ], correct:0},
-          {text:"They had breakfast. (negative)", options:[
-            "They didn't have breakfast.",
-            "They didn't had breakfast."
-          ], correct:0},
-          {text:"We played football. (negative)", options:[
-            "We didn't play football.",
-            "We didn't played football."
-          ], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Make questions.",
-        questions:[
-          {text:"You watched TV yesterday. (question)", options:[
-            "Did you watch TV yesterday?",
-            "Did you watched TV yesterday?"
-          ], correct:0},
-          {text:"She went to school. (question)", options:[
-            "Did she go to school?",
-            "Did she went to school?"
-          ], correct:0},
-          {text:"They had breakfast. (question)", options:[
-            "Did they have breakfast?",
-            "Did they had breakfast?"
-          ], correct:0},
-          {text:"We played football. (question)", options:[
-            "Did we play football?",
-            "Did we played football?"
-          ], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Short answers.",
-        questions:[
-          {text:"Did you do your homework? (Yes)", options:[
-            "Yes, I did.","Yes, I do.","Yes, I done."
-          ], correct:0},
-          {text:"Did she go to the park? (No)", options:[
-            "No, she didn't.","No, she don't.","No, she hasn't."
-          ], correct:0},
-          {text:"Did they watch the film? (Yes)", options:[
-            "Yes, they did.","Yes, they do.","Yes, they watched."
-          ], correct:0},
-          {text:"Did he have breakfast? (No)", options:[
-            "No, he didn't.","No, he hasn't.","No, he don't."
-          ], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(yesterday / did / you / go / to school)", options:[
-            "Did you go to school yesterday?",
-            "You did go to school yesterday?"
-          ], correct:0},
-          {text:"(didn't / I / eat / breakfast)", options:[
-            "I didn't eat breakfast.",
-            "Didn't I eat breakfast."
-          ], correct:0},
-          {text:"(they / to the cinema / didn't / go)", options:[
-            "They didn't go to the cinema.",
-            "Didn't they go to the cinema."
-          ], correct:0},
-          {text:"(do / your homework / did / he)", options:[
-            "Did he do your homework?",
-            "He did do your homework?"
-          ], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Choose the correct option.",
-        questions:[
-          {text:"I ___ go to school yesterday. I was ill.", options:["didn't","don't","wasn't"], correct:0},
-          {text:"___ you watch TV last night?", options:["Did","Do","Were"], correct:0},
-          {text:"She ___ play football yesterday.", options:["didn't","doesn't","wasn't"], correct:0},
-          {text:"___ he have a test?", options:["Did","Does","Was"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Correct or wrong?",
-        questions:[
-          {text:"I didn't went to school.", options:["Wrong","Correct"], correct:0},
-          {text:"I didn't go to school.", options:["Correct","Wrong"], correct:0},
-          {text:"Did you watched the film?", options:["Wrong","Correct"], correct:0},
-          {text:"Did you watch the film?", options:["Correct","Wrong"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"They ___ (not / watch) TV yesterday.", options:["didn't watch","didn't watched","don't watch"], correct:0},
-          {text:"___ you (do) the test?", options:["Did / do","Did / did","Do / do"], correct:0},
-          {text:"We ___ (not / have) English yesterday.", options:["didn't have","didn't had","don't have"], correct:0},
-          {text:"___ she (go) to the park?", options:["Did / go","Did / went","Does / go"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>She _________ (read) this book for an hour.</li>
+    <li>I _________ (not feel) well lately.</li>
+    <li>They _________ (work) here since last year.</li>
+    <li>We _________ (wait) for the bus for 20 minutes.</li>
+    <li>He _________ (not sleep) much these days.</li>
+    <li>How long _________ you _________ (live) in this city?</li>
+  </ol>
 
-  /* ===== 19. BE GOING TO (PLANS) ===== */
-  {
-    id:19,
-    title:"Be going to (plans & intentions)",
-    level:"Beginner",
-    explanation:"We use be going to to talk about future plans and intentions.",
-    ruleRu:"be going to – собираться что-то сделать (планы на будущее).",
-    usageRu:`
-      I am going to + V<br>
-      He/She/It is going to + V<br>
-      You/We/They are going to + V<br>
-      Отрицание: am not / isn't / aren't going to + V<br>
-      Вопрос: Am/Is/Are + S + going to + V?
-    `,
-    formulas:[
-      "I am going to study.",
-      "She is going to visit her grandma.",
-      "They are going to play football."
-    ],
-    examples:[
-      "I am going to do my homework tonight.",
-      "We are going to travel to Almaty in summer.",
-      "Is he going to take part in the competition?"
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – Make be going to (positive).",
-        questions:[
-          {text:"I ___ (study) English tonight.", options:["am going to study","going to study","am study"], correct:0},
-          {text:"She ___ (visit) her grandparents.", options:["is going to visit","going to visit","are going to visit"], correct:0},
-          {text:"They ___ (play) football after school.", options:["are going to play","is going to play","going to play"], correct:0},
-          {text:"We ___ (have) a party.", options:["are going to have","is going to have","going to have"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Negative.",
-        questions:[
-          {text:"I ___ (not / watch) TV tonight.", options:["am not going to watch","don't going to watch","not going to watch"], correct:0},
-          {text:"She ___ (not / do) her homework now.", options:["isn't going to do","doesn't going to do","not going to do"], correct:0},
-          {text:"They ___ (not / play) computer games.", options:["aren't going to play","don't going to play","not are going to play"], correct:0},
-          {text:"We ___ (not / travel) this winter.", options:["aren't going to travel","don't going to travel","not going to travel"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Questions.",
-        questions:[
-          {text:"___ you (take) part in the competition?", options:["Are / going to take","Do / take","Will / going to take"], correct:0},
-          {text:"___ she (visit) her grandma?", options:["Is / going to visit","Does / visit","Will / visit"], correct:0},
-          {text:"___ they (study) for the test?", options:["Are / going to study","Do / study","Will / study"], correct:0},
-          {text:"___ he (play) football tomorrow?", options:["Is / going to play","Does / play","Will / going to play"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Word order.",
-        questions:[
-          {text:"(going to / I / English / am / study)", options:["I am going to study English.","I going to am study English."], correct:0},
-          {text:"(are / they / football / going to / play)", options:["They are going to play football.","Are going to play football they."], correct:0},
-          {text:"(is / she / going to / visit / Almaty)", options:["She is going to visit Almaty.","Is she going to visit Almaty."], correct:0},
-          {text:"(going to / not / we / are / travel)", options:["We are not going to travel.","We not are going to travel."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Choose the correct option.",
-        questions:[
-          {text:"Tomorrow I ___ my project.", options:["am going to finish","going to finish","am finish"], correct:0},
-          {text:"We ___ for the test tonight.", options:["are going to study","are study","going to study"], correct:0},
-          {text:"He ___ his grandparents next week.", options:["is going to visit","is going visit","going to visit"], correct:0},
-          {text:"They ___ football after school.", options:["are going to play","are play","going play"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Correct or wrong?",
-        questions:[
-          {text:"I going to study English.", options:["Wrong","Correct"], correct:0},
-          {text:"I am going to study English.", options:["Correct","Wrong"], correct:0},
-          {text:"She is going to visits her grandma.", options:["Wrong","Correct"], correct:0},
-          {text:"She is going to visit her grandma.", options:["Correct","Wrong"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"We ___ (not / watch) TV tonight.", options:["are not going to watch","don't going to watch","are going not to watch"], correct:0},
-          {text:"___ he (take) part in the Olympiad?", options:["Is / going to take","Does / take","Will / going to take"], correct:0},
-          {text:"I ___ (help) my mum.", options:["am going to help","am help","going to help"], correct:0},
-          {text:"They ___ (not / travel) this year.", options:["are not going to travel","don't going to travel","are going not to travel"], correct:0}
-        ]
-      }
-    ]
-  },
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>I (have been studying / studied) English for 5 years.</li>
+    <li>She (has worked / has been working) here since 2021 – process.</li>
+    <li>They (have been waiting / waited) for you for an hour.</li>
+    <li>He is tired because he (has been running / ran) for a long time.</li>
+    <li>How long (have you been reading / did you read) this book?</li>
+    <li>It (has been raining / rained) since morning.</li>
+  </ol>
+</div>
 
-  /* ===== 20. MUST / MUSTN'T (RULES) ===== */
-  {
-    id:20,
-    title:"Must / mustn't (rules & obligations)",
-    level:"Beginner",
-    explanation:"We use must to say that something is necessary, and mustn't to say that something is not allowed.",
-    ruleRu:"must – должен, нужно; mustn't – нельзя.",
-    usageRu:`
-      <b>must + V1</b>: You must do your homework. – Ты должен...<br>
-      <b>mustn't + V1</b>: You mustn't be late. – Нельзя...<br>
-      Одинаково для всех лиц (I/you/he/she/it/we/they).
-    `,
-    formulas:[
-      "You must do your homework.",
-      "You mustn't use your phone in class."
-    ],
-    examples:[
-      "Students must wear a uniform.",
-      "You mustn't run in the corridor.",
-      "We must be quiet in the library."
-    ],
-    exercises:[
-      {
-        title:"Ex.1 – must or mustn't?",
-        questions:[
-          {text:"You ___ listen to the teacher.", options:["must","mustn't","don't must"], correct:0},
-          {text:"You ___ talk during the test.", options:["mustn't","must","don't must"], correct:0},
-          {text:"Students ___ be on time.", options:["must","mustn't","are"], correct:0},
-          {text:"You ___ use your phone in class.", options:["mustn't","must","don't must"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.2 – Complete the rules.",
-        questions:[
-          {text:"You ___ do your homework every day.", options:["must","mustn't","don't must"], correct:0},
-          {text:"You ___ eat in the classroom.", options:["mustn't","must","don't must"], correct:0},
-          {text:"You ___ be polite to your classmates.", options:["must","mustn't","are"], correct:0},
-          {text:"You ___ write in your book with a pencil. Only pen.", options:["mustn't","must","don't must"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.3 – Word order.",
-        questions:[
-          {text:"(must / do / you / homework / your)", options:["You must do your homework.","Must you do your homework."], correct:0},
-          {text:"(mustn't / in the corridor / run / you)", options:["You mustn't run in the corridor.","Mustn't you run in the corridor."], correct:0},
-          {text:"(be / we / must / quiet)", options:["We must be quiet.","Must we be quiet."], correct:0},
-          {text:"(must / wear / students / a uniform)", options:["Students must wear a uniform.","Must students wear a uniform."], correct:0}
-        ]
-      },
-      {
-        title:"Ex.4 – Questions with must.",
-        questions:[
-          {text:"___ I do this exercise?", options:["Must","Do","Am"], correct:0},
-          {text:"___ we wear uniforms?", options:["Must","Do","Are"], correct:0},
-          {text:"___ students be quiet in the library?", options:["Must","Do","Are"], correct:0},
-          {text:"___ I come to school on Saturday?", options:["Must","Do","Am"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.5 – Correct or wrong?",
-        questions:[
-          {text:"You don't must be late.", options:["Wrong","Correct"], correct:0},
-          {text:"You mustn't be late.", options:["Correct","Wrong"], correct:0},
-          {text:"He must to do his homework.", options:["Wrong","Correct"], correct:0},
-          {text:"He must do his homework.", options:["Correct","Wrong"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.6 – Match the rule to the place.",
-        questions:[
-          {text:"You must be quiet.", options:["in the library","on the playground","at home"], correct:0},
-          {text:"You mustn't run.", options:["in the corridor","on the football field","in PE"], correct:0},
-          {text:"You must do your homework.", options:["at home","in the shop","on the bus"], correct:0},
-          {text:"You mustn't use your phone.", options:["in class","in the park","at home"], correct:0}
-        ]
-      },
-      {
-        title:"Ex.7 – Mixed practice.",
-        questions:[
-          {text:"You ___ be late for the exam.", options:["mustn't","must","don't must"], correct:0},
-          {text:"We ___ help our parents at home.", options:["must","mustn't","are"], correct:0},
-          {text:"___ I bring my book tomorrow?", options:["Must","Do","Am"], correct:0},
-          {text:"Students ___ talk during the test.", options:["mustn't","must","don't must"], correct:0}
-        ]
-      }
-    ]
-  }
-];
+<!-- TOPIC 3 -->
+<div class="topic" id="topic3">
+  <h2>3. Past Continuous vs Past Simple</h2>
+  <div class="meta">Level: Intermediate · Background vs short actions</div>
 
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    <b>Past Continuous</b> describes a long or background action in the past.  
+    <b>Past Simple</b> describes short, finished actions that interrupt or follow.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>Past Continuous</b> – длительное / фоновое действие в прошлом.  
+    <b>Past Simple</b> – короткое, завершённое действие (часто «врезается» в фон).  
+    Часто вместе с when/while.
+  </div>
+
+  <div class="formula">
+    Past Continuous: was/were + V-ing · Past Simple: V2 / V-ed
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I ___ (walk) home when it ___ (start) raining.</li>
+    <li>She ___ (watch) TV when I ___ (arrive).</li>
+    <li>They ___ (have) dinner when the phone ___ (ring).</li>
+    <li>We ___ (play) football when it ___ (get) dark.</li>
+    <li>He ___ (sleep) when the alarm ___ (go off).</li>
+    <li>I ___ (do) my homework when my friend ___ (call) me.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>I ___ (not watch) TV when you called.</li>
+    <li>She ___ (not sleep) at 10 pm.</li>
+    <li>They ___ (not play) outside when it started to rain.</li>
+    <li>We ___ (not listen) to music when he came in.</li>
+    <li>He ___ (not drive) fast when the accident happened.</li>
+    <li>I ___ (not study) when my parents arrived.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>What ___ you ___ (do) at 7 pm yesterday?</li>
+    <li>___ she ___ (watch) TV when you visited her?</li>
+    <li>Where ___ they ___ (go) when you saw them?</li>
+    <li>What ___ he ___ (do) when it started to rain?</li>
+    <li>___ you ___ (sleep) when I called?</li>
+    <li>Who ___ they ___ (talk) to when you entered?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>was / I / when / walking / started / it / raining</li>
+    <li>she / TV / watching / was / arrived / I / when</li>
+    <li>they / having / were / dinner / the phone / rang / when</li>
+    <li>dark / playing / got / we / it / were / when</li>
+    <li>sleeping / he / the alarm / went off / was / when</li>
+    <li>doing / was / homework / I / my / called / friend / my / when</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>He _________ (drive) home when he _________ (see) the accident.</li>
+    <li>We _________ (sit) in the park when it _________ (start) to rain.</li>
+    <li>They _________ (not listen) when the teacher _________ (explain).</li>
+    <li>She _________ (read) a book while he _________ (cook) dinner.</li>
+    <li>I _________ (walk) to school when I _________ (meet) my friend.</li>
+    <li>What _________ you _________ (do) when the lights _________ (go off)?</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>I (was watching / watched) TV when he (called / was calling).</li>
+    <li>They (were playing / played) outside when it (started / was starting) to rain.</li>
+    <li>She (was walking / walked) home when she (saw / was seeing) the dog.</li>
+    <li>We (were eating / ate) when the phone (rang / was ringing).</li>
+    <li>He (was sleeping / slept) when I (came / was coming) in.</li>
+    <li>What (were you doing / did you do) at 8 pm yesterday?</li>
+  </ol>
+</div>
+
+<!-- TOPIC 4 -->
+<div class="topic" id="topic4">
+  <h2>4. Future Forms: Will / Going To / Present Continuous</h2>
+  <div class="meta">Level: Intermediate · Plans, decisions, timetables</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    <b>Will</b> – instant decisions, promises, predictions.  
+    <b>Be going to</b> – plans, intentions, predictions with evidence.  
+    <b>Present Continuous</b> – fixed future arrangements (with time).
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>Will</b> — решение сейчас, обещание, прогноз.  
+    <b>Be going to</b> — уже продуманный план/намерение, «так собираюсь сделать».  
+    <b>Present Continuous</b> — конкретная договорённость (встреча, расписание).
+  </div>
+
+  <div class="formula">
+    will + V · am/is/are going to + V · am/is/are + V-ing (future meaning)
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I think it ___ (rain) tomorrow. (will)</li>
+    <li>She ___ (visit) her grandparents next weekend. (is going to)</li>
+    <li>They ___ (meet) at 6 pm tonight. (are meeting)</li>
+    <li>We ___ (travel) to Italy this summer. (are going to)</li>
+    <li>I ___ (help) you with your homework. (will)</li>
+    <li>He ___ (start) a new course next month. (is going to)</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>I ___ (not go) to the party. (am not going to)</li>
+    <li>She ___ (not come) today. (won’t)</li>
+    <li>They ___ (not leave) at 5, they ___ (leave) at 6. (aren’t leaving)</li>
+    <li>We ___ (not travel) this year. (aren’t going to)</li>
+    <li>He ___ (not do) it now. (won’t)</li>
+    <li>It ___ (not be) easy. (won’t)</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>___ you ___ (help) me with this? (will)</li>
+    <li>What ___ you ___ (do) tomorrow evening? (are)</li>
+    <li>___ she ___ (visit) her parents this weekend? (is going to)</li>
+    <li>When ___ they ___ (leave)? (are)</li>
+    <li>Where ___ we ___ (meet)? (are)</li>
+    <li>___ it ___ (rain) tomorrow? (will)</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>think / it / I / rain / will</li>
+    <li>going / is / she / to / study / medicine</li>
+    <li>meeting / they / at 7 / are</li>
+    <li>help / I / you / will</li>
+    <li>are / we / to / travel / going / this summer</li>
+    <li>not / will / easy / be / it</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>Look at the clouds. It _________ (rain).</li>
+    <li>We _________ (meet) at 4 o’clock tomorrow.</li>
+    <li>I think he _________ (pass) the exam.</li>
+    <li>She _________ (visit) her cousin next week.</li>
+    <li>We _________ (not travel) this year.</li>
+    <li>What _________ you _________ (do) this evening?</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>It’s very late. I (will take / am taking) a taxi.</li>
+    <li>We (are going to visit / will visit) our grandma at the weekend – plan.</li>
+    <li>Look at those clouds! It (is going to rain / will rain).</li>
+    <li>They (are meeting / will meet) at 7 – it’s in their calendar.</li>
+    <li>I promise I (will help / am going to help) you.</li>
+    <li>She (is going to learn / learns) French next year.</li>
+  </ol>
+</div>
+
+<!-- TOPIC 5 -->
+<div class="topic" id="topic5">
+  <h2>5. Used To / Be Used To / Get Used To</h2>
+  <div class="meta">Level: Intermediate · Past habits & adaptation</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    <b>used to + V</b> – past habits or states that are not true now.  
+    <b>be used to + V-ing/noun</b> – to be accustomed to something now.  
+    <b>get used to + V-ing/noun</b> – to become accustomed, process of change.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>used to + V</b> — «раньше делал / было, но сейчас нет».  
+    <b>be used to + V-ing</b> — «привык, для него это нормально».  
+    <b>get used to + V-ing</b> — «привыкает (процесс)».
+  </div>
+
+  <div class="formula">
+    used to + V · be used to + V-ing / noun · get used to + V-ing / noun
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I ___ (use) to play outside every day when I was a child.</li>
+    <li>She ___ (be) used to getting up early.</li>
+    <li>They ___ (get) used to living in a big city.</li>
+    <li>He ___ (use) to live in a small village.</li>
+    <li>We ___ (be) used to cold weather.</li>
+    <li>She ___ (get) used to speaking English at school.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>I ___ (not use) to like vegetables.</li>
+    <li>She ___ (not be) used to driving on the left.</li>
+    <li>They ___ (not get) used to the noise yet.</li>
+    <li>He ___ (not use) to watch TV every day.</li>
+    <li>We ___ (not be) used to such hot weather.</li>
+    <li>She ___ (not get) used to online lessons.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>___ you ___ (use) to play outside a lot?</li>
+    <li>___ she ___ (be) used to living alone?</li>
+    <li>___ they ___ (get) used to the new school?</li>
+    <li>What games ___ you ___ (use) to play?</li>
+    <li>How long ___ he ___ (be) used to this job?</li>
+    <li>When ___ you ___ (get) used to the climate?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>used / I / to / live / in a village</li>
+    <li>is / to / used / she / getting up early</li>
+    <li>used / they / living / to / are / in a city</li>
+    <li>get / used / is / he / to / working / late</li>
+    <li>used / we / to / weren’t / hot weather</li>
+    <li>get / used / are / to / they / online lessons</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>I _________ (use) to play with my friends in the street.</li>
+    <li>She is _________ (be used to) eating late.</li>
+    <li>They are _________ (get used to) studying online.</li>
+    <li>He _________ (not use to) drink coffee.</li>
+    <li>We are _________ (not be used to) speaking English every day.</li>
+    <li>She is _________ (get used to) her new school.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>I (used to play / am used to play) football after school.</li>
+    <li>She (is used to getting / used to get) up early.</li>
+    <li>They (are getting used to / used to) living in London.</li>
+    <li>He (didn’t use to like / wasn’t used to like) vegetables.</li>
+    <li>We (aren’t used to / didn’t use to) hot weather.</li>
+    <li>She (is getting used to / used to getting) online lessons.</li>
+  </ol>
+</div>
+
+<!-- TOPIC 6 -->
+<div class="topic" id="topic6">
+  <h2>6. Modal Verbs of Deduction (must / might / can’t)</h2>
+  <div class="meta">Level: Intermediate · Guessing about the present</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    We use these modals to show how sure we are about something now:  
+    <b>must</b> – almost sure; <b>might/may/could</b> – possible; <b>can’t</b> – impossible.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Модальные глаголы для предположений о настоящем:  
+    <b>must</b> — наверняка; <b>might/may/could</b> — возможно; <b>can’t</b> — не может быть.
+  </div>
+
+  <div class="formula">
+    must + V · might/may/could + V · can’t + V
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>He ___ be at home. The lights are on. (must)</li>
+    <li>She ___ be a teacher. She works at school. (must)</li>
+    <li>They ___ be tired after the trip. (must)</li>
+    <li>It ___ be easy for you. (might)</li>
+    <li>He ___ know the answer. (might)</li>
+    <li>She ___ be in the library. (could)</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>He ___ be 10. He looks 20. (can’t)</li>
+    <li>She ___ be at home. I saw her at school. (can’t)</li>
+    <li>They ___ be hungry. They have just eaten. (can’t)</li>
+    <li>It ___ be true. (can’t)</li>
+    <li>He ___ be ill. He is playing football. (can’t)</li>
+    <li>This story ___ be real. (can’t)</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Where can he be? He ___ be at work. (must/might?)</li>
+    <li>Why is she late? She ___ be stuck in traffic. (might)</li>
+    <li>Who is at the door? It ___ be our neighbours. (might)</li>
+    <li>Why is he so happy? He ___ pass the exam. (must)</li>
+    <li>Why is the light on? Someone ___ be inside. (must)</li>
+    <li>Why is it so quiet? They ___ be sleeping. (might)</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>be / must / tired / he</li>
+    <li>she / can’t / home / be / at</li>
+    <li>be / they / might / busy</li>
+    <li>true / be / can’t / it</li>
+    <li>must / here / be / he</li>
+    <li>might / in the park / be / they</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>He ___ be in his room. I hear music.</li>
+    <li>She ___ be angry. She is smiling.</li>
+    <li>They ___ be at school. It’s Sunday.</li>
+    <li>It ___ be Tom. I can see his car.</li>
+    <li>This ___ be a mistake. Check again.</li>
+    <li>He ___ be Russian. His accent is different.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>He ___ be at work. (must / can’t)</li>
+    <li>She ___ be 5. She is in grade 9. (can’t / might)</li>
+    <li>They ___ be tired after the game. (must / can’t)</li>
+    <li>It ___ be Anna, I’m not sure. (might / can’t)</li>
+    <li>He ___ be ill. He is in hospital. (must / might)</li>
+    <li>This story ___ be true. It’s crazy. (can’t / must)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 7 -->
+<div class="topic" id="topic7">
+  <h2>7. Second Conditional</h2>
+  <div class="meta">Level: Intermediate · Unreal present/future</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    We use the <b>Second Conditional</b> for unreal or imaginary situations in the present or future.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>Second Conditional</b> – нереальные, воображаемые ситуации про настоящее/будущее: мечты, советы «на твоём месте».
+  </div>
+
+  <div class="formula">
+    If + Past Simple, would + V
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>If I had more money, I ___ (travel) around the world.</li>
+    <li>If she studied harder, she ___ (get) better marks.</li>
+    <li>If they lived near the sea, they ___ (swim) every day.</li>
+    <li>If he spoke English well, he ___ (find) a good job.</li>
+    <li>If we had a bigger house, we ___ (invite) more guests.</li>
+    <li>If I were older, I ___ (drive) a car.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>If I didn’t love music, I ___ (not play) the guitar.</li>
+    <li>If she weren’t so busy, she ___ (not work) every weekend.</li>
+    <li>If they didn’t live far, they ___ (not miss) the bus.</li>
+    <li>If he weren’t shy, he ___ (not stay) at home.</li>
+    <li>If we didn’t have homework, we ___ (not be) tired.</li>
+    <li>If I weren’t afraid, I ___ (not avoid) speaking in public.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>What would you do if you ___ (win) a million dollars?</li>
+    <li>If you could travel anywhere, where ___ you ___ (go)?</li>
+    <li>If she ___ (be) the teacher, what would change?</li>
+    <li>Would he be happy if he ___ (move) to another city?</li>
+    <li>If they ___ (have) more free time, what would they do?</li>
+    <li>Would you help me if I ___ (ask) you?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>had / if / I / more time / would / I / study</li>
+    <li>help / you / would / if / I / could / I</li>
+    <li>if / she / harder / studied / get / would / better marks / she</li>
+    <li>were / rich / if / would / he / travel / he</li>
+    <li>not / if / so tired / they / would / sleep / be</li>
+    <li>invite / more friends / we / if / would / bigger / had / house / a</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>If I _________ (be) you, I _________ (study) more.</li>
+    <li>If she _________ (have) more time, she _________ (learn) Japanese.</li>
+    <li>If they _________ (live) in London, they _________ (visit) museums.</li>
+    <li>If we _________ (not have) school today, we _________ (go) to the beach.</li>
+    <li>If he _________ (see) this film, he _________ (enjoy) it.</li>
+    <li>If you _________ (call) me, I _________ (help) you.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>If I (have / had) wings, I (will / would) fly.</li>
+    <li>If she (studied / studies) more, she (will / would) pass.</li>
+    <li>He (will / would) help you if you (ask / asked) him.</li>
+    <li>If they (lived / live) in Spain, they (will / would) speak Spanish.</li>
+    <li>If we (didn’t have / don’t have) school, we (will / would) be happy.</li>
+    <li>If you (were / are) my friend, I (would / will) trust you.</li>
+  </ol>
+</div>
+
+<!-- TOPIC 8 -->
+<div class="topic" id="topic8">
+  <h2>8. Mixed Conditionals</h2>
+  <div class="meta">Level: Intermediate · Past cause, present result</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    Mixed conditionals connect different times:  
+    Past → now: unreal past action with present result.  
+    Now → past: unreal present condition with past result.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Смешанные условные предложения связывают разные времена:  
+    если бы что-то произошло в прошлом, сейчас было бы по-другому;  
+    или если бы сейчас было иначе, в прошлом было бы иначе.
+  </div>
+
+  <div class="formula">
+    Past → now: If + Past Perfect, would + V (now) · Now → past: If + Past Simple, would have + V3
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>If I had studied harder, I ___ (be) at university now.</li>
+    <li>If she had left earlier, she ___ (not be) late now.</li>
+    <li>If they had saved money, they ___ (have) a car now.</li>
+    <li>If he were more careful, he ___ (not have had) so many problems.</li>
+    <li>If we were rich now, we ___ (have bought) that house.</li>
+    <li>If you had listened to me, you ___ (be) happier now.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>If I hadn’t moved here, I ___ (not know) my best friend now.</li>
+    <li>If she had not missed the train, she ___ (not be) so tired now.</li>
+    <li>If they had not spent all the money, they ___ (not be) broke now.</li>
+    <li>If he weren’t so shy, he ___ (not have missed) that chance.</li>
+    <li>If we weren’t busy now, we ___ (not have cancelled) the trip.</li>
+    <li>If you had not failed the exam, you ___ (not feel) so bad now.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>What would you ___ (do) now if you had stayed in your old school?</li>
+    <li>If you hadn’t met your best friend, where would you ___ (be) now?</li>
+    <li>If she were more confident, what would she ___ (have done) last year?</li>
+    <li>If they had practised more, would they ___ (be) champions now?</li>
+    <li>If he were taller, would he ___ (have become) a basketball player?</li>
+    <li>If we had lived abroad, would we ___ (speak) English better now?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>had / I / harder / if / studied / be / would / I / now / at university</li>
+    <li>if / listened / to me / had / you / be / happier / would / you / now</li>
+    <li>have / would / they / if / money / more / saved / now / a car</li>
+    <li>weren’t / he / so shy / would / have / he / that chance / missed / not</li>
+    <li>hadn’t / if / we / moved / here / know / wouldn’t / our friends / we</li>
+    <li>if / better / were / my English / have / I / would / found / a job</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>If I _________ (not waste) my time, I _________ (be) more successful now.</li>
+    <li>If she _________ (work) harder, she _________ (not fail) last year.</li>
+    <li>If they _________ (go) abroad, they _________ (speak) better English now.</li>
+    <li>If we _________ (not miss) the train, we _________ (be) at home now.</li>
+    <li>If he _________ (be) more careful, he _________ (not have) that accident.</li>
+    <li>If you _________ (not shout) at him, he _________ (be) your friend now.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>If I (had studied / studied) harder, I (would be / would have been) at university now.</li>
+    <li>If she (were / had been) more confident, she (would do / would have done) more last year.</li>
+    <li>If they (had saved / saved) money, they (would have / would have had) a car now.</li>
+    <li>If we (weren’t / hadn’t been) busy now, we (wouldn’t cancel / wouldn’t have cancelled) the trip.</li>
+    <li>If he (had listened / listened) to you, he (wouldn’t be / wouldn’t have been) in trouble now.</li>
+    <li>If you (were / had been) taller, you (would play / would have played) basketball.</li>
+  </ol>
+</div>
+
+<!-- TOPIC 9 -->
+<div class="topic" id="topic9">
+  <h2>9. Passive Voice (Intermediate)</h2>
+  <div class="meta">Level: Intermediate · Focus on the action</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    The Passive Voice focuses on the action, not the doer. We use it when the doer is unknown or not important.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Страдательный залог (Passive) — важнее действие, чем исполнитель:  
+    «дом построили» вместо «кто-то построил дом».
+  </div>
+
+  <div class="formula">
+    Present: am/is/are + V3 · Past: was/were + V3 · Future: will be + V3
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>The letters ___ (send) every Monday.</li>
+    <li>The homework ___ (check) by the teacher.</li>
+    <li>This film ___ (watch) all over the world.</li>
+    <li>The room ___ (clean) yesterday.</li>
+    <li>The project ___ (finish) next week.</li>
+    <li>English ___ (speak) in many countries.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>The work ___ (not do) on time.</li>
+    <li>The test ___ (not check) yet.</li>
+    <li>The email ___ (not send) yesterday.</li>
+    <li>The room ___ (not clean) every day.</li>
+    <li>The homework ___ (not do) by many students.</li>
+    <li>The project ___ (not start) last month.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>When ___ the letters ___ (send)?</li>
+    <li>___ the homework ___ (check) yesterday?</li>
+    <li>Where ___ English ___ (speak)?</li>
+    <li>___ the project ___ (finish) next week?</li>
+    <li>Why ___ the work ___ (not do)?</li>
+    <li>How often ___ the room ___ (clean)?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>is / homework / the / checked / always</li>
+    <li>sent / emails / are / every day</li>
+    <li>was / cleaned / the / yesterday / room</li>
+    <li>will / be / finished / project / the / soon</li>
+    <li>books / are / in the library / kept</li>
+    <li>the / spoken / is / language / everywhere / English</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>The letters _________ (send) every week.</li>
+    <li>The test _________ (not check) yet.</li>
+    <li>The room _________ (clean) yesterday.</li>
+    <li>The project _________ (finish) next month.</li>
+    <li>These books _________ (keep) in the library.</li>
+    <li>English _________ (speak) in this country.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>The homework (is do / is done) every day.</li>
+    <li>The letters (are sent / send) on Fridays.</li>
+    <li>The room (was cleaned / cleaned) yesterday.</li>
+    <li>The project (will be finished / will finished) next week.</li>
+    <li>English (is spoken / is speaked) here.</li>
+    <li>The work (was not done / did not done) on time.</li>
+  </ol>
+</div>
+
+<!-- TOPIC 10 -->
+<div class="topic" id="topic10">
+  <h2>10. Reported Speech (Statements)</h2>
+  <div class="meta">Level: Intermediate · Saying what someone said</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    In reported speech we repeat what someone said without quotation marks and usually shift tenses back into the past.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Косвенная речь — передаём чужие слова без кавычек, обычно сдвигая время «на шаг назад»:  
+    am → was, do → did, will → would и т.д.
+  </div>
+
+  <div class="formula">
+    say / tell + (that) + clause; tense backshift: Present → Past, Past → Past Perfect, will → would
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>“I am tired,” he said. → He said he ___ (be) tired.</li>
+    <li>“We will go home,” they said. → They said they ___ (go) home.</li>
+    <li>“I like this book,” she said. → She said she ___ (like) that book.</li>
+    <li>“I have finished,” he said. → He said he ___ (finish).</li>
+    <li>“We are happy,” they said. → They said they ___ (be) happy.</li>
+    <li>“I can swim,” she said. → She said she ___ (can) swim.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>“I don’t know,” he said. → He said he ___ (not know).</li>
+    <li>“We won’t come,” they said. → They said they ___ (not come).</li>
+    <li>“I didn’t see him,” she said. → She said she ___ (not see) him.</li>
+    <li>“I haven’t finished,” he said. → He said he ___ (not finish).</li>
+    <li>“We aren’t ready,” they said. → They said they ___ (not be) ready.</li>
+    <li>“I can’t drive,” she said. → She said she ___ (not can) drive.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>“Where do you live?” he asked me. → He asked me where I ___ (live).</li>
+    <li>“When will you come?” she asked. → She asked when I ___ (come).</li>
+    <li>“Do you like English?” he asked. → He asked if I ___ (like) English.</li>
+    <li>“Did you see the film?” she asked. → She asked if I ___ (see) the film.</li>
+    <li>“Are you tired?” he asked. → He asked if I ___ (be) tired.</li>
+    <li>“Can you help me?” she asked. → She asked if I ___ (can) help her.</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>said / he / that / tired / he / was</li>
+    <li>she / that / happy / was / said / she</li>
+    <li>told / he / me / that / finished / had / he</li>
+    <li>asked / if / me / he / liked / English / I</li>
+    <li>they / coming / said / were / they / not</li>
+    <li>she / asked / when / coming / I / was</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>He said he _________ (be) busy.</li>
+    <li>She said she _________ (not like) the film.</li>
+    <li>They said they _________ (go) to London.</li>
+    <li>He told me he _________ (not see) that man before.</li>
+    <li>She said she _________ (finish) her homework.</li>
+    <li>They said they _________ (not be) ready.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>He said he (is / was) happy.</li>
+    <li>She said she (likes / liked) that book.</li>
+    <li>They said they (will go / would go) home.</li>
+    <li>He said he (has finished / had finished) the test.</li>
+    <li>She asked if I (am / was) tired.</li>
+    <li>He asked when I (will come / would come).</li>
+  </ol>
+</div>
+
+<!-- TOPIC 11 -->
+<div class="topic" id="topic11">
+  <h2>11. Relative Clauses (who / which / where)</h2>
+  <div class="meta">Level: Intermediate · Joining sentences</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    We use <b>who</b> for people, <b>which</b> for things/animals, <b>where</b> for places to add extra information about a noun.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Относительные местоимения:  
+    <b>who</b> – люди; <b>which</b> – предметы и животные; <b>where</b> – места.  
+    Помогают соединять предложения и уточнять существительное.
+  </div>
+
+  <div class="formula">
+    noun + who/which/where + clause
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>The man ___ lives next door is a doctor.</li>
+    <li>This is the book ___ I like most.</li>
+    <li>That’s the café ___ we met.</li>
+    <li>She is the girl ___ helped me.</li>
+    <li>This is the city ___ I was born.</li>
+    <li>They have a dog ___ loves playing.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>He isn’t the person ___ I talked to.</li>
+    <li>This isn’t the place ___ we had dinner.</li>
+    <li>That’s not the film ___ I wanted to watch.</li>
+    <li>She isn’t the girl ___ won the race.</li>
+    <li>This isn’t the shop ___ I usually go.</li>
+    <li>They aren’t the people ___ I invited.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Who is the man ___ is sitting there?</li>
+    <li>What is the name of the book ___ you read?</li>
+    <li>Where is the place ___ they usually meet?</li>
+    <li>Who is the girl ___ helped you?</li>
+    <li>Which is the film ___ you like best?</li>
+    <li>What is the city ___ you want to visit?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>who / the man / lives / there / is</li>
+    <li>book / which / reading / I / am / interesting / is</li>
+    <li>is / the / we / place / where / meet</li>
+    <li>girl / who / the / helped / me / is</li>
+    <li>park / which / the / I / in / walk / is</li>
+    <li>café / where / met / we / is / this</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>This is the teacher _________ (who/which) explains well.</li>
+    <li>That’s the film _________ (which/where) I want to see.</li>
+    <li>Here is the restaurant _________ (where/who) we had lunch.</li>
+    <li>He is the boy _________ (who/which) plays the guitar.</li>
+    <li>This is the house _________ (where/which) I grew up.</li>
+    <li>That’s the dog _________ (who/which) barks loudly.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>The man ___ lives next door is friendly. (who / which)</li>
+    <li>This is the place ___ we met. (where / who)</li>
+    <li>That’s the book ___ I told you about. (which / where)</li>
+    <li>She is the girl ___ won the prize. (who / which)</li>
+    <li>This is the city ___ I want to visit. (where / who)</li>
+    <li>This is the dog ___ likes playing. (who / which)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 12 -->
+<div class="topic" id="topic12">
+  <h2>12. Gerunds & Infinitives (advanced)</h2>
+  <div class="meta">Level: Intermediate · Verb patterns</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    Some verbs are followed by a gerund (V-ing), some by an infinitive (to + V), and some by object + infinitive.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    После разных глаголов идут разные формы:  
+    <b>Gerund (V-ing)</b> – enjoy, avoid, finish…  
+    <b>Infinitive (to V)</b> – want, decide, hope…  
+    <b>object + to V</b> – want someone to do.
+  </div>
+
+  <div class="formula">
+    V + V-ing · V + to V · V + object + to V
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I enjoy ___ (read) books.</li>
+    <li>She decided ___ (move) to another city.</li>
+    <li>They want ___ (visit) London.</li>
+    <li>He finished ___ (do) his homework.</li>
+    <li>We hope ___ (see) you soon.</li>
+    <li>She suggested ___ (go) to the cinema.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>He doesn’t want ___ (go) out tonight.</li>
+    <li>She avoided ___ (talk) to him.</li>
+    <li>They decided not ___ (buy) that car.</li>
+    <li>I stopped ___ (eat) junk food.</li>
+    <li>We didn’t plan ___ (stay) so long.</li>
+    <li>She hates ___ (wait) in queues.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Do you enjoy ___ (learn) English?</li>
+    <li>Why did she decide ___ (change) her job?</li>
+    <li>Do they want ___ (travel) by train?</li>
+    <li>What did he finish ___ (write)?</li>
+    <li>Did you plan ___ (visit) your grandparents?</li>
+    <li>Does she like ___ (cook) at home?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>reading / I / enjoy / books</li>
+    <li>to / she / wants / learn / English</li>
+    <li>decided / we / travel / to</li>
+    <li>playing / he / football / loves</li>
+    <li>go / suggested / she / to / cinema / the</li>
+    <li>homework / finished / his / he / doing</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>I would like _________ (go) to the party.</li>
+    <li>He enjoys _________ (play) the guitar.</li>
+    <li>They decided _________ (stay) at home.</li>
+    <li>She stopped _________ (watch) TV.</li>
+    <li>We hope _________ (meet) you again.</li>
+    <li>He suggested _________ (take) a taxi.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>I enjoy (to read / reading) books.</li>
+    <li>She wants (to go / going) home.</li>
+    <li>They decided (to travel / travelling) by car.</li>
+    <li>He finished (to write / writing) the letter.</li>
+    <li>We hope (to see / seeing) you soon.</li>
+    <li>She hates (to wait / waiting) in traffic.</li>
+  </ol>
+</div>
+
+<!-- TOPIC 13 -->
+<div class="topic" id="topic13">
+  <h2>13. Articles (advanced)</h2>
+  <div class="meta">Level: Intermediate · a/an, the, zero</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    <b>a/an</b> – first mention, one of many;  
+    <b>the</b> – specific, known;  
+    <b>zero article</b> – plural and uncountable in general, names, languages, sports.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>a/an</b> – «какой-то, один» (впервые упоминаем);  
+    <b>the</b> – «тот самый, конкретный»;  
+    без артикля – вообще, в целом (music, water), языки, виды спорта.
+  </div>
+
+  <div class="formula">
+    a/an + singular countable · the + specific noun · Ø + general / plural / uncountable
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>He is ___ engineer.</li>
+    <li>She bought ___ new phone.</li>
+    <li>___ sun is very bright today.</li>
+    <li>We visited ___ museum in our city.</li>
+    <li>She loves ___ music.</li>
+    <li>They play ___ football every weekend.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>He isn’t ___ doctor, he is ___ teacher.</li>
+    <li>This isn’t ___ answer I wanted.</li>
+    <li>We don’t have ___ car.</li>
+    <li>She doesn’t play ___ piano.</li>
+    <li>This isn’t ___ biggest city.</li>
+    <li>They don’t watch ___ TV in the morning.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Is he ___ student or ___ teacher?</li>
+    <li>Did you see ___ film I told you about?</li>
+    <li>Do you like ___ music?</li>
+    <li>Is this ___ book you were reading?</li>
+    <li>Do they play ___ basketball?</li>
+    <li>Is ___ Nile ___ longest river?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>engineer / he / an / is</li>
+    <li>sun / the / shining / is</li>
+    <li>a / she / has / cat</li>
+    <li>museum / the / visited / we</li>
+    <li>music / loves / she / Ø</li>
+    <li>football / play / Ø / they</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>He is ___ (a / an / the) honest man.</li>
+    <li>She bought ___ (a / an / the) interesting book.</li>
+    <li>___ (A / An / The) moon is bright tonight.</li>
+    <li>They live near ___ (a / the / Ø) sea.</li>
+    <li>She loves ___ (the / Ø) classical music.</li>
+    <li>He plays ___ (the / Ø) tennis every Saturday.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>He is ___ engineer. (a / an / the)</li>
+    <li>This is ___ book you wanted. (a / an / the)</li>
+    <li>She likes ___ music. (the / Ø)</li>
+    <li>They saw ___ Eiffel Tower. (a / an / the)</li>
+    <li>We visited ___ museum in our city. (a / the)</li>
+    <li>He drinks ___ water every day. (a / Ø)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 14 -->
+<div class="topic" id="topic14">
+  <h2>14. Phrasal Verbs</h2>
+  <div class="meta">Level: Intermediate · Verb + particle</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    A phrasal verb = verb + particle (up, on, off, after…) and often has an idiomatic meaning not clear from the words.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Фразовый глагол – глагол + маленькое слово (up, on, off, after…), и вместе часто дают новое значение:  
+    break up – расстаться, look after – присматривать.
+  </div>
+
+  <div class="formula">
+    verb + particle → new meaning (break up, turn on, look after, give up...)
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>They decided to break ___ (end the relationship).</li>
+    <li>Please turn ___ the lights. It’s dark. (on)</li>
+    <li>I will pick you ___ at 7 pm. (up)</li>
+    <li>She looks ___ her little brother. (after)</li>
+    <li>Don’t give ___ — keep trying. (up)</li>
+    <li>He took ___ a new hobby. (up)</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>Don’t turn ___ your phone in class. (on)</li>
+    <li>They didn’t break ___ last year. (up)</li>
+    <li>He doesn’t look ___ his plants well. (after)</li>
+    <li>She didn’t give ___ when it was difficult. (up)</li>
+    <li>We didn’t take ___ any new projects. (on/up)</li>
+    <li>I don’t want to wake ___ early. (up)</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Can you turn ___ the TV, please? (on/off)</li>
+    <li>Who looks ___ your dog when you travel? (after)</li>
+    <li>When did they break ___? (up)</li>
+    <li>Did you take ___ any new hobbies? (up)</li>
+    <li>Why did he give ___ so soon? (up)</li>
+    <li>What time do you wake ___? (up)</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>up / broke / they</li>
+    <li>after / she / looks / her sister</li>
+    <li>off / lights / turn / the</li>
+    <li>gave / he / up / smoking</li>
+    <li>up / children / the / wakes</li>
+    <li>up / new / took / he / sport / a</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>Please _________ (turn on) the TV.</li>
+    <li>They _________ (break up) last month.</li>
+    <li>She _________ (look after) her grandparents.</li>
+    <li>He _________ (take up) running last year.</li>
+    <li>Don’t _________ (give up)! You can do it.</li>
+    <li>We _________ (wake up) at 7 o’clock.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>She (looks after / looks for) her little sister.</li>
+    <li>They (broke up / broke out) last year.</li>
+    <li>Please (turn on / turn off) the radio.</li>
+    <li>He (took off / took up) swimming as a hobby.</li>
+    <li>Don’t (give in / give up) so easily.</li>
+    <li>What time do you (wake up / get up) on Sundays?</li>
+  </ol>
+</div>
+
+<!-- TOPIC 15 -->
+<div class="topic" id="topic15">
+  <h2>15. Linking Words</h2>
+  <div class="meta">Level: Intermediate · Connecting ideas</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    Linking words connect sentences and ideas:  
+    <b>although</b> (contrast), <b>however</b> (contrast), <b>because</b> (reason), <b>therefore</b> (result), <b>in order to</b> (purpose).
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Связующие слова:  
+    <b>although</b> – хотя; <b>however</b> – однако; <b>because</b> – потому что;  
+    <b>therefore</b> – поэтому; <b>in order to</b> – чтобы (цель).
+  </div>
+
+  <div class="formula">
+    although + clause; clause. However, clause; because + clause; therefore + result; in order to + V
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>Although it was cold, we ___ (go) for a walk.</li>
+    <li>He was tired; however, he ___ (finish) the work.</li>
+    <li>She studied hard, therefore she ___ (pass) the exam.</li>
+    <li>They went home because it ___ (be) late.</li>
+    <li>He saved money in order to ___ (buy) a car.</li>
+    <li>Although she was ill, she ___ (go) to school.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>Although he was hungry, he ___ (not eat).</li>
+    <li>She was busy; however, she ___ (not call) us.</li>
+    <li>They didn’t go out because it ___ (not stop) raining.</li>
+    <li>We didn’t stay long, therefore we ___ (not see) everything.</li>
+    <li>He didn’t save money in order to ___ (not buy) a car.</li>
+    <li>Although they were tired, they ___ (not stop).</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Why did you stay at home although it ___ (be) sunny?</li>
+    <li>Did he go to work although he ___ (be) ill?</li>
+    <li>Why didn’t she call us, however she ___ (have) time?</li>
+    <li>What did you do because you ___ (be) late?</li>
+    <li>What did he buy in order to ___ (help) his family?</li>
+    <li>Did they pass the exam, therefore they ___ (be) happy?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>cold / was / although / it / went / we / out</li>
+    <li>tired / was / he / however / finished / work / his</li>
+    <li>because / stayed / I / at home / it / raining / was</li>
+    <li>to / English / order / study / in / she / passed / to</li>
+    <li>late / it / home / went / they / because / was</li>
+    <li>therefore / she / happy / was / passed / she / exam / the</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>_________ it was raining, we went outside.</li>
+    <li>He was tired; _________, he finished the project.</li>
+    <li>She didn’t come _________ she was ill.</li>
+    <li>He saved money _________ buy a new phone.</li>
+    <li>They were late; _________, they missed the train.</li>
+    <li>_________ it was difficult, he didn’t give up.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>_________ it was cold, we went out. (Although / Because)</li>
+    <li>He was tired; _________, he kept working. (however / because)</li>
+    <li>She stayed home _________ she felt sick. (because / although)</li>
+    <li>He worked hard; _________, he passed the exam. (therefore / although)</li>
+    <li>He saved money _________ buy a car. (to / in order to)</li>
+    <li>_________ it was late, they didn’t go to bed. (Although / Because)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 16 -->
+<div class="topic" id="topic16">
+  <h2>16. Countable & Uncountable Nouns</h2>
+  <div class="meta">Level: Intermediate · much/many, a little/a few, some/any</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    Countable nouns can be counted (1,2,3…). Uncountable nouns cannot be counted easily.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Исчисляемые существительные можно посчитать (apple, book).  
+    Неисчисляемые нельзя посчитать поштучно (water, rice, sugar).
+  </div>
+
+  <div class="formula">
+    many/few/a few + countable · much/little/a little + uncountable · some/any + both
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>There are ___ apples on the table. (many)</li>
+    <li>There is ___ water in the glass. (a little)</li>
+    <li>She has ___ friends in class. (a few)</li>
+    <li>We need ___ sugar. (some)</li>
+    <li>They have ___ books at home. (many)</li>
+    <li>There is ___ rice left. (a little)</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>There aren’t ___ bananas. (any)</li>
+    <li>We don’t have ___ milk. (any)</li>
+    <li>She doesn’t have ___ time. (much)</li>
+    <li>There aren’t ___ chairs. (many)</li>
+    <li>He doesn’t need ___ coffee. (much)</li>
+    <li>They don’t have ___ friends. (many)</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Do you have ___ water? (any)</li>
+    <li>Are there ___ books? (any)</li>
+    <li>How ___ money do you have? (much)</li>
+    <li>How ___ apples are there? (many)</li>
+    <li>Do they need ___ help? (any)</li>
+    <li>Is there ___ bread? (any)</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>many / books / she / has</li>
+    <li>water / little / a / there / is</li>
+    <li>any / you / have / do / questions</li>
+    <li>much / time / have / we / don’t</li>
+    <li>few / a / friends / he / has</li>
+    <li>sugar / any / isn’t / there</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>There are ___ (many/much) students.</li>
+    <li>There is ___ (little/few) juice.</li>
+    <li>She has ___ (a few/a little) pencils.</li>
+    <li>Do we have ___ (some/any) eggs?</li>
+    <li>He needs ___ (much/many) water.</li>
+    <li>I have ___ (a little/a few) homework.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>How ___ water? (much / many)</li>
+    <li>How ___ books? (much / many)</li>
+    <li>She has ___ friends. (a few / a little)</li>
+    <li>There isn’t ___ milk. (any / some)</li>
+    <li>I have ___ money. (little / few)</li>
+    <li>We need ___ sugar. (some / any)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 17 -->
+<div class="topic" id="topic17">
+  <h2>17. Complex Object (V + object + to V)</h2>
+  <div class="meta">Level: Intermediate · want/ask/tell someone to do</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    Complex Object is used after verbs like want, ask, tell, expect, allow:  
+    I want you to help me.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Сложное дополнение: глагол + объект + to V.  
+    Примеры глаголов: want, ask, tell, expect, allow.  
+    I want you to help – Я хочу, чтобы ты помог.
+  </div>
+
+  <div class="formula">
+    S + V + object + to V
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I want you ___ (help) me.</li>
+    <li>They asked him ___ (come) early.</li>
+    <li>She told me ___ (wait).</li>
+    <li>We expect you ___ (finish) on time.</li>
+    <li>He wants her ___ (call) later.</li>
+    <li>They allowed us ___ (enter).</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>I don’t want you ___ (go).</li>
+    <li>They didn’t ask him ___ (stay).</li>
+    <li>She didn’t tell me ___ (do) it.</li>
+    <li>He doesn’t expect us ___ (win).</li>
+    <li>We didn’t allow them ___ (leave).</li>
+    <li>She doesn’t want me ___ (talk).</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Do you want me ___ (help)?</li>
+    <li>Did they ask you ___ (come)?</li>
+    <li>Does she want him ___ (study)?</li>
+    <li>Did he tell you ___ (wait)?</li>
+    <li>Do they expect her ___ (win)?</li>
+    <li>Did you allow him ___ (drive)?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>help / want / I / to / you</li>
+    <li>asked / come / they / him / to</li>
+    <li>told / wait / she / me / to</li>
+    <li>expect / finish / we / to / you</li>
+    <li>her / wants / call / to / he</li>
+    <li>allowed / us / enter / they / to</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>I want you _________ (help).</li>
+    <li>They asked me _________ (bring) it.</li>
+    <li>She told him _________ (sit).</li>
+    <li>He allowed me _________ (go).</li>
+    <li>We expect them _________ (win).</li>
+    <li>She wants us _________ (listen).</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>I want you ___ me. (to help / helping)</li>
+    <li>They asked him ___ home. (to come / coming)</li>
+    <li>She told me ___ quiet. (to be / be)</li>
+    <li>He allowed us ___. (to leave / leaving)</li>
+    <li>We expect you ___. (to try / trying)</li>
+    <li>She wants me ___ more. (to study / studying)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 18 -->
+<div class="topic" id="topic18">
+  <h2>18. Causative Form (have/get something done)</h2>
+  <div class="meta">Level: Intermediate · Someone does it for you</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    We use causative when someone does something for us:  
+    I had my hair cut. (= someone cut my hair).
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Каузатив: мы заказываем услугу – кто-то делает что-то для нас.  
+    I had my hair cut – мне постригли волосы.
+  </div>
+
+  <div class="formula">
+    have/get + object + V3
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>I had my hair ___ (cut).</li>
+    <li>She got her phone ___ (repair).</li>
+    <li>We had our house ___ (paint).</li>
+    <li>He got his car ___ (wash).</li>
+    <li>They had their roof ___ (fix).</li>
+    <li>She got her nails ___ (do).</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>I didn’t have my bike ___ (repair).</li>
+    <li>She didn’t get her phone ___ (fix).</li>
+    <li>They didn’t have their car ___ (wash).</li>
+    <li>He didn’t get his suit ___ (clean).</li>
+    <li>We don’t have our roof ___ (fix).</li>
+    <li>She didn’t get her dress ___ (shorten).</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Did you have your hair ___ (cut)?</li>
+    <li>Did she get her phone ___ (repair)?</li>
+    <li>Did they have their house ___ (paint)?</li>
+    <li>Did he get his car ___ (wash)?</li>
+    <li>Do you have your laptop ___ (fix)?</li>
+    <li>Did she get her nails ___ (do)?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>my / hair / had / cut / I</li>
+    <li>got / phone / repaired / her / she</li>
+    <li>car / their / washed / had / they</li>
+    <li>house / painted / we / had / our</li>
+    <li>his / he / suit / cleaned / got</li>
+    <li>nails / her / done / got / she</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>I had my laptop _________ (fix).</li>
+    <li>She got her jacket _________ (clean).</li>
+    <li>They had their car _________ (repair).</li>
+    <li>He got his boots _________ (polish).</li>
+    <li>We had our garden _________ (water).</li>
+    <li>She got her bag _________ (fix).</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>I had my hair ___. (cut / cutting)</li>
+    <li>She got her phone ___. (repaired / repair)</li>
+    <li>They had their car ___. (washed / wash)</li>
+    <li>He got his suit ___. (cleaned / clean)</li>
+    <li>We had our roof ___. (fixed / fix)</li>
+    <li>She got her nails ___. (done / do)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 19 -->
+<div class="topic" id="topic19">
+  <h2>19. Cleft Sentences (It is/was … that …)</h2>
+  <div class="meta">Level: Intermediate · Emphasis</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    Cleft sentences use <b>It is/was</b> to emphasize a person, thing or time:  
+    It was John who helped me.
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    Cleft-предложения подчёркивают важную часть:  
+    It was John who helped me – Именно Джон помог мне.
+  </div>
+
+  <div class="formula">
+    It is/was + noun/pronoun + who/that + clause
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>It was John ___ helped me.</li>
+    <li>It was the exam ___ stressed her.</li>
+    <li>It is the book ___ I like most.</li>
+    <li>It was my mom ___ cooked dinner.</li>
+    <li>It is the place ___ we met.</li>
+    <li>It was Tom ___ called me.</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>It wasn’t John ___ called me.</li>
+    <li>It wasn’t the test ___ scared her.</li>
+    <li>It isn’t the film ___ I want.</li>
+    <li>It wasn’t my dad ___ fixed it.</li>
+    <li>It isn’t the shop ___ I mean.</li>
+    <li>It wasn’t the dog ___ barked.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Who was it ___ helped you?</li>
+    <li>What was it ___ made you upset?</li>
+    <li>Who was it ___ called?</li>
+    <li>What is it ___ you want?</li>
+    <li>Who was it ___ opened the door?</li>
+    <li>What was it ___ broke?</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>was / it / John / helped / who / me</li>
+    <li>exam / the / stressed / her / it / was</li>
+    <li>the / is / it / book / like / I / that</li>
+    <li>cooked / it / my mom / was / dinner</li>
+    <li>place / is / it / we / met / the / where</li>
+    <li>called / it / Tom / was / who</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>It was my friend _________ (who/that) helped.</li>
+    <li>It is the food _________ (that/where) I love.</li>
+    <li>It was the movie _________ (that/who) scared me.</li>
+    <li>It was she _________ (who/that) won.</li>
+    <li>It is the teacher _________ (who/which) explains well.</li>
+    <li>It was the day _________ (when/that) we met.</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>It was John ___ helped me. (who / which)</li>
+    <li>It is the place ___ we met. (where / that)</li>
+    <li>It was the dog ___ barked. (that / where)</li>
+    <li>It isn’t the book ___ I want. (that / who)</li>
+    <li>It was Anna ___ called. (who / where)</li>
+    <li>It was the moment ___ changed everything. (that / who)</li>
+  </ol>
+</div>
+
+<!-- TOPIC 20 -->
+<div class="topic" id="topic20">
+  <h2>20. Quantifiers: too / enough / so / such</h2>
+  <div class="meta">Level: Intermediate · Degree & intensity</div>
+
+  <div class="rule-block">
+    <b>Rule (EN):</b>
+    We use these words to show how strong or sufficient something is:  
+    <b>too + adj</b> – more than is good;  
+    <b>adj + enough</b> – sufficient;  
+    <b>so + adj</b> – very;  
+    <b>such + adj + noun</b> – very (with noun).
+  </div>
+
+  <div class="rule-block">
+    <b>Правило (RU):</b>
+    <b>too</b> – слишком; <b>enough</b> – достаточно; <b>so</b> – так, очень;  
+    <b>such</b> – такой/такая + существительное.
+  </div>
+
+  <div class="formula">
+    too + adj · adj + enough · so + adj · such + (a) + adj + noun
+  </div>
+
+  <h3>Exercise 1 – Affirmative</h3>
+  <ol>
+    <li>It is too ___ (cold).</li>
+    <li>She is tall enough ___ (play) basketball.</li>
+    <li>He is so ___ (kind).</li>
+    <li>It is such a ___ day. (nice)</li>
+    <li>They are too ___ (slow).</li>
+    <li>She is so ___ (happy).</li>
+  </ol>
+
+  <h3>Exercise 2 – Negative</h3>
+  <ol>
+    <li>He isn’t tall enough ___ (reach) the shelf.</li>
+    <li>It isn’t too ___ (late) to start.</li>
+    <li>She isn’t ___ enough. (strong)</li>
+    <li>They aren’t so ___ (fast) as us.</li>
+    <li>It isn’t such a ___ movie. (good)</li>
+    <li>He isn’t too ___ (busy) today.</li>
+  </ol>
+
+  <h3>Exercise 3 – Questions</h3>
+  <ol>
+    <li>Is it too ___ (hot) for you?</li>
+    <li>Is she ___ enough? (smart)</li>
+    <li>Is he so ___ (kind)?</li>
+    <li>Is it such a ___ day? (bad)</li>
+    <li>Are they too ___ (slow)?</li>
+    <li>Is it ___ enough? (warm)</li>
+  </ol>
+
+  <h3>Exercise 4 – Word Order</h3>
+  <ol>
+    <li>cold / too / it / is</li>
+    <li>tall / she / enough / is</li>
+    <li>kind / so / he / is</li>
+    <li>a / day / such / nice / it / is</li>
+    <li>slow / too / they / are</li>
+    <li>happy / so / she / is</li>
+  </ol>
+
+  <h3>Exercise 5 – Complete</h3>
+  <ol>
+    <li>It is too _________ (big).</li>
+    <li>She is _________ (strong) enough.</li>
+    <li>He is so _________ (funny).</li>
+    <li>It is such a _________ (sad) story.</li>
+    <li>They are _________ (too) slow.</li>
+    <li>It is warm _________ (enough).</li>
+  </ol>
+
+  <h3>Exercise 6 – Choose</h3>
+  <ol>
+    <li>It is ___ hot. (too / enough)</li>
+    <li>She is tall ___. (enough / too)</li>
+    <li>He is ___ kind. (so / such)</li>
+    <li>She is ___ a good student. (such / so)</li>
+    <li>They are ___ slow. (too / enough)</li>
+    <li>It is cold ___. (enough / such)</li>
+  </ol>
+  
 /* ---------- STATE & STORAGE ---------- */
 
 let currentUser = null; // {name, code, classLabel, stars, lastLogin}
