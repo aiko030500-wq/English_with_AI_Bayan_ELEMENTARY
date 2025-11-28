@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ENGLISH WITH AI BAYAN – Beginner</title>
+  <title>ENGLISH WITH AI BAYAN – Intermediate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root{
@@ -502,7 +502,7 @@
     <img src="logo.png" alt="AI Bayan" class="logo-img">
     <div class="brand-text">
       <h1>ENGLISH WITH AI BAYAN</h1>
-      <span>Beginner · stars · interactive topics</span>
+      <span>Intermediate · 20 grammar topics</span>
     </div>
   </div>
   <div class="top-info" id="topInfo">Not logged in</div>
@@ -528,6 +528,12 @@
     </div>
 
     <div id="loginError" class="error hidden"></div>
+
+    <p class="login-note">
+      Student PIN ranges: 3E (101-115), 4G (201-215), 5G (301-315), 5Zh (401-415),
+      6G (501-515), 7B (601-615), 7V (701-715), 8E (801-815), 9Zh (901-915), 10A (1001-1015).<br>
+      Teacher code: <strong>3234</strong>.
+    </p>
   </section>
 
   <!-- MAIN MENU (STUDENT) -->
@@ -535,7 +541,7 @@
     <section class="card">
       <div class="top-row">
         <div>
-          <h2 class="section-title" style="margin-bottom:4px;">Beginner topics</h2>
+          <h2 class="section-title" style="margin-bottom:4px;">Intermediate grammar topics</h2>
           <div id="menuInfo" class="muted"></div>
         </div>
         <div>
@@ -576,7 +582,7 @@
     </aside>
   </section>
 
-    <!-- TOPIC SCREEN -->
+  <!-- TOPIC SCREEN -->
   <section id="topicScreen" class="hidden">
     <div class="topic-header">
       <div class="topic-header-main">
@@ -610,13 +616,13 @@
     <div class="table-wrapper">
       <table id="teacherTable">
         <thead>
-        <tr>
-          <th>Class</th>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Stars</th>
-          <th>Last login</th>
-        </tr>
+          <tr>
+            <th>Class</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Stars</th>
+            <th>Last login</th>
+          </tr>
         </thead>
         <tbody></tbody>
       </table>
@@ -651,1655 +657,335 @@ function getClassByCode(num){
 
 /* ---------- TOPIC COLORS ---------- */
 
-<h1>ENGLISH WITH AI BAYAN – Intermediate Grammar Pack (20 Topics)</h1>
+const topicColors = {
+  1:"#1976d2",
+  2:"#00796b",
+  3:"#6a1b9a",
+  4:"#ef6c00",
+  5:"#00838f",
+  6:"#8e24aa",
+  7:"#5d4037",
+  8:"#c2185b",
+  9:"#455a64",
+  10:"#2e7d32",
+  11:"#7b1fa2",
+  12:"#1565c0",
+  13:"#d81b60",
+  14:"#0097a7",
+  15:"#8d6e63",
+  16:"#9e9d24",
+  17:"#3949ab",
+  18:"#00695c",
+  19:"#ad1457",
+  20:"#ff7043"
+};
+
+/* ---------- TOPICS (20 INTERMEDIATE) ---------- */
+
+const topics = [
+  {
+    id:1,
+    title:"Present Perfect vs Past Simple",
+    level:"Intermediate",
+    explanation:"Present Perfect is used for life experience and results that are connected with now (ever, never, already, yet) and we do not say the exact finished time. Past Simple is used for finished actions in the past with a clear time (yesterday, last week, in 2020).",
+    ruleRu:"Present Perfect – опыт и результат, связанный с настоящим, без точного времени (ever, never, already, yet). Past Simple – завершённое действие в прошлом с указанием времени (yesterday, last year, in 2020).",
+    formulas:["have/has + V3","V2 / V-ed"],
+    examples:[
+      "I have seen this film three times.",
+      "I saw this film last year."
+    ],
+    exercises:[]
+  },
+  {
+    id:2,
+    title:"Present Perfect Continuous",
+    level:"Intermediate",
+    explanation:"We use Present Perfect Continuous for actions that started in the past and are still happening now or have a visible result now. We often use it with for, since, recently, lately.",
+    ruleRu:"Present Perfect Continuous – действие началось в прошлом и длится до сих пор или дало видимый результат сейчас. Часто с for, since, recently, lately.",
+    formulas:["have/has been + V-ing"],
+    examples:[
+      "I have been studying English for three years.",
+      "She has been working here since 2020."
+    ],
+    exercises:[]
+  },
+  {
+    id:3,
+    title:"Past Continuous vs Past Simple",
+    level:"Intermediate",
+    explanation:"Past Continuous describes a long or background action in the past. Past Simple describes short, finished actions that happened one after another or interrupted the background action.",
+    ruleRu:"Past Continuous – длительное или фоновое действие в прошлом. Past Simple – короткое завершённое действие, часто «врезается» в фон (when/while).",
+    formulas:["was/were + V-ing","V2 / V-ed"],
+    examples:[
+      "I was watching TV when he called.",
+      "It started to rain while we were walking home."
+    ],
+    exercises:[]
+  },
+  {
+    id:4,
+    title:"Future forms: will / going to / Present Continuous",
+    level:"Intermediate",
+    explanation:"Will is used for instant decisions, promises and predictions. Be going to is used for plans and intentions and for predictions with evidence. Present Continuous is used for fixed future arrangements (timetable, meeting, calendar).",
+    ruleRu:"Will – решение сейчас, обещание, прогноз. Be going to – план или намерение, «я собираюсь». Present Continuous – конкретная договорённость на будущее (встречи, расписание).",
+    formulas:["will + V","am/is/are going to + V","am/is/are + V-ing (future)"],
+    examples:[
+      "I think it will rain tomorrow.",
+      "We are going to visit our grandma.",
+      "They are meeting at 7 pm."
+    ],
+    exercises:[]
+  },
+  {
+    id:5,
+    title:"Used to / be used to / get used to",
+    level:"Intermediate",
+    explanation:"Used to + V is for past habits or states that are not true now. Be used to + V-ing/noun is for something that is normal for you now. Get used to + V-ing/noun is the process of becoming accustomed.",
+    ruleRu:"Used to + V – раньше делал/было, но сейчас нет. Be used to + V-ing/сущ. – привык, это нормально. Get used to + V-ing/сущ. – привыкает (процесс).",
+    formulas:["used to + V","be used to + V-ing / noun","get used to + V-ing / noun"],
+    examples:[
+      "I used to live in a village.",
+      "She is used to getting up early.",
+      "They are getting used to online lessons."
+    ],
+    exercises:[]
+  },
+  {
+    id:6,
+    title:"Modal verbs of deduction (must / might / can’t)",
+    level:"Intermediate",
+    explanation:"We use must when we are almost sure something is true now, might/may/could when it is possible, and can’t when we are sure it is impossible.",
+    ruleRu:"Модальные глаголы для предположений о настоящем: must – наверняка; might/may/could – возможно; can’t – не может быть.",
+    formulas:["must + V","might / may / could + V","can’t + V"],
+    examples:[
+      "He must be at home – the lights are on.",
+      "She might be at the library.",
+      "He can’t be 10, he looks 20."
+    ],
+    exercises:[]
+  },
+  {
+    id:7,
+    title:"Second Conditional",
+    level:"Intermediate",
+    explanation:"Second Conditional is used for unreal or imaginary situations in the present or future: dreams, advice and hypothetical situations.",
+    ruleRu:"Second Conditional – нереальные, воображаемые ситуации про настоящее/будущее: мечты, советы «на твоём месте».",
+    formulas:["If + Past Simple, would + V"],
+    examples:[
+      "If I had a lot of money, I would travel around the world.",
+      "If she studied harder, she would get better marks."
+    ],
+    exercises:[]
+  },
+  {
+    id:8,
+    title:"Mixed Conditionals",
+    level:"Intermediate",
+    explanation:"Mixed conditionals connect different times: unreal past action with a present result, or unreal present situation with a past result.",
+    ruleRu:"Смешанные условные связывают разные времена: если бы что-то произошло в прошлом, сейчас было бы иначе; или если бы сейчас было по-другому, в прошлом было бы иначе.",
+    formulas:[
+      "If + Past Perfect, would + V (now)",
+      "If + Past Simple, would have + V3 (past result)"
+    ],
+    examples:[
+      "If I had studied harder, I would be at university now.",
+      "If I were taller, I would have become a basketball player."
+    ],
+    exercises:[]
+  },
+  {
+    id:9,
+    title:"Passive Voice (Intermediate)",
+    level:"Intermediate",
+    explanation:"In the Passive Voice we focus on the action, not on the doer. We use it when the doer is unknown, unimportant or obvious.",
+    ruleRu:"Страдательный залог (Passive) – важнее действие, чем исполнитель: «дом построили», а не «кто-то построил дом». Используем, когда исполнитель неизвестен или не важен.",
+    formulas:[
+      "Present: am/is/are + V3",
+      "Past: was/were + V3",
+      "Future: will be + V3"
+    ],
+    examples:[
+      "The homework is checked every day.",
+      "This film was made in 2019.",
+      "The project will be finished next week."
+    ],
+    exercises:[]
+  },
+  {
+    id:10,
+    title:"Reported Speech (statements & questions)",
+    level:"Intermediate",
+    explanation:"In reported speech we say what someone said without quotation marks and usually move the tense one step back into the past.",
+    ruleRu:"Косвенная речь – передаём чужие слова без кавычек, обычно сдвигая время «на шаг назад»: am → was, do → did, will → would и т.д.",
+    formulas:[
+      "say / tell + (that) + clause",
+      "Present → Past, Past → Past Perfect, will → would"
+    ],
+    examples:[
+      "He said that he was tired.",
+      "She asked if I liked English."
+    ],
+    exercises:[]
+  },
+  {
+    id:11,
+    title:"Relative Clauses (who / which / where)",
+    level:"Intermediate",
+    explanation:"We use who for people, which for things and animals, and where for places to add extra information about a noun.",
+    ruleRu:"Относительные местоимения: who – люди, which – предметы и животные, where – места. Они помогают соединять предложения и уточнять существительное.",
+    formulas:["noun + who/which/where + clause"],
+    examples:[
+      "The man who lives next door is a doctor.",
+      "This is the place where we met.",
+      "That’s the dog which barks a lot."
+    ],
+    exercises:[]
+  },
+  {
+    id:12,
+    title:"Gerunds & Infinitives",
+    level:"Intermediate",
+    explanation:"Some verbs are followed by a gerund (V-ing), some by an infinitive (to + V), and some by object + infinitive.",
+    ruleRu:"После разных глаголов используются разные формы: Gerund (V-ing) – enjoy, avoid, finish; Infinitive (to V) – want, decide, hope; конструкция V + object + to V – want someone to do.",
+    formulas:["V + V-ing","V + to V","V + object + to V"],
+    examples:[
+      "I enjoy reading books.",
+      "She decided to move.",
+      "They want us to help."
+    ],
+    exercises:[]
+  },
+  {
+    id:13,
+    title:"Articles (a/an, the, zero)",
+    level:"Intermediate",
+    explanation:"We use a/an for a thing we mention for the first time or one of many, the for specific or known things, and no article (zero) for plural and uncountable nouns in general, languages, sports and most places.",
+    ruleRu:"A/An – «какой-то, один» (говорим впервые). The – «тот самый, конкретный». Ноль артикля – вообще, в целом (music, water), языки, виды спорта и т.п.",
+    formulas:[
+      "a/an + singular countable noun",
+      "the + specific noun",
+      "Ø + general / plural / uncountable"
+    ],
+    examples:[
+      "He is an engineer.",
+      "I like the film you recommended.",
+      "They play football."
+    ],
+    exercises:[]
+  },
+  {
+    id:14,
+    title:"Phrasal Verbs",
+    level:"Intermediate",
+    explanation:"A phrasal verb is a verb + a small word (particle) like up, on, off, after, and often the whole expression has a new meaning.",
+    ruleRu:"Фразовый глагол – глагол + маленькое слово (up, on, off, after…), вместе часто дают новое значение: break up – расстаться, look after – присматривать.",
+    formulas:["verb + particle → new meaning"],
+    examples:[
+      "They broke up last year.",
+      "She looks after her little brother.",
+      "Please turn off the lights."
+    ],
+    exercises:[]
+  },
+  {
+    id:15,
+    title:"Linking Words",
+    level:"Intermediate",
+    explanation:"Linking words connect ideas: although and however show contrast; because shows reason; therefore shows result; in order to shows purpose.",
+    ruleRu:"Связующие слова: although – хотя, however – однако, because – потому что, therefore – поэтому, in order to – чтобы (цель).",
+    formulas:[
+      "although + clause",
+      "clause. However, clause.",
+      "because + clause",
+      "clause; therefore, clause.",
+      "in order to + V"
+    ],
+    examples:[
+      "Although it was cold, we went out.",
+      "He was tired; however, he finished the work.",
+      "She stayed home because she was ill."
+    ],
+    exercises:[]
+  },
+  {
+    id:16,
+    title:"Countable & Uncountable Nouns",
+    level:"Intermediate",
+    explanation:"Countable nouns can be counted (one, two, three apples). Uncountable nouns cannot be counted easily (water, rice, sugar). We use different quantifiers with them.",
+    ruleRu:"Исчисляемые существительные можно посчитать (apple, book). Неисчисляемые нельзя посчитать поштучно (water, rice, sugar). С ними используются разные слова much/many, little/few и т.д.",
+    formulas:[
+      "many / few / a few + countable",
+      "much / little / a little + uncountable",
+      "some / any + оба типа"
+    ],
+    examples:[
+      "There are many books.",
+      "There is a little water.",
+      "Do you have any friends here?"
+    ],
+    exercises:[]
+  },
+  {
+    id:17,
+    title:"Complex Object (V + object + to V)",
+    level:"Intermediate",
+    explanation:"Complex Object is used after verbs like want, ask, tell, expect, allow when one person wants another person to do something.",
+    ruleRu:"Сложное дополнение: глагол + объект + to V. Примеры глаголов: want, ask, tell, expect, allow. I want you to help – «Я хочу, чтобы ты помог».",
+    formulas:["S + V + object + to V"],
+    examples:[
+      "I want you to listen carefully.",
+      "They asked him to come early.",
+      "She told me to wait."
+    ],
+    exercises:[]
+  },
+  {
+    id:18,
+    title:"Causative (have/get something done)",
+    level:"Intermediate",
+    explanation:"We use the causative when someone does something for us as a service: I had my hair cut (= someone cut my hair for me).",
+    ruleRu:"Каузатив: мы заказываем услугу, и кто-то делает что-то для нас. I had my hair cut – мне постригли волосы.",
+    formulas:["have / get + object + V3"],
+    examples:[
+      "I had my phone repaired.",
+      "She got her hair cut yesterday."
+    ],
+    exercises:[]
+  },
+  {
+    id:19,
+    title:"Cleft Sentences (It is/was … that …)",
+    level:"Intermediate",
+    explanation:"Cleft sentences use It is/was to emphasise a person, thing, place or time: It was John who helped me.",
+    ruleRu:"Cleft-предложения подчёркивают важную часть: It was John who helped me – именно Джон помог мне.",
+    formulas:["It is/was + noun/pronoun + who/that + clause"],
+    examples:[
+      "It was my mum who cooked dinner.",
+      "It is this book that I like most."
+    ],
+    exercises:[]
+  },
+  {
+    id:20,
+    title:"Quantifiers: too / enough / so / such",
+    level:"Intermediate",
+    explanation:"We use too to mean more than is good, enough to mean sufficient, so before an adjective to mean very, and such + (a) + adjective + noun to mean very with a noun.",
+    ruleRu:"Too – слишком; enough – достаточно; so – так, очень; such – такой/такая + существительное.",
+    formulas:[
+      "too + adjective",
+      "adjective + enough",
+      "so + adjective",
+      "such + (a) + adjective + noun"
+    ],
+    examples:[
+      "It is too cold.",
+      "She is tall enough to play basketball.",
+      "It is such a nice day."
+    ],
+    exercises:[]
+  }
+];
 
-<!-- TOPIC 1 -->
-<div class="topic" id="topic1">
-  <h2>1. Present Perfect vs Past Simple</h2>
-  <div class="meta">Level: Intermediate · Experience vs finished past</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    We use <b>Present Perfect</b> for experience and results connected with now (no exact past time).
-    We use <b>Past Simple</b> for finished actions in the past with a clear time (yesterday, last week, in 2019).
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>Present Perfect</b> – опыт и результат, связанный с настоящим, без точного указания времени.  
-    <b>Past Simple</b> – завершённое действие в прошлом с указанием времени (yesterday, last year…).
-  </div>
-
-  <div class="formula">
-    Present Perfect: have/has + V3 · Past Simple: V2 / V-ed
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I ___ (visit) London many times.</li>
-    <li>She ___ (already finish) her homework.</li>
-    <li>They ___ (see) this film three times.</li>
-    <li>We ___ (go) to Paris last summer.</li>
-    <li>He ___ (meet) his best friend in 2018.</li>
-    <li>I ___ (just write) an email to my teacher.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>I ___ (not finish) my project yet.</li>
-    <li>She ___ (never be) to London.</li>
-    <li>They ___ (not see) him yesterday.</li>
-    <li>We ___ (not visit) this museum last year.</li>
-    <li>He ___ (not do) his homework yet.</li>
-    <li>I ___ (not watch) this film in 2020.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>___ you ever ___ (try) sushi?</li>
-    <li>When ___ you ___ (go) to London?</li>
-    <li>How many times ___ she ___ (be) to Italy?</li>
-    <li>___ they ___ (see) him yesterday?</li>
-    <li>What ___ you ___ (do) last weekend?</li>
-    <li>___ he ___ (finish) his homework yet?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>already / I / my homework / have / finished</li>
-    <li>went / last year / to Spain / we</li>
-    <li>ever / you / have / this film / seen</li>
-    <li>not / yet / has / finished / she</li>
-    <li>yesterday / met / I / him</li>
-    <li>has / he / just / left</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>I _________ (never / see) this city before.</li>
-    <li>She _________ (already / do) her homework.</li>
-    <li>They _________ (go) to the park yesterday.</li>
-    <li>We _________ (visit) that museum in 2019.</li>
-    <li>He _________ (not / finish) the test yet.</li>
-    <li>When _________ you _________ (meet) him?</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>I (have seen / saw) this film three times.</li>
-    <li>She (has already finished / finished) her homework yesterday.</li>
-    <li>We (have visited / visited) London last year.</li>
-    <li>They (have just arrived / arrived just) home.</li>
-    <li>He (didn’t finish / hasn’t finished) his work yet.</li>
-    <li>___ you (have ever been / were ever) to Paris?</li>
-  </ol>
-</div>
-
-<!-- TOPIC 2 -->
-<div class="topic" id="topic2">
-  <h2>2. Present Perfect Continuous</h2>
-  <div class="meta">Level: Intermediate · Long actions until now</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    We use <b>Present Perfect Continuous</b> for actions that started in the past and continue until now or have a visible result now.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>Present Perfect Continuous</b> – действие началось в прошлом и длится до сих пор или дало видимый результат сейчас.  
-    Часто с: for, since, recently, lately.
-  </div>
-
-  <div class="formula">
-    have/has + been + V-ing
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I ___ (study) English for three years.</li>
-    <li>She ___ (work) here since 2020.</li>
-    <li>They ___ (wait) for you for an hour.</li>
-    <li>He ___ (play) football all afternoon.</li>
-    <li>We ___ (talk) about this problem for a long time.</li>
-    <li>It ___ (rain) since morning.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>I ___ (not sleep) well recently.</li>
-    <li>She ___ (not study) much this week.</li>
-    <li>They ___ (not work) here for long.</li>
-    <li>We ___ (not wait) for you for very long.</li>
-    <li>He ___ (not feel) well lately.</li>
-    <li>It ___ (not rain) for two weeks.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>How long ___ you ___ (wait) here?</li>
-    <li>What ___ she ___ (do) all day?</li>
-    <li>___ they ___ (study) for the exam?</li>
-    <li>How long ___ he ___ (work) in this company?</li>
-    <li>___ it ___ (rain) since morning?</li>
-    <li>Why ___ you ___ (cry)?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>been / I / for two hours / have / studying</li>
-    <li>has / working / all day / she / been</li>
-    <li>have / waiting / we / for you / been</li>
-    <li>been / playing / he / football / has</li>
-    <li>has / raining / since morning / been / it</li>
-    <li>they / been / talking / have / for a long time</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>She _________ (read) this book for an hour.</li>
-    <li>I _________ (not feel) well lately.</li>
-    <li>They _________ (work) here since last year.</li>
-    <li>We _________ (wait) for the bus for 20 minutes.</li>
-    <li>He _________ (not sleep) much these days.</li>
-    <li>How long _________ you _________ (live) in this city?</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>I (have been studying / studied) English for 5 years.</li>
-    <li>She (has worked / has been working) here since 2021 – process.</li>
-    <li>They (have been waiting / waited) for you for an hour.</li>
-    <li>He is tired because he (has been running / ran) for a long time.</li>
-    <li>How long (have you been reading / did you read) this book?</li>
-    <li>It (has been raining / rained) since morning.</li>
-  </ol>
-</div>
-
-<!-- TOPIC 3 -->
-<div class="topic" id="topic3">
-  <h2>3. Past Continuous vs Past Simple</h2>
-  <div class="meta">Level: Intermediate · Background vs short actions</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    <b>Past Continuous</b> describes a long or background action in the past.  
-    <b>Past Simple</b> describes short, finished actions that interrupt or follow.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>Past Continuous</b> – длительное / фоновое действие в прошлом.  
-    <b>Past Simple</b> – короткое, завершённое действие (часто «врезается» в фон).  
-    Часто вместе с when/while.
-  </div>
-
-  <div class="formula">
-    Past Continuous: was/were + V-ing · Past Simple: V2 / V-ed
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I ___ (walk) home when it ___ (start) raining.</li>
-    <li>She ___ (watch) TV when I ___ (arrive).</li>
-    <li>They ___ (have) dinner when the phone ___ (ring).</li>
-    <li>We ___ (play) football when it ___ (get) dark.</li>
-    <li>He ___ (sleep) when the alarm ___ (go off).</li>
-    <li>I ___ (do) my homework when my friend ___ (call) me.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>I ___ (not watch) TV when you called.</li>
-    <li>She ___ (not sleep) at 10 pm.</li>
-    <li>They ___ (not play) outside when it started to rain.</li>
-    <li>We ___ (not listen) to music when he came in.</li>
-    <li>He ___ (not drive) fast when the accident happened.</li>
-    <li>I ___ (not study) when my parents arrived.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>What ___ you ___ (do) at 7 pm yesterday?</li>
-    <li>___ she ___ (watch) TV when you visited her?</li>
-    <li>Where ___ they ___ (go) when you saw them?</li>
-    <li>What ___ he ___ (do) when it started to rain?</li>
-    <li>___ you ___ (sleep) when I called?</li>
-    <li>Who ___ they ___ (talk) to when you entered?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>was / I / when / walking / started / it / raining</li>
-    <li>she / TV / watching / was / arrived / I / when</li>
-    <li>they / having / were / dinner / the phone / rang / when</li>
-    <li>dark / playing / got / we / it / were / when</li>
-    <li>sleeping / he / the alarm / went off / was / when</li>
-    <li>doing / was / homework / I / my / called / friend / my / when</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>He _________ (drive) home when he _________ (see) the accident.</li>
-    <li>We _________ (sit) in the park when it _________ (start) to rain.</li>
-    <li>They _________ (not listen) when the teacher _________ (explain).</li>
-    <li>She _________ (read) a book while he _________ (cook) dinner.</li>
-    <li>I _________ (walk) to school when I _________ (meet) my friend.</li>
-    <li>What _________ you _________ (do) when the lights _________ (go off)?</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>I (was watching / watched) TV when he (called / was calling).</li>
-    <li>They (were playing / played) outside when it (started / was starting) to rain.</li>
-    <li>She (was walking / walked) home when she (saw / was seeing) the dog.</li>
-    <li>We (were eating / ate) when the phone (rang / was ringing).</li>
-    <li>He (was sleeping / slept) when I (came / was coming) in.</li>
-    <li>What (were you doing / did you do) at 8 pm yesterday?</li>
-  </ol>
-</div>
-
-<!-- TOPIC 4 -->
-<div class="topic" id="topic4">
-  <h2>4. Future Forms: Will / Going To / Present Continuous</h2>
-  <div class="meta">Level: Intermediate · Plans, decisions, timetables</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    <b>Will</b> – instant decisions, promises, predictions.  
-    <b>Be going to</b> – plans, intentions, predictions with evidence.  
-    <b>Present Continuous</b> – fixed future arrangements (with time).
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>Will</b> — решение сейчас, обещание, прогноз.  
-    <b>Be going to</b> — уже продуманный план/намерение, «так собираюсь сделать».  
-    <b>Present Continuous</b> — конкретная договорённость (встреча, расписание).
-  </div>
-
-  <div class="formula">
-    will + V · am/is/are going to + V · am/is/are + V-ing (future meaning)
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I think it ___ (rain) tomorrow. (will)</li>
-    <li>She ___ (visit) her grandparents next weekend. (is going to)</li>
-    <li>They ___ (meet) at 6 pm tonight. (are meeting)</li>
-    <li>We ___ (travel) to Italy this summer. (are going to)</li>
-    <li>I ___ (help) you with your homework. (will)</li>
-    <li>He ___ (start) a new course next month. (is going to)</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>I ___ (not go) to the party. (am not going to)</li>
-    <li>She ___ (not come) today. (won’t)</li>
-    <li>They ___ (not leave) at 5, they ___ (leave) at 6. (aren’t leaving)</li>
-    <li>We ___ (not travel) this year. (aren’t going to)</li>
-    <li>He ___ (not do) it now. (won’t)</li>
-    <li>It ___ (not be) easy. (won’t)</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>___ you ___ (help) me with this? (will)</li>
-    <li>What ___ you ___ (do) tomorrow evening? (are)</li>
-    <li>___ she ___ (visit) her parents this weekend? (is going to)</li>
-    <li>When ___ they ___ (leave)? (are)</li>
-    <li>Where ___ we ___ (meet)? (are)</li>
-    <li>___ it ___ (rain) tomorrow? (will)</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>think / it / I / rain / will</li>
-    <li>going / is / she / to / study / medicine</li>
-    <li>meeting / they / at 7 / are</li>
-    <li>help / I / you / will</li>
-    <li>are / we / to / travel / going / this summer</li>
-    <li>not / will / easy / be / it</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>Look at the clouds. It _________ (rain).</li>
-    <li>We _________ (meet) at 4 o’clock tomorrow.</li>
-    <li>I think he _________ (pass) the exam.</li>
-    <li>She _________ (visit) her cousin next week.</li>
-    <li>We _________ (not travel) this year.</li>
-    <li>What _________ you _________ (do) this evening?</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>It’s very late. I (will take / am taking) a taxi.</li>
-    <li>We (are going to visit / will visit) our grandma at the weekend – plan.</li>
-    <li>Look at those clouds! It (is going to rain / will rain).</li>
-    <li>They (are meeting / will meet) at 7 – it’s in their calendar.</li>
-    <li>I promise I (will help / am going to help) you.</li>
-    <li>She (is going to learn / learns) French next year.</li>
-  </ol>
-</div>
-
-<!-- TOPIC 5 -->
-<div class="topic" id="topic5">
-  <h2>5. Used To / Be Used To / Get Used To</h2>
-  <div class="meta">Level: Intermediate · Past habits & adaptation</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    <b>used to + V</b> – past habits or states that are not true now.  
-    <b>be used to + V-ing/noun</b> – to be accustomed to something now.  
-    <b>get used to + V-ing/noun</b> – to become accustomed, process of change.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>used to + V</b> — «раньше делал / было, но сейчас нет».  
-    <b>be used to + V-ing</b> — «привык, для него это нормально».  
-    <b>get used to + V-ing</b> — «привыкает (процесс)».
-  </div>
-
-  <div class="formula">
-    used to + V · be used to + V-ing / noun · get used to + V-ing / noun
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I ___ (use) to play outside every day when I was a child.</li>
-    <li>She ___ (be) used to getting up early.</li>
-    <li>They ___ (get) used to living in a big city.</li>
-    <li>He ___ (use) to live in a small village.</li>
-    <li>We ___ (be) used to cold weather.</li>
-    <li>She ___ (get) used to speaking English at school.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>I ___ (not use) to like vegetables.</li>
-    <li>She ___ (not be) used to driving on the left.</li>
-    <li>They ___ (not get) used to the noise yet.</li>
-    <li>He ___ (not use) to watch TV every day.</li>
-    <li>We ___ (not be) used to such hot weather.</li>
-    <li>She ___ (not get) used to online lessons.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>___ you ___ (use) to play outside a lot?</li>
-    <li>___ she ___ (be) used to living alone?</li>
-    <li>___ they ___ (get) used to the new school?</li>
-    <li>What games ___ you ___ (use) to play?</li>
-    <li>How long ___ he ___ (be) used to this job?</li>
-    <li>When ___ you ___ (get) used to the climate?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>used / I / to / live / in a village</li>
-    <li>is / to / used / she / getting up early</li>
-    <li>used / they / living / to / are / in a city</li>
-    <li>get / used / is / he / to / working / late</li>
-    <li>used / we / to / weren’t / hot weather</li>
-    <li>get / used / are / to / they / online lessons</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>I _________ (use) to play with my friends in the street.</li>
-    <li>She is _________ (be used to) eating late.</li>
-    <li>They are _________ (get used to) studying online.</li>
-    <li>He _________ (not use to) drink coffee.</li>
-    <li>We are _________ (not be used to) speaking English every day.</li>
-    <li>She is _________ (get used to) her new school.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>I (used to play / am used to play) football after school.</li>
-    <li>She (is used to getting / used to get) up early.</li>
-    <li>They (are getting used to / used to) living in London.</li>
-    <li>He (didn’t use to like / wasn’t used to like) vegetables.</li>
-    <li>We (aren’t used to / didn’t use to) hot weather.</li>
-    <li>She (is getting used to / used to getting) online lessons.</li>
-  </ol>
-</div>
-
-<!-- TOPIC 6 -->
-<div class="topic" id="topic6">
-  <h2>6. Modal Verbs of Deduction (must / might / can’t)</h2>
-  <div class="meta">Level: Intermediate · Guessing about the present</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    We use these modals to show how sure we are about something now:  
-    <b>must</b> – almost sure; <b>might/may/could</b> – possible; <b>can’t</b> – impossible.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Модальные глаголы для предположений о настоящем:  
-    <b>must</b> — наверняка; <b>might/may/could</b> — возможно; <b>can’t</b> — не может быть.
-  </div>
-
-  <div class="formula">
-    must + V · might/may/could + V · can’t + V
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>He ___ be at home. The lights are on. (must)</li>
-    <li>She ___ be a teacher. She works at school. (must)</li>
-    <li>They ___ be tired after the trip. (must)</li>
-    <li>It ___ be easy for you. (might)</li>
-    <li>He ___ know the answer. (might)</li>
-    <li>She ___ be in the library. (could)</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>He ___ be 10. He looks 20. (can’t)</li>
-    <li>She ___ be at home. I saw her at school. (can’t)</li>
-    <li>They ___ be hungry. They have just eaten. (can’t)</li>
-    <li>It ___ be true. (can’t)</li>
-    <li>He ___ be ill. He is playing football. (can’t)</li>
-    <li>This story ___ be real. (can’t)</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Where can he be? He ___ be at work. (must/might?)</li>
-    <li>Why is she late? She ___ be stuck in traffic. (might)</li>
-    <li>Who is at the door? It ___ be our neighbours. (might)</li>
-    <li>Why is he so happy? He ___ pass the exam. (must)</li>
-    <li>Why is the light on? Someone ___ be inside. (must)</li>
-    <li>Why is it so quiet? They ___ be sleeping. (might)</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>be / must / tired / he</li>
-    <li>she / can’t / home / be / at</li>
-    <li>be / they / might / busy</li>
-    <li>true / be / can’t / it</li>
-    <li>must / here / be / he</li>
-    <li>might / in the park / be / they</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>He ___ be in his room. I hear music.</li>
-    <li>She ___ be angry. She is smiling.</li>
-    <li>They ___ be at school. It’s Sunday.</li>
-    <li>It ___ be Tom. I can see his car.</li>
-    <li>This ___ be a mistake. Check again.</li>
-    <li>He ___ be Russian. His accent is different.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>He ___ be at work. (must / can’t)</li>
-    <li>She ___ be 5. She is in grade 9. (can’t / might)</li>
-    <li>They ___ be tired after the game. (must / can’t)</li>
-    <li>It ___ be Anna, I’m not sure. (might / can’t)</li>
-    <li>He ___ be ill. He is in hospital. (must / might)</li>
-    <li>This story ___ be true. It’s crazy. (can’t / must)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 7 -->
-<div class="topic" id="topic7">
-  <h2>7. Second Conditional</h2>
-  <div class="meta">Level: Intermediate · Unreal present/future</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    We use the <b>Second Conditional</b> for unreal or imaginary situations in the present or future.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>Second Conditional</b> – нереальные, воображаемые ситуации про настоящее/будущее: мечты, советы «на твоём месте».
-  </div>
-
-  <div class="formula">
-    If + Past Simple, would + V
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>If I had more money, I ___ (travel) around the world.</li>
-    <li>If she studied harder, she ___ (get) better marks.</li>
-    <li>If they lived near the sea, they ___ (swim) every day.</li>
-    <li>If he spoke English well, he ___ (find) a good job.</li>
-    <li>If we had a bigger house, we ___ (invite) more guests.</li>
-    <li>If I were older, I ___ (drive) a car.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>If I didn’t love music, I ___ (not play) the guitar.</li>
-    <li>If she weren’t so busy, she ___ (not work) every weekend.</li>
-    <li>If they didn’t live far, they ___ (not miss) the bus.</li>
-    <li>If he weren’t shy, he ___ (not stay) at home.</li>
-    <li>If we didn’t have homework, we ___ (not be) tired.</li>
-    <li>If I weren’t afraid, I ___ (not avoid) speaking in public.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>What would you do if you ___ (win) a million dollars?</li>
-    <li>If you could travel anywhere, where ___ you ___ (go)?</li>
-    <li>If she ___ (be) the teacher, what would change?</li>
-    <li>Would he be happy if he ___ (move) to another city?</li>
-    <li>If they ___ (have) more free time, what would they do?</li>
-    <li>Would you help me if I ___ (ask) you?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>had / if / I / more time / would / I / study</li>
-    <li>help / you / would / if / I / could / I</li>
-    <li>if / she / harder / studied / get / would / better marks / she</li>
-    <li>were / rich / if / would / he / travel / he</li>
-    <li>not / if / so tired / they / would / sleep / be</li>
-    <li>invite / more friends / we / if / would / bigger / had / house / a</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>If I _________ (be) you, I _________ (study) more.</li>
-    <li>If she _________ (have) more time, she _________ (learn) Japanese.</li>
-    <li>If they _________ (live) in London, they _________ (visit) museums.</li>
-    <li>If we _________ (not have) school today, we _________ (go) to the beach.</li>
-    <li>If he _________ (see) this film, he _________ (enjoy) it.</li>
-    <li>If you _________ (call) me, I _________ (help) you.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>If I (have / had) wings, I (will / would) fly.</li>
-    <li>If she (studied / studies) more, she (will / would) pass.</li>
-    <li>He (will / would) help you if you (ask / asked) him.</li>
-    <li>If they (lived / live) in Spain, they (will / would) speak Spanish.</li>
-    <li>If we (didn’t have / don’t have) school, we (will / would) be happy.</li>
-    <li>If you (were / are) my friend, I (would / will) trust you.</li>
-  </ol>
-</div>
-
-<!-- TOPIC 8 -->
-<div class="topic" id="topic8">
-  <h2>8. Mixed Conditionals</h2>
-  <div class="meta">Level: Intermediate · Past cause, present result</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    Mixed conditionals connect different times:  
-    Past → now: unreal past action with present result.  
-    Now → past: unreal present condition with past result.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Смешанные условные предложения связывают разные времена:  
-    если бы что-то произошло в прошлом, сейчас было бы по-другому;  
-    или если бы сейчас было иначе, в прошлом было бы иначе.
-  </div>
-
-  <div class="formula">
-    Past → now: If + Past Perfect, would + V (now) · Now → past: If + Past Simple, would have + V3
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>If I had studied harder, I ___ (be) at university now.</li>
-    <li>If she had left earlier, she ___ (not be) late now.</li>
-    <li>If they had saved money, they ___ (have) a car now.</li>
-    <li>If he were more careful, he ___ (not have had) so many problems.</li>
-    <li>If we were rich now, we ___ (have bought) that house.</li>
-    <li>If you had listened to me, you ___ (be) happier now.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>If I hadn’t moved here, I ___ (not know) my best friend now.</li>
-    <li>If she had not missed the train, she ___ (not be) so tired now.</li>
-    <li>If they had not spent all the money, they ___ (not be) broke now.</li>
-    <li>If he weren’t so shy, he ___ (not have missed) that chance.</li>
-    <li>If we weren’t busy now, we ___ (not have cancelled) the trip.</li>
-    <li>If you had not failed the exam, you ___ (not feel) so bad now.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>What would you ___ (do) now if you had stayed in your old school?</li>
-    <li>If you hadn’t met your best friend, where would you ___ (be) now?</li>
-    <li>If she were more confident, what would she ___ (have done) last year?</li>
-    <li>If they had practised more, would they ___ (be) champions now?</li>
-    <li>If he were taller, would he ___ (have become) a basketball player?</li>
-    <li>If we had lived abroad, would we ___ (speak) English better now?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>had / I / harder / if / studied / be / would / I / now / at university</li>
-    <li>if / listened / to me / had / you / be / happier / would / you / now</li>
-    <li>have / would / they / if / money / more / saved / now / a car</li>
-    <li>weren’t / he / so shy / would / have / he / that chance / missed / not</li>
-    <li>hadn’t / if / we / moved / here / know / wouldn’t / our friends / we</li>
-    <li>if / better / were / my English / have / I / would / found / a job</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>If I _________ (not waste) my time, I _________ (be) more successful now.</li>
-    <li>If she _________ (work) harder, she _________ (not fail) last year.</li>
-    <li>If they _________ (go) abroad, they _________ (speak) better English now.</li>
-    <li>If we _________ (not miss) the train, we _________ (be) at home now.</li>
-    <li>If he _________ (be) more careful, he _________ (not have) that accident.</li>
-    <li>If you _________ (not shout) at him, he _________ (be) your friend now.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>If I (had studied / studied) harder, I (would be / would have been) at university now.</li>
-    <li>If she (were / had been) more confident, she (would do / would have done) more last year.</li>
-    <li>If they (had saved / saved) money, they (would have / would have had) a car now.</li>
-    <li>If we (weren’t / hadn’t been) busy now, we (wouldn’t cancel / wouldn’t have cancelled) the trip.</li>
-    <li>If he (had listened / listened) to you, he (wouldn’t be / wouldn’t have been) in trouble now.</li>
-    <li>If you (were / had been) taller, you (would play / would have played) basketball.</li>
-  </ol>
-</div>
-
-<!-- TOPIC 9 -->
-<div class="topic" id="topic9">
-  <h2>9. Passive Voice (Intermediate)</h2>
-  <div class="meta">Level: Intermediate · Focus on the action</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    The Passive Voice focuses on the action, not the doer. We use it when the doer is unknown or not important.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Страдательный залог (Passive) — важнее действие, чем исполнитель:  
-    «дом построили» вместо «кто-то построил дом».
-  </div>
-
-  <div class="formula">
-    Present: am/is/are + V3 · Past: was/were + V3 · Future: will be + V3
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>The letters ___ (send) every Monday.</li>
-    <li>The homework ___ (check) by the teacher.</li>
-    <li>This film ___ (watch) all over the world.</li>
-    <li>The room ___ (clean) yesterday.</li>
-    <li>The project ___ (finish) next week.</li>
-    <li>English ___ (speak) in many countries.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>The work ___ (not do) on time.</li>
-    <li>The test ___ (not check) yet.</li>
-    <li>The email ___ (not send) yesterday.</li>
-    <li>The room ___ (not clean) every day.</li>
-    <li>The homework ___ (not do) by many students.</li>
-    <li>The project ___ (not start) last month.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>When ___ the letters ___ (send)?</li>
-    <li>___ the homework ___ (check) yesterday?</li>
-    <li>Where ___ English ___ (speak)?</li>
-    <li>___ the project ___ (finish) next week?</li>
-    <li>Why ___ the work ___ (not do)?</li>
-    <li>How often ___ the room ___ (clean)?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>is / homework / the / checked / always</li>
-    <li>sent / emails / are / every day</li>
-    <li>was / cleaned / the / yesterday / room</li>
-    <li>will / be / finished / project / the / soon</li>
-    <li>books / are / in the library / kept</li>
-    <li>the / spoken / is / language / everywhere / English</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>The letters _________ (send) every week.</li>
-    <li>The test _________ (not check) yet.</li>
-    <li>The room _________ (clean) yesterday.</li>
-    <li>The project _________ (finish) next month.</li>
-    <li>These books _________ (keep) in the library.</li>
-    <li>English _________ (speak) in this country.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>The homework (is do / is done) every day.</li>
-    <li>The letters (are sent / send) on Fridays.</li>
-    <li>The room (was cleaned / cleaned) yesterday.</li>
-    <li>The project (will be finished / will finished) next week.</li>
-    <li>English (is spoken / is speaked) here.</li>
-    <li>The work (was not done / did not done) on time.</li>
-  </ol>
-</div>
-
-<!-- TOPIC 10 -->
-<div class="topic" id="topic10">
-  <h2>10. Reported Speech (Statements)</h2>
-  <div class="meta">Level: Intermediate · Saying what someone said</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    In reported speech we repeat what someone said without quotation marks and usually shift tenses back into the past.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Косвенная речь — передаём чужие слова без кавычек, обычно сдвигая время «на шаг назад»:  
-    am → was, do → did, will → would и т.д.
-  </div>
-
-  <div class="formula">
-    say / tell + (that) + clause; tense backshift: Present → Past, Past → Past Perfect, will → would
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>“I am tired,” he said. → He said he ___ (be) tired.</li>
-    <li>“We will go home,” they said. → They said they ___ (go) home.</li>
-    <li>“I like this book,” she said. → She said she ___ (like) that book.</li>
-    <li>“I have finished,” he said. → He said he ___ (finish).</li>
-    <li>“We are happy,” they said. → They said they ___ (be) happy.</li>
-    <li>“I can swim,” she said. → She said she ___ (can) swim.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>“I don’t know,” he said. → He said he ___ (not know).</li>
-    <li>“We won’t come,” they said. → They said they ___ (not come).</li>
-    <li>“I didn’t see him,” she said. → She said she ___ (not see) him.</li>
-    <li>“I haven’t finished,” he said. → He said he ___ (not finish).</li>
-    <li>“We aren’t ready,” they said. → They said they ___ (not be) ready.</li>
-    <li>“I can’t drive,” she said. → She said she ___ (not can) drive.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>“Where do you live?” he asked me. → He asked me where I ___ (live).</li>
-    <li>“When will you come?” she asked. → She asked when I ___ (come).</li>
-    <li>“Do you like English?” he asked. → He asked if I ___ (like) English.</li>
-    <li>“Did you see the film?” she asked. → She asked if I ___ (see) the film.</li>
-    <li>“Are you tired?” he asked. → He asked if I ___ (be) tired.</li>
-    <li>“Can you help me?” she asked. → She asked if I ___ (can) help her.</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>said / he / that / tired / he / was</li>
-    <li>she / that / happy / was / said / she</li>
-    <li>told / he / me / that / finished / had / he</li>
-    <li>asked / if / me / he / liked / English / I</li>
-    <li>they / coming / said / were / they / not</li>
-    <li>she / asked / when / coming / I / was</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>He said he _________ (be) busy.</li>
-    <li>She said she _________ (not like) the film.</li>
-    <li>They said they _________ (go) to London.</li>
-    <li>He told me he _________ (not see) that man before.</li>
-    <li>She said she _________ (finish) her homework.</li>
-    <li>They said they _________ (not be) ready.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>He said he (is / was) happy.</li>
-    <li>She said she (likes / liked) that book.</li>
-    <li>They said they (will go / would go) home.</li>
-    <li>He said he (has finished / had finished) the test.</li>
-    <li>She asked if I (am / was) tired.</li>
-    <li>He asked when I (will come / would come).</li>
-  </ol>
-</div>
-
-<!-- TOPIC 11 -->
-<div class="topic" id="topic11">
-  <h2>11. Relative Clauses (who / which / where)</h2>
-  <div class="meta">Level: Intermediate · Joining sentences</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    We use <b>who</b> for people, <b>which</b> for things/animals, <b>where</b> for places to add extra information about a noun.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Относительные местоимения:  
-    <b>who</b> – люди; <b>which</b> – предметы и животные; <b>where</b> – места.  
-    Помогают соединять предложения и уточнять существительное.
-  </div>
-
-  <div class="formula">
-    noun + who/which/where + clause
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>The man ___ lives next door is a doctor.</li>
-    <li>This is the book ___ I like most.</li>
-    <li>That’s the café ___ we met.</li>
-    <li>She is the girl ___ helped me.</li>
-    <li>This is the city ___ I was born.</li>
-    <li>They have a dog ___ loves playing.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>He isn’t the person ___ I talked to.</li>
-    <li>This isn’t the place ___ we had dinner.</li>
-    <li>That’s not the film ___ I wanted to watch.</li>
-    <li>She isn’t the girl ___ won the race.</li>
-    <li>This isn’t the shop ___ I usually go.</li>
-    <li>They aren’t the people ___ I invited.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Who is the man ___ is sitting there?</li>
-    <li>What is the name of the book ___ you read?</li>
-    <li>Where is the place ___ they usually meet?</li>
-    <li>Who is the girl ___ helped you?</li>
-    <li>Which is the film ___ you like best?</li>
-    <li>What is the city ___ you want to visit?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>who / the man / lives / there / is</li>
-    <li>book / which / reading / I / am / interesting / is</li>
-    <li>is / the / we / place / where / meet</li>
-    <li>girl / who / the / helped / me / is</li>
-    <li>park / which / the / I / in / walk / is</li>
-    <li>café / where / met / we / is / this</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>This is the teacher _________ (who/which) explains well.</li>
-    <li>That’s the film _________ (which/where) I want to see.</li>
-    <li>Here is the restaurant _________ (where/who) we had lunch.</li>
-    <li>He is the boy _________ (who/which) plays the guitar.</li>
-    <li>This is the house _________ (where/which) I grew up.</li>
-    <li>That’s the dog _________ (who/which) barks loudly.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>The man ___ lives next door is friendly. (who / which)</li>
-    <li>This is the place ___ we met. (where / who)</li>
-    <li>That’s the book ___ I told you about. (which / where)</li>
-    <li>She is the girl ___ won the prize. (who / which)</li>
-    <li>This is the city ___ I want to visit. (where / who)</li>
-    <li>This is the dog ___ likes playing. (who / which)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 12 -->
-<div class="topic" id="topic12">
-  <h2>12. Gerunds & Infinitives (advanced)</h2>
-  <div class="meta">Level: Intermediate · Verb patterns</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    Some verbs are followed by a gerund (V-ing), some by an infinitive (to + V), and some by object + infinitive.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    После разных глаголов идут разные формы:  
-    <b>Gerund (V-ing)</b> – enjoy, avoid, finish…  
-    <b>Infinitive (to V)</b> – want, decide, hope…  
-    <b>object + to V</b> – want someone to do.
-  </div>
-
-  <div class="formula">
-    V + V-ing · V + to V · V + object + to V
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I enjoy ___ (read) books.</li>
-    <li>She decided ___ (move) to another city.</li>
-    <li>They want ___ (visit) London.</li>
-    <li>He finished ___ (do) his homework.</li>
-    <li>We hope ___ (see) you soon.</li>
-    <li>She suggested ___ (go) to the cinema.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>He doesn’t want ___ (go) out tonight.</li>
-    <li>She avoided ___ (talk) to him.</li>
-    <li>They decided not ___ (buy) that car.</li>
-    <li>I stopped ___ (eat) junk food.</li>
-    <li>We didn’t plan ___ (stay) so long.</li>
-    <li>She hates ___ (wait) in queues.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Do you enjoy ___ (learn) English?</li>
-    <li>Why did she decide ___ (change) her job?</li>
-    <li>Do they want ___ (travel) by train?</li>
-    <li>What did he finish ___ (write)?</li>
-    <li>Did you plan ___ (visit) your grandparents?</li>
-    <li>Does she like ___ (cook) at home?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>reading / I / enjoy / books</li>
-    <li>to / she / wants / learn / English</li>
-    <li>decided / we / travel / to</li>
-    <li>playing / he / football / loves</li>
-    <li>go / suggested / she / to / cinema / the</li>
-    <li>homework / finished / his / he / doing</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>I would like _________ (go) to the party.</li>
-    <li>He enjoys _________ (play) the guitar.</li>
-    <li>They decided _________ (stay) at home.</li>
-    <li>She stopped _________ (watch) TV.</li>
-    <li>We hope _________ (meet) you again.</li>
-    <li>He suggested _________ (take) a taxi.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>I enjoy (to read / reading) books.</li>
-    <li>She wants (to go / going) home.</li>
-    <li>They decided (to travel / travelling) by car.</li>
-    <li>He finished (to write / writing) the letter.</li>
-    <li>We hope (to see / seeing) you soon.</li>
-    <li>She hates (to wait / waiting) in traffic.</li>
-  </ol>
-</div>
-
-<!-- TOPIC 13 -->
-<div class="topic" id="topic13">
-  <h2>13. Articles (advanced)</h2>
-  <div class="meta">Level: Intermediate · a/an, the, zero</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    <b>a/an</b> – first mention, one of many;  
-    <b>the</b> – specific, known;  
-    <b>zero article</b> – plural and uncountable in general, names, languages, sports.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>a/an</b> – «какой-то, один» (впервые упоминаем);  
-    <b>the</b> – «тот самый, конкретный»;  
-    без артикля – вообще, в целом (music, water), языки, виды спорта.
-  </div>
-
-  <div class="formula">
-    a/an + singular countable · the + specific noun · Ø + general / plural / uncountable
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>He is ___ engineer.</li>
-    <li>She bought ___ new phone.</li>
-    <li>___ sun is very bright today.</li>
-    <li>We visited ___ museum in our city.</li>
-    <li>She loves ___ music.</li>
-    <li>They play ___ football every weekend.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>He isn’t ___ doctor, he is ___ teacher.</li>
-    <li>This isn’t ___ answer I wanted.</li>
-    <li>We don’t have ___ car.</li>
-    <li>She doesn’t play ___ piano.</li>
-    <li>This isn’t ___ biggest city.</li>
-    <li>They don’t watch ___ TV in the morning.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Is he ___ student or ___ teacher?</li>
-    <li>Did you see ___ film I told you about?</li>
-    <li>Do you like ___ music?</li>
-    <li>Is this ___ book you were reading?</li>
-    <li>Do they play ___ basketball?</li>
-    <li>Is ___ Nile ___ longest river?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>engineer / he / an / is</li>
-    <li>sun / the / shining / is</li>
-    <li>a / she / has / cat</li>
-    <li>museum / the / visited / we</li>
-    <li>music / loves / she / Ø</li>
-    <li>football / play / Ø / they</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>He is ___ (a / an / the) honest man.</li>
-    <li>She bought ___ (a / an / the) interesting book.</li>
-    <li>___ (A / An / The) moon is bright tonight.</li>
-    <li>They live near ___ (a / the / Ø) sea.</li>
-    <li>She loves ___ (the / Ø) classical music.</li>
-    <li>He plays ___ (the / Ø) tennis every Saturday.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>He is ___ engineer. (a / an / the)</li>
-    <li>This is ___ book you wanted. (a / an / the)</li>
-    <li>She likes ___ music. (the / Ø)</li>
-    <li>They saw ___ Eiffel Tower. (a / an / the)</li>
-    <li>We visited ___ museum in our city. (a / the)</li>
-    <li>He drinks ___ water every day. (a / Ø)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 14 -->
-<div class="topic" id="topic14">
-  <h2>14. Phrasal Verbs</h2>
-  <div class="meta">Level: Intermediate · Verb + particle</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    A phrasal verb = verb + particle (up, on, off, after…) and often has an idiomatic meaning not clear from the words.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Фразовый глагол – глагол + маленькое слово (up, on, off, after…), и вместе часто дают новое значение:  
-    break up – расстаться, look after – присматривать.
-  </div>
-
-  <div class="formula">
-    verb + particle → new meaning (break up, turn on, look after, give up...)
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>They decided to break ___ (end the relationship).</li>
-    <li>Please turn ___ the lights. It’s dark. (on)</li>
-    <li>I will pick you ___ at 7 pm. (up)</li>
-    <li>She looks ___ her little brother. (after)</li>
-    <li>Don’t give ___ — keep trying. (up)</li>
-    <li>He took ___ a new hobby. (up)</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>Don’t turn ___ your phone in class. (on)</li>
-    <li>They didn’t break ___ last year. (up)</li>
-    <li>He doesn’t look ___ his plants well. (after)</li>
-    <li>She didn’t give ___ when it was difficult. (up)</li>
-    <li>We didn’t take ___ any new projects. (on/up)</li>
-    <li>I don’t want to wake ___ early. (up)</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Can you turn ___ the TV, please? (on/off)</li>
-    <li>Who looks ___ your dog when you travel? (after)</li>
-    <li>When did they break ___? (up)</li>
-    <li>Did you take ___ any new hobbies? (up)</li>
-    <li>Why did he give ___ so soon? (up)</li>
-    <li>What time do you wake ___? (up)</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>up / broke / they</li>
-    <li>after / she / looks / her sister</li>
-    <li>off / lights / turn / the</li>
-    <li>gave / he / up / smoking</li>
-    <li>up / children / the / wakes</li>
-    <li>up / new / took / he / sport / a</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>Please _________ (turn on) the TV.</li>
-    <li>They _________ (break up) last month.</li>
-    <li>She _________ (look after) her grandparents.</li>
-    <li>He _________ (take up) running last year.</li>
-    <li>Don’t _________ (give up)! You can do it.</li>
-    <li>We _________ (wake up) at 7 o’clock.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>She (looks after / looks for) her little sister.</li>
-    <li>They (broke up / broke out) last year.</li>
-    <li>Please (turn on / turn off) the radio.</li>
-    <li>He (took off / took up) swimming as a hobby.</li>
-    <li>Don’t (give in / give up) so easily.</li>
-    <li>What time do you (wake up / get up) on Sundays?</li>
-  </ol>
-</div>
-
-<!-- TOPIC 15 -->
-<div class="topic" id="topic15">
-  <h2>15. Linking Words</h2>
-  <div class="meta">Level: Intermediate · Connecting ideas</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    Linking words connect sentences and ideas:  
-    <b>although</b> (contrast), <b>however</b> (contrast), <b>because</b> (reason), <b>therefore</b> (result), <b>in order to</b> (purpose).
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Связующие слова:  
-    <b>although</b> – хотя; <b>however</b> – однако; <b>because</b> – потому что;  
-    <b>therefore</b> – поэтому; <b>in order to</b> – чтобы (цель).
-  </div>
-
-  <div class="formula">
-    although + clause; clause. However, clause; because + clause; therefore + result; in order to + V
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>Although it was cold, we ___ (go) for a walk.</li>
-    <li>He was tired; however, he ___ (finish) the work.</li>
-    <li>She studied hard, therefore she ___ (pass) the exam.</li>
-    <li>They went home because it ___ (be) late.</li>
-    <li>He saved money in order to ___ (buy) a car.</li>
-    <li>Although she was ill, she ___ (go) to school.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>Although he was hungry, he ___ (not eat).</li>
-    <li>She was busy; however, she ___ (not call) us.</li>
-    <li>They didn’t go out because it ___ (not stop) raining.</li>
-    <li>We didn’t stay long, therefore we ___ (not see) everything.</li>
-    <li>He didn’t save money in order to ___ (not buy) a car.</li>
-    <li>Although they were tired, they ___ (not stop).</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Why did you stay at home although it ___ (be) sunny?</li>
-    <li>Did he go to work although he ___ (be) ill?</li>
-    <li>Why didn’t she call us, however she ___ (have) time?</li>
-    <li>What did you do because you ___ (be) late?</li>
-    <li>What did he buy in order to ___ (help) his family?</li>
-    <li>Did they pass the exam, therefore they ___ (be) happy?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>cold / was / although / it / went / we / out</li>
-    <li>tired / was / he / however / finished / work / his</li>
-    <li>because / stayed / I / at home / it / raining / was</li>
-    <li>to / English / order / study / in / she / passed / to</li>
-    <li>late / it / home / went / they / because / was</li>
-    <li>therefore / she / happy / was / passed / she / exam / the</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>_________ it was raining, we went outside.</li>
-    <li>He was tired; _________, he finished the project.</li>
-    <li>She didn’t come _________ she was ill.</li>
-    <li>He saved money _________ buy a new phone.</li>
-    <li>They were late; _________, they missed the train.</li>
-    <li>_________ it was difficult, he didn’t give up.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>_________ it was cold, we went out. (Although / Because)</li>
-    <li>He was tired; _________, he kept working. (however / because)</li>
-    <li>She stayed home _________ she felt sick. (because / although)</li>
-    <li>He worked hard; _________, he passed the exam. (therefore / although)</li>
-    <li>He saved money _________ buy a car. (to / in order to)</li>
-    <li>_________ it was late, they didn’t go to bed. (Although / Because)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 16 -->
-<div class="topic" id="topic16">
-  <h2>16. Countable & Uncountable Nouns</h2>
-  <div class="meta">Level: Intermediate · much/many, a little/a few, some/any</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    Countable nouns can be counted (1,2,3…). Uncountable nouns cannot be counted easily.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Исчисляемые существительные можно посчитать (apple, book).  
-    Неисчисляемые нельзя посчитать поштучно (water, rice, sugar).
-  </div>
-
-  <div class="formula">
-    many/few/a few + countable · much/little/a little + uncountable · some/any + both
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>There are ___ apples on the table. (many)</li>
-    <li>There is ___ water in the glass. (a little)</li>
-    <li>She has ___ friends in class. (a few)</li>
-    <li>We need ___ sugar. (some)</li>
-    <li>They have ___ books at home. (many)</li>
-    <li>There is ___ rice left. (a little)</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>There aren’t ___ bananas. (any)</li>
-    <li>We don’t have ___ milk. (any)</li>
-    <li>She doesn’t have ___ time. (much)</li>
-    <li>There aren’t ___ chairs. (many)</li>
-    <li>He doesn’t need ___ coffee. (much)</li>
-    <li>They don’t have ___ friends. (many)</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Do you have ___ water? (any)</li>
-    <li>Are there ___ books? (any)</li>
-    <li>How ___ money do you have? (much)</li>
-    <li>How ___ apples are there? (many)</li>
-    <li>Do they need ___ help? (any)</li>
-    <li>Is there ___ bread? (any)</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>many / books / she / has</li>
-    <li>water / little / a / there / is</li>
-    <li>any / you / have / do / questions</li>
-    <li>much / time / have / we / don’t</li>
-    <li>few / a / friends / he / has</li>
-    <li>sugar / any / isn’t / there</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>There are ___ (many/much) students.</li>
-    <li>There is ___ (little/few) juice.</li>
-    <li>She has ___ (a few/a little) pencils.</li>
-    <li>Do we have ___ (some/any) eggs?</li>
-    <li>He needs ___ (much/many) water.</li>
-    <li>I have ___ (a little/a few) homework.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>How ___ water? (much / many)</li>
-    <li>How ___ books? (much / many)</li>
-    <li>She has ___ friends. (a few / a little)</li>
-    <li>There isn’t ___ milk. (any / some)</li>
-    <li>I have ___ money. (little / few)</li>
-    <li>We need ___ sugar. (some / any)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 17 -->
-<div class="topic" id="topic17">
-  <h2>17. Complex Object (V + object + to V)</h2>
-  <div class="meta">Level: Intermediate · want/ask/tell someone to do</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    Complex Object is used after verbs like want, ask, tell, expect, allow:  
-    I want you to help me.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Сложное дополнение: глагол + объект + to V.  
-    Примеры глаголов: want, ask, tell, expect, allow.  
-    I want you to help – Я хочу, чтобы ты помог.
-  </div>
-
-  <div class="formula">
-    S + V + object + to V
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I want you ___ (help) me.</li>
-    <li>They asked him ___ (come) early.</li>
-    <li>She told me ___ (wait).</li>
-    <li>We expect you ___ (finish) on time.</li>
-    <li>He wants her ___ (call) later.</li>
-    <li>They allowed us ___ (enter).</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>I don’t want you ___ (go).</li>
-    <li>They didn’t ask him ___ (stay).</li>
-    <li>She didn’t tell me ___ (do) it.</li>
-    <li>He doesn’t expect us ___ (win).</li>
-    <li>We didn’t allow them ___ (leave).</li>
-    <li>She doesn’t want me ___ (talk).</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Do you want me ___ (help)?</li>
-    <li>Did they ask you ___ (come)?</li>
-    <li>Does she want him ___ (study)?</li>
-    <li>Did he tell you ___ (wait)?</li>
-    <li>Do they expect her ___ (win)?</li>
-    <li>Did you allow him ___ (drive)?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>help / want / I / to / you</li>
-    <li>asked / come / they / him / to</li>
-    <li>told / wait / she / me / to</li>
-    <li>expect / finish / we / to / you</li>
-    <li>her / wants / call / to / he</li>
-    <li>allowed / us / enter / they / to</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>I want you _________ (help).</li>
-    <li>They asked me _________ (bring) it.</li>
-    <li>She told him _________ (sit).</li>
-    <li>He allowed me _________ (go).</li>
-    <li>We expect them _________ (win).</li>
-    <li>She wants us _________ (listen).</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>I want you ___ me. (to help / helping)</li>
-    <li>They asked him ___ home. (to come / coming)</li>
-    <li>She told me ___ quiet. (to be / be)</li>
-    <li>He allowed us ___. (to leave / leaving)</li>
-    <li>We expect you ___. (to try / trying)</li>
-    <li>She wants me ___ more. (to study / studying)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 18 -->
-<div class="topic" id="topic18">
-  <h2>18. Causative Form (have/get something done)</h2>
-  <div class="meta">Level: Intermediate · Someone does it for you</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    We use causative when someone does something for us:  
-    I had my hair cut. (= someone cut my hair).
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Каузатив: мы заказываем услугу – кто-то делает что-то для нас.  
-    I had my hair cut – мне постригли волосы.
-  </div>
-
-  <div class="formula">
-    have/get + object + V3
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>I had my hair ___ (cut).</li>
-    <li>She got her phone ___ (repair).</li>
-    <li>We had our house ___ (paint).</li>
-    <li>He got his car ___ (wash).</li>
-    <li>They had their roof ___ (fix).</li>
-    <li>She got her nails ___ (do).</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>I didn’t have my bike ___ (repair).</li>
-    <li>She didn’t get her phone ___ (fix).</li>
-    <li>They didn’t have their car ___ (wash).</li>
-    <li>He didn’t get his suit ___ (clean).</li>
-    <li>We don’t have our roof ___ (fix).</li>
-    <li>She didn’t get her dress ___ (shorten).</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Did you have your hair ___ (cut)?</li>
-    <li>Did she get her phone ___ (repair)?</li>
-    <li>Did they have their house ___ (paint)?</li>
-    <li>Did he get his car ___ (wash)?</li>
-    <li>Do you have your laptop ___ (fix)?</li>
-    <li>Did she get her nails ___ (do)?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>my / hair / had / cut / I</li>
-    <li>got / phone / repaired / her / she</li>
-    <li>car / their / washed / had / they</li>
-    <li>house / painted / we / had / our</li>
-    <li>his / he / suit / cleaned / got</li>
-    <li>nails / her / done / got / she</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>I had my laptop _________ (fix).</li>
-    <li>She got her jacket _________ (clean).</li>
-    <li>They had their car _________ (repair).</li>
-    <li>He got his boots _________ (polish).</li>
-    <li>We had our garden _________ (water).</li>
-    <li>She got her bag _________ (fix).</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>I had my hair ___. (cut / cutting)</li>
-    <li>She got her phone ___. (repaired / repair)</li>
-    <li>They had their car ___. (washed / wash)</li>
-    <li>He got his suit ___. (cleaned / clean)</li>
-    <li>We had our roof ___. (fixed / fix)</li>
-    <li>She got her nails ___. (done / do)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 19 -->
-<div class="topic" id="topic19">
-  <h2>19. Cleft Sentences (It is/was … that …)</h2>
-  <div class="meta">Level: Intermediate · Emphasis</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    Cleft sentences use <b>It is/was</b> to emphasize a person, thing or time:  
-    It was John who helped me.
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    Cleft-предложения подчёркивают важную часть:  
-    It was John who helped me – Именно Джон помог мне.
-  </div>
-
-  <div class="formula">
-    It is/was + noun/pronoun + who/that + clause
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>It was John ___ helped me.</li>
-    <li>It was the exam ___ stressed her.</li>
-    <li>It is the book ___ I like most.</li>
-    <li>It was my mom ___ cooked dinner.</li>
-    <li>It is the place ___ we met.</li>
-    <li>It was Tom ___ called me.</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>It wasn’t John ___ called me.</li>
-    <li>It wasn’t the test ___ scared her.</li>
-    <li>It isn’t the film ___ I want.</li>
-    <li>It wasn’t my dad ___ fixed it.</li>
-    <li>It isn’t the shop ___ I mean.</li>
-    <li>It wasn’t the dog ___ barked.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Who was it ___ helped you?</li>
-    <li>What was it ___ made you upset?</li>
-    <li>Who was it ___ called?</li>
-    <li>What is it ___ you want?</li>
-    <li>Who was it ___ opened the door?</li>
-    <li>What was it ___ broke?</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>was / it / John / helped / who / me</li>
-    <li>exam / the / stressed / her / it / was</li>
-    <li>the / is / it / book / like / I / that</li>
-    <li>cooked / it / my mom / was / dinner</li>
-    <li>place / is / it / we / met / the / where</li>
-    <li>called / it / Tom / was / who</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>It was my friend _________ (who/that) helped.</li>
-    <li>It is the food _________ (that/where) I love.</li>
-    <li>It was the movie _________ (that/who) scared me.</li>
-    <li>It was she _________ (who/that) won.</li>
-    <li>It is the teacher _________ (who/which) explains well.</li>
-    <li>It was the day _________ (when/that) we met.</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>It was John ___ helped me. (who / which)</li>
-    <li>It is the place ___ we met. (where / that)</li>
-    <li>It was the dog ___ barked. (that / where)</li>
-    <li>It isn’t the book ___ I want. (that / who)</li>
-    <li>It was Anna ___ called. (who / where)</li>
-    <li>It was the moment ___ changed everything. (that / who)</li>
-  </ol>
-</div>
-
-<!-- TOPIC 20 -->
-<div class="topic" id="topic20">
-  <h2>20. Quantifiers: too / enough / so / such</h2>
-  <div class="meta">Level: Intermediate · Degree & intensity</div>
-
-  <div class="rule-block">
-    <b>Rule (EN):</b>
-    We use these words to show how strong or sufficient something is:  
-    <b>too + adj</b> – more than is good;  
-    <b>adj + enough</b> – sufficient;  
-    <b>so + adj</b> – very;  
-    <b>such + adj + noun</b> – very (with noun).
-  </div>
-
-  <div class="rule-block">
-    <b>Правило (RU):</b>
-    <b>too</b> – слишком; <b>enough</b> – достаточно; <b>so</b> – так, очень;  
-    <b>such</b> – такой/такая + существительное.
-  </div>
-
-  <div class="formula">
-    too + adj · adj + enough · so + adj · such + (a) + adj + noun
-  </div>
-
-  <h3>Exercise 1 – Affirmative</h3>
-  <ol>
-    <li>It is too ___ (cold).</li>
-    <li>She is tall enough ___ (play) basketball.</li>
-    <li>He is so ___ (kind).</li>
-    <li>It is such a ___ day. (nice)</li>
-    <li>They are too ___ (slow).</li>
-    <li>She is so ___ (happy).</li>
-  </ol>
-
-  <h3>Exercise 2 – Negative</h3>
-  <ol>
-    <li>He isn’t tall enough ___ (reach) the shelf.</li>
-    <li>It isn’t too ___ (late) to start.</li>
-    <li>She isn’t ___ enough. (strong)</li>
-    <li>They aren’t so ___ (fast) as us.</li>
-    <li>It isn’t such a ___ movie. (good)</li>
-    <li>He isn’t too ___ (busy) today.</li>
-  </ol>
-
-  <h3>Exercise 3 – Questions</h3>
-  <ol>
-    <li>Is it too ___ (hot) for you?</li>
-    <li>Is she ___ enough? (smart)</li>
-    <li>Is he so ___ (kind)?</li>
-    <li>Is it such a ___ day? (bad)</li>
-    <li>Are they too ___ (slow)?</li>
-    <li>Is it ___ enough? (warm)</li>
-  </ol>
-
-  <h3>Exercise 4 – Word Order</h3>
-  <ol>
-    <li>cold / too / it / is</li>
-    <li>tall / she / enough / is</li>
-    <li>kind / so / he / is</li>
-    <li>a / day / such / nice / it / is</li>
-    <li>slow / too / they / are</li>
-    <li>happy / so / she / is</li>
-  </ol>
-
-  <h3>Exercise 5 – Complete</h3>
-  <ol>
-    <li>It is too _________ (big).</li>
-    <li>She is _________ (strong) enough.</li>
-    <li>He is so _________ (funny).</li>
-    <li>It is such a _________ (sad) story.</li>
-    <li>They are _________ (too) slow.</li>
-    <li>It is warm _________ (enough).</li>
-  </ol>
-
-  <h3>Exercise 6 – Choose</h3>
-  <ol>
-    <li>It is ___ hot. (too / enough)</li>
-    <li>She is tall ___. (enough / too)</li>
-    <li>He is ___ kind. (so / such)</li>
-    <li>She is ___ a good student. (such / so)</li>
-    <li>They are ___ slow. (too / enough)</li>
-    <li>It is cold ___. (enough / such)</li>
-  </ol>
-  
 /* ---------- STATE & STORAGE ---------- */
 
 let currentUser = null; // {name, code, classLabel, stars, lastLogin}
@@ -2442,7 +1128,7 @@ function buildMainMenu(){
   chat.innerHTML = "";
   const msg = document.createElement("div");
   msg.className = "chat-msg";
-  msg.textContent = "AI Bayan chat will be available later. Now use topics and exercises.";
+  msg.textContent = "AI Bayan chat will be available later. Now use topics and explanations.";
   chat.appendChild(msg);
   document.getElementById("aiLimit").textContent = "· demo mode";
 }
@@ -2475,10 +1161,10 @@ function openTopic(id){
         : ""
     }
     ${
-      t.ruleRu || t.usageRu
+      t.ruleRu
         ? `<div class="grammar-ru">
              <strong>Правило (RU):</strong><br>
-             ${t.ruleRu||""}<br>${t.usageRu||""}
+             ${t.ruleRu}
            </div>`
         : ""
     }
@@ -2525,17 +1211,19 @@ function openTopic(id){
 
         const opts = document.createElement("div");
         opts.className = "options";
-        q.options.forEach((opt,optIndex)=>{
-          const label = document.createElement("label");
-          const radio = document.createElement("input");
-          radio.type = "radio";
-          const gname = `t${id}_e${exIndex}_q${qIndex}`;
-          radio.name = gname;
-          radio.value = optIndex;
-          label.appendChild(radio);
-          label.appendChild(document.createTextNode(" "+opt));
-          opts.appendChild(label);
-        });
+        if(q.options && q.options.length){
+          q.options.forEach((opt,optIndex)=>{
+            const label = document.createElement("label");
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            const gname = `t${id}_e${exIndex}_q${qIndex}`;
+            radio.name = gname;
+            radio.value = optIndex;
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(" "+opt));
+            opts.appendChild(label);
+          });
+        }
         row.appendChild(opts);
 
         const mark = document.createElement("span");
@@ -2563,6 +1251,7 @@ function openTopic(id){
     ec.appendChild(wrapper);
   }
 
+  document.getElementById("topicStatus").textContent = "";
   showOnly("topicScreen");
 }
 
@@ -2576,8 +1265,6 @@ function backToMenu(){
 }
 
 function printCurrentTopic(){
-  // Кнопка печати есть только внутри темы,
-  // поэтому просто запускаем печать
   if(!currentTopicId) return;
   window.print();
 }
@@ -2627,7 +1314,7 @@ function checkExercise(topicId,exIndex){
     }
   }
 }
-  
+
 /* ---------- TEACHER TABLE ---------- */
 
 function renderTeacherTable(){
@@ -2676,17 +1363,22 @@ function renderTeacherTable(){
   });
 }
 
-/* ---------- INIT ---------- */
+/* ---------- INIT & STARS ---------- */
 
-showOnly("loginScreen");
-  /* ----------- FIX: ADD updateTopStars FUNCTION ----------- */
 function updateTopStars() {
-  const topStars = document.getElementById("topStars");
-  if (!topStars) return;
-
-  const stars = localStorage.getItem("stars") || 0;
-  topStars.textContent = "Stars: " + stars;
+  if (!currentUser) return;
+  const topStarsEl = document.getElementById("topStars");
+  if (topStarsEl) {
+    topStarsEl.textContent = currentUser.stars;
+  }
+  const menuStarsEl = document.getElementById("menuStars");
+  if (menuStarsEl) {
+    menuStarsEl.textContent = currentUser.stars;
+  }
 }
+
+// стартуем с экрана логина
+showOnly("loginScreen");
 </script>
 </body>
 </html>
