@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root{
-      --blue-main:#005b73;
-      --blue-soft:#008a9e;
+      /* Burgundy palette */
+      --blue-main:#7b1f3a;
+      --blue-soft:#a13a50;
       --gold:#ffd54f;
-      --bg:#f3f7fa;
-      --topicColor:#005b73;
+      --bg:#f9f4f6;
+      --topicColor:#7b1f3a;
     }
 
     *{
@@ -22,12 +23,12 @@
 
     body{
       background:var(--bg);
-      color:#043042;
+      color:#3b1d23;
     }
 
     /* HEADER WITH GIRL LOGO */
     header{
-      background:linear-gradient(90deg,#005b73,#008a9e);
+      background:linear-gradient(90deg,var(--blue-main),var(--blue-soft));
       color:#fff;
       padding:10px 24px;
       display:flex;
@@ -88,7 +89,7 @@
       font-weight:600;
     }
     .muted{
-      color:#607080;
+      color:#705e68;
       font-size:12px;
     }
 
@@ -101,14 +102,14 @@
       width:100%;
       padding:10px 12px;
       border-radius:10px;
-      border:1px solid #c9d5df;
+      border:1px solid #c9b7c0;
       margin-bottom:14px;
       font-size:14px;
     }
     .text-input:focus{
       outline:none;
       border-color:var(--blue-soft);
-      box-shadow:0 0 0 2px rgba(0,138,158,.2);
+      box-shadow:0 0 0 2px rgba(161,58,80,.25);
     }
 
     .btn{
@@ -127,16 +128,16 @@
       background:var(--blue-soft);
       color:#fff;
     }
-    .btn-primary:hover{background:#007487;}
+    .btn-primary:hover{background:#8c3246;}
     .btn-ghost{
-      background:#eef5f9;
+      background:#f4e5ea;
       color:var(--blue-main);
     }
-    .btn-ghost:hover{background:#dde9f1;}
+    .btn-ghost:hover{background:#ead2db;}
 
     .login-note{
       font-size:12px;
-      color:#526675;
+      color:#705e68;
       margin-top:10px;
       line-height:1.4;
     }
@@ -168,9 +169,9 @@
       display:inline-block;
       padding:2px 6px;
       border-radius:999px;
-      background:#e3f2fd;
+      background:#fbe9eb;
       font-size:11px;
-      color:#005b73;
+      color:var(--blue-main);
     }
 
     .top-row{
@@ -206,9 +207,9 @@
 
     .topic-card{
       border-radius:12px;
-      border:1px solid #dde5ee;
+      border:1px solid #e1c3cf;
       padding:10px 12px;
-      background:#f8fafc;
+      background:#fdf7fa;
       cursor:pointer;
       transition:.15s;
       display:flex;
@@ -216,7 +217,7 @@
       gap:4px;
     }
     .topic-card:hover{
-      background:#e3f2fd;
+      background:#f7dde9;
       transform:translateY(-1px);
     }
     .topic-card-title{
@@ -225,7 +226,7 @@
     }
     .topic-card-sub{
       font-size:11px;
-      color:#607080;
+      color:#705e68;
     }
 
     /* AI PANEL (demo) */
@@ -252,14 +253,14 @@
     }
     .chat-note{
       font-size:11px;
-      color:#607080;
+      color:#705e68;
     }
     .chat-box{
       flex:1;
       border-radius:10px;
-      border:1px solid #dde5ee;
+      border:1px solid #e1c3cf;
       padding:8px;
-      background:#f8fafc;
+      background:#fdf7fa;
       font-size:13px;
       overflow-y:auto;
     }
@@ -267,13 +268,13 @@
       margin-bottom:6px;
       line-height:1.4;
     }
-    .chat-msg strong{color:#005b73;}
+    .chat-msg strong{color:var(--blue-main);}
     #aiQuestion{
       width:100%;
       min-height:60px;
       resize:vertical;
       border-radius:10px;
-      border:1px solid #c9d5df;
+      border:1px solid #c9b7c0;
       padding:8px;
       font-size:13px;
       margin-top:4px;
@@ -281,7 +282,7 @@
     #aiQuestion:focus{
       outline:none;
       border-color:var(--blue-soft);
-      box-shadow:0 0 0 2px rgba(0,138,158,.17);
+      box-shadow:0 0 0 2px rgba(161,58,80,.2);
     }
     .chat-actions{
       display:flex;
@@ -297,7 +298,7 @@
     .topic-header{
       border-radius:16px 16px 0 0;
       padding:14px 16px;
-      background:linear-gradient(90deg,var(--topicColor),#007d99);
+      background:linear-gradient(90deg,var(--topicColor),#b34765);
       color:#fff;
       display:flex;
       justify-content:space-between;
@@ -349,7 +350,7 @@
     }
 
     .grammar-box{
-      background:#f7fbff;
+      background:#fdf3f6;
       border-left:4px solid var(--topicColor);
       padding:10px 12px;
       border-radius:10px;
@@ -357,10 +358,10 @@
       font-size:14px;
       line-height:1.5;
     }
-    .grammar-box strong{color:#005b73;}
+    .grammar-box strong{color:var(--blue-main);}
     .formula{
       font-family:"Consolas","Courier New",monospace;
-      background:#e3f2fd;
+      background:#f7dde9;
       padding:3px 6px;
       border-radius:6px;
       margin-right:4px;
@@ -378,7 +379,7 @@
     .grammar-ru{
       margin-top:10px;
       font-size:13px;
-      color:#24313f;
+      color:#3b1d23;
     }
 
     .exercises{
@@ -386,10 +387,10 @@
     }
     .exercise-block{
       border-radius:12px;
-      background:#f8fafc;
+      background:#fdf7fa;
       padding:10px 12px;
       margin-bottom:10px;
-      border:1px solid #dde5ee;
+      border:1px solid #e1c3cf;
     }
     .exercise-title{
       font-size:14px;
@@ -416,7 +417,7 @@
     .options label{
       background:#ffffff;
       border-radius:999px;
-      border:1px solid #ccd7e3;
+      border:1px solid #e1c3cf;
       padding:2px 8px;
       cursor:pointer;
       display:inline-flex;
@@ -443,7 +444,7 @@
     }
     .exercise-footer small{
       font-size:11px;
-      color:#607080;
+      color:#705e68;
     }
 
     /* TEACHER */
@@ -466,13 +467,13 @@
       margin-top:10px;
     }
     th,td{
-      border:1px solid #dde5ee;
+      border:1px solid #e1c3cf;
       padding:6px 8px;
       text-align:left;
       white-space:nowrap;
     }
     th{
-      background:#eef5f9;
+      background:#f7dde9;
       font-weight:600;
     }
 
@@ -529,10 +530,9 @@
 
     <div id="loginError" class="error hidden"></div>
 
+    <!-- No PIN ranges or teacher code hints on screen -->
     <p class="login-note">
-      Student PIN ranges: 3E (101-115), 4G (201-215), 5G (301-315), 5Zh (401-415),
-      6G (501-515), 7B (601-615), 7V (701-715), 8E (801-815), 9Zh (901-915), 10A (1001-1015).<br>
-      Teacher code: <strong>3234</strong>.
+      Your teacher will give you your personal student code and the teacher code.
     </p>
   </section>
 
@@ -658,29 +658,29 @@ function getClassByCode(num){
 /* ---------- TOPIC COLORS ---------- */
 
 const topicColors = {
-  1:"#1976d2",
-  2:"#00796b",
-  3:"#6a1b9a",
-  4:"#ef6c00",
-  5:"#00838f",
-  6:"#8e24aa",
-  7:"#5d4037",
-  8:"#c2185b",
-  9:"#455a64",
-  10:"#2e7d32",
-  11:"#7b1fa2",
-  12:"#1565c0",
-  13:"#d81b60",
-  14:"#0097a7",
-  15:"#8d6e63",
-  16:"#9e9d24",
-  17:"#3949ab",
-  18:"#00695c",
-  19:"#ad1457",
-  20:"#ff7043"
+  1:"#7b1f3a",
+  2:"#8e2442",
+  3:"#a13a50",
+  4:"#b34765",
+  5:"#5d1a2e",
+  6:"#7b1f3a",
+  7:"#8e2442",
+  8:"#a13a50",
+  9:"#b34765",
+  10:"#5d1a2e",
+  11:"#7b1f3a",
+  12:"#8e2442",
+  13:"#a13a50",
+  14:"#b34765",
+  15:"#5d1a2e",
+  16:"#7b1f3a",
+  17:"#8e2442",
+  18:"#a13a50",
+  19:"#b34765",
+  20:"#5d1a2e"
 };
 
-/* ---------- TOPICS (20 INTERMEDIATE) ---------- */
+/* ---------- TOPICS (20 INTERMEDIATE, 7 exercises each) ---------- */
 
 const topics = [
   {
@@ -694,7 +694,48 @@ const topics = [
       "I have seen this film three times.",
       "I saw this film last year."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct option.",
+        questions:[
+          {
+            text:"We ____ this film three times.",
+            options:["have seen","saw","see"],
+            correct:0
+          },
+          {
+            text:"I ____ to London in 2019.",
+            options:["have been","went","have gone"],
+            correct:1
+          },
+          {
+            text:"She ____ already finished her homework.",
+            options:["has","have","did"],
+            correct:0
+          },
+          {
+            text:"They ____ the new museum yesterday.",
+            options:["have visited","visited","have been visiting"],
+            correct:1
+          },
+          {
+            text:"I have never ____ sushi.",
+            options:["eat","eaten","ate"],
+            correct:1
+          },
+          {
+            text:"He ____ his keys last week.",
+            options:["has lost","lost","have lost"],
+            correct:1
+          },
+          {
+            text:"She ____ just called me.",
+            options:["has","have","did"],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:2,
@@ -707,7 +748,48 @@ const topics = [
       "I have been studying English for three years.",
       "She has been working here since 2020."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct sentence.",
+        questions:[
+          {
+            text:"She ____ English for five years.",
+            options:["has studied","has been studying","was studying"],
+            correct:1
+          },
+          {
+            text:"They ____ in the garden since morning.",
+            options:["have worked","have been working","work"],
+            correct:1
+          },
+          {
+            text:"I ____ this book all day and I am tired.",
+            options:["have read","have been reading","read"],
+            correct:1
+          },
+          {
+            text:"He ____ games since two o clock.",
+            options:["has been playing","played","has played"],
+            correct:0
+          },
+          {
+            text:"We ____ for the bus for twenty minutes.",
+            options:["have waited","have been waiting","wait"],
+            correct:1
+          },
+          {
+            text:"It is wet. It ____ all night.",
+            options:["has rained","has been raining","rained"],
+            correct:1
+          },
+          {
+            text:"She is tired because she ____.",
+            options:["has been running","ran","has run"],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:3,
@@ -720,7 +802,48 @@ const topics = [
       "I was watching TV when he called.",
       "It started to rain while we were walking home."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the best option.",
+        questions:[
+          {
+            text:"I ____ dinner when my friend called.",
+            options:["was cooking","cooked","have cooked"],
+            correct:0
+          },
+          {
+            text:"They ____ football when it started to rain.",
+            options:["played","were playing","have played"],
+            correct:1
+          },
+          {
+            text:"She ____ when she fell off the bike.",
+            options:["was running","ran","has run"],
+            correct:0
+          },
+          {
+            text:"We ____ to music while we were cleaning.",
+            options:["listened","were listening","have listened"],
+            correct:1
+          },
+          {
+            text:"He ____ a book when I came in.",
+            options:["read","was reading","has read"],
+            correct:1
+          },
+          {
+            text:"The lights went out while I ____ a shower.",
+            options:["took","was taking","have taken"],
+            correct:1
+          },
+          {
+            text:"They ____ TV after they finished homework.",
+            options:["were watching","watched","have watched"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:4,
@@ -734,7 +857,48 @@ const topics = [
       "We are going to visit our grandma.",
       "They are meeting at 7 pm."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct future form.",
+        questions:[
+          {
+            text:"I am cold. I ____ close the window.",
+            options:["am going to","will","am"],
+            correct:1
+          },
+          {
+            text:"They ____ visit their cousins next weekend. It is their plan.",
+            options:["will","are going to","are visiting"],
+            correct:1
+          },
+          {
+            text:"We ____ the teacher at 3 pm tomorrow. It is in the diary.",
+            options:["will meet","are meeting","are going to meet"],
+            correct:1
+          },
+          {
+            text:"Look at those clouds. It ____ rain.",
+            options:["will","is going to","is raining"],
+            correct:1
+          },
+          {
+            text:"I think our team ____ win the match.",
+            options:["is going to","will","is winning"],
+            correct:1
+          },
+          {
+            text:"She ____ start a new course next month. She has decided.",
+            options:["is going to","will","is starting"],
+            correct:0
+          },
+          {
+            text:"We ____ have lunch with our grandparents on Sunday. It is arranged.",
+            options:["are having","will have","are going to have"],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:5,
@@ -748,7 +912,48 @@ const topics = [
       "She is used to getting up early.",
       "They are getting used to online lessons."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct form.",
+        questions:[
+          {
+            text:"I ____ play the piano, but I do not now.",
+            options:["am used to","used to","get used to"],
+            correct:1
+          },
+          {
+            text:"She ____ waking up at six. It is easy for her.",
+            options:["is used to","used to","gets used to"],
+            correct:0
+          },
+          {
+            text:"They are new here and they are ____ the city.",
+            options:["used to","getting used to","get used to"],
+            correct:1
+          },
+          {
+            text:"We ____ live near the sea, but now we live in a city.",
+            options:["used to","are used to","get used to"],
+            correct:1
+          },
+          {
+            text:"He will ____ driving on the left soon.",
+            options:["be used to","get used to","used to"],
+            correct:1
+          },
+          {
+            text:"I am not ____ spicy food yet.",
+            options:["used to","use to","getting used to"],
+            correct:0
+          },
+          {
+            text:"She ____ work at night, so she is tired.",
+            options:["is not used to","did not use to","does not used to"],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:6,
@@ -762,7 +967,48 @@ const topics = [
       "She might be at the library.",
       "He can’t be 10, he looks 20."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the best modal verb.",
+        questions:[
+          {
+            text:"The lights are off. They ____ be at home.",
+            options:["must","might","cannot"],
+            correct:2
+          },
+          {
+            text:"She looks very happy. She ____ have passed the exam.",
+            options:["must","might","cannot"],
+            correct:0
+          },
+          {
+            text:"He is late, but the bus is often slow. He ____ be on the bus.",
+            options:["must","might","cannot"],
+            correct:1
+          },
+          {
+            text:"This task is very easy. It ____ be a problem for you.",
+            options:["must","might","cannot"],
+            correct:2
+          },
+          {
+            text:"I am not sure, but it ____ rain later.",
+            options:["must","might","cannot"],
+            correct:1
+          },
+          {
+            text:"She knows all the answers. She ____ be very clever.",
+            options:["must","might","cannot"],
+            correct:0
+          },
+          {
+            text:"He is only five. He ____ read this difficult book.",
+            options:["must","might","cannot"],
+            correct:2
+          }
+        ]
+      }
+    ]
   },
   {
     id:7,
@@ -775,7 +1021,48 @@ const topics = [
       "If I had a lot of money, I would travel around the world.",
       "If she studied harder, she would get better marks."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Complete the conditional.",
+        questions:[
+          {
+            text:"If I ____ rich, I would buy a big house.",
+            options:["am","were","was"],
+            correct:1
+          },
+          {
+            text:"If she studied harder, she ____ better marks.",
+            options:["will get","would get","got"],
+            correct:1
+          },
+          {
+            text:"If we lived by the sea, we ____ swim every day.",
+            options:["will","would","can"],
+            correct:1
+          },
+          {
+            text:"If he ____ more time, he would start a new hobby.",
+            options:["had","has","have"],
+            correct:0
+          },
+          {
+            text:"If they knew the answer, they ____ tell you.",
+            options:["will","would","can"],
+            correct:1
+          },
+          {
+            text:"I would help you if I ____ free tomorrow.",
+            options:["am","was","were"],
+            correct:2
+          },
+          {
+            text:"If I were you, I ____ speak to the teacher.",
+            options:["will","would","can"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:8,
@@ -791,7 +1078,48 @@ const topics = [
       "If I had studied harder, I would be at university now.",
       "If I were taller, I would have become a basketball player."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct mixed conditional.",
+        questions:[
+          {
+            text:"If I had gone to bed earlier, I ____ tired now.",
+            options:["would not be","would not have been","am not"],
+            correct:0
+          },
+          {
+            text:"If she were more careful, she ____ that mistake yesterday.",
+            options:["would not make","would not have made","did not make"],
+            correct:1
+          },
+          {
+            text:"If they had left earlier, they ____ stuck in traffic now.",
+            options:["would not be","would not have been","are not"],
+            correct:0
+          },
+          {
+            text:"If he were taller, he ____ the match last year.",
+            options:["would win","would have won","won"],
+            correct:1
+          },
+          {
+            text:"If I liked maths, I ____ an engineer now.",
+            options:["would become","would have become","was"],
+            correct:0
+          },
+          {
+            text:"If we had saved more money, we ____ on holiday now.",
+            options:["would be","would have been","are"],
+            correct:0
+          },
+          {
+            text:"If she knew French, she ____ that job last month.",
+            options:["would get","would have got","got"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:9,
@@ -809,7 +1137,48 @@ const topics = [
       "This film was made in 2019.",
       "The project will be finished next week."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct passive form.",
+        questions:[
+          {
+            text:"This song ____ every day on the radio.",
+            options:["plays","is played","was played"],
+            correct:1
+          },
+          {
+            text:"The letter ____ yesterday.",
+            options:["is sent","was sent","will be sent"],
+            correct:1
+          },
+          {
+            text:"The new road ____ next year.",
+            options:["is built","was built","will be built"],
+            correct:2
+          },
+          {
+            text:"These houses ____ in 1990.",
+            options:["are built","were built","will be built"],
+            correct:1
+          },
+          {
+            text:"English ____ in many countries.",
+            options:["is spoken","was spoken","speaks"],
+            correct:0
+          },
+          {
+            text:"The homework ____ at the moment.",
+            options:["is checked","was checked","will be checked"],
+            correct:0
+          },
+          {
+            text:"The windows ____ tomorrow.",
+            options:["are cleaned","were cleaned","will be cleaned"],
+            correct:2
+          }
+        ]
+      }
+    ]
   },
   {
     id:10,
@@ -825,7 +1194,76 @@ const topics = [
       "He said that he was tired.",
       "She asked if I liked English."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct reported sentence.",
+        questions:[
+          {
+            text:"He said, I am busy.",
+            options:[
+              "He said that he is busy.",
+              "He said that he was busy.",
+              "He said that I was busy."
+            ],
+            correct:1
+          },
+          {
+            text:"She said, I do not like coffee.",
+            options:[
+              "She said that she did not like coffee.",
+              "She said that she does not like coffee.",
+              "She said that she liked coffee."
+            ],
+            correct:0
+          },
+          {
+            text:"They said, We will come tomorrow.",
+            options:[
+              "They said that they would come the next day.",
+              "They said that they will come the next day.",
+              "They said that we would come tomorrow."
+            ],
+            correct:0
+          },
+          {
+            text:"He asked, Do you like sports",
+            options:[
+              "He asked if I like sports.",
+              "He asked if I liked sports.",
+              "He asked did I like sports."
+            ],
+            correct:1
+          },
+          {
+            text:"She asked, Where do you live",
+            options:[
+              "She asked where I live.",
+              "She asked where did I live.",
+              "She asked where I lived."
+            ],
+            correct:2
+          },
+          {
+            text:"My friend said, I saw this film.",
+            options:[
+              "My friend said that he had seen that film.",
+              "My friend said that he saw that film.",
+              "My friend said that he has seen that film."
+            ],
+            correct:0
+          },
+          {
+            text:"He said, I can help you.",
+            options:[
+              "He said that he could help me.",
+              "He said that he can help me.",
+              "He said that I could help him."
+            ],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:11,
@@ -839,7 +1277,48 @@ const topics = [
       "This is the place where we met.",
       "That’s the dog which barks a lot."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct relative pronoun.",
+        questions:[
+          {
+            text:"The girl ____ is wearing a red dress is my sister.",
+            options:["which","who","where"],
+            correct:1
+          },
+          {
+            text:"This is the shop ____ we buy bread.",
+            options:["who","which","where"],
+            correct:2
+          },
+          {
+            text:"The book ____ is on the table is mine.",
+            options:["who","which","where"],
+            correct:1
+          },
+          {
+            text:"The man ____ helped me is very kind.",
+            options:["who","which","where"],
+            correct:0
+          },
+          {
+            text:"That is the park ____ we play football.",
+            options:["who","which","where"],
+            correct:2
+          },
+          {
+            text:"The dog ____ lives next door is very friendly.",
+            options:["who","which","where"],
+            correct:1
+          },
+          {
+            text:"I visited the town ____ my grandparents live.",
+            options:["who","which","where"],
+            correct:2
+          }
+        ]
+      }
+    ]
   },
   {
     id:12,
@@ -853,7 +1332,48 @@ const topics = [
       "She decided to move.",
       "They want us to help."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct form.",
+        questions:[
+          {
+            text:"I enjoy ____ music.",
+            options:["to listen","listening","listen"],
+            correct:1
+          },
+          {
+            text:"She decided ____ abroad.",
+            options:["to study","studying","study"],
+            correct:0
+          },
+          {
+            text:"They want us ____ early.",
+            options:["to come","coming","come"],
+            correct:0
+          },
+          {
+            text:"He finished ____ the letter.",
+            options:["to write","writing","write"],
+            correct:1
+          },
+          {
+            text:"I hope ____ you soon.",
+            options:["to see","seeing","see"],
+            correct:0
+          },
+          {
+            text:"My parents allowed me ____ TV.",
+            options:["to watch","watching","watch"],
+            correct:0
+          },
+          {
+            text:"She suggested ____ to the park.",
+            options:["to go","going","go"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:13,
@@ -871,7 +1391,48 @@ const topics = [
       "I like the film you recommended.",
       "They play football."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct article.",
+        questions:[
+          {
+            text:"My father is ____ engineer.",
+            options:["a","an","the"],
+            correct:1
+          },
+          {
+            text:"I like ____ music.",
+            options:["a","the","Ø"],
+            correct:2
+          },
+          {
+            text:"We went to ____ cinema yesterday.",
+            options:["a","the","Ø"],
+            correct:1
+          },
+          {
+            text:"She bought ____ new dress.",
+            options:["a","the","Ø"],
+            correct:0
+          },
+          {
+            text:"____ Nile is a long river.",
+            options:["A","The","Ø"],
+            correct:1
+          },
+          {
+            text:"He plays ____ football every weekend.",
+            options:["a","the","Ø"],
+            correct:2
+          },
+          {
+            text:"____ English is not easy.",
+            options:["The","An","Ø"],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:14,
@@ -885,7 +1446,48 @@ const topics = [
       "She looks after her little brother.",
       "Please turn off the lights."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct phrasal verb.",
+        questions:[
+          {
+            text:"Please ____ the lights before you leave.",
+            options:["turn up","turn off","turn on"],
+            correct:1
+          },
+          {
+            text:"She ____ after her little sister every day.",
+            options:["looks after","looks for","looks up"],
+            correct:0
+          },
+          {
+            text:"They ____ up last month.",
+            options:["broke","broke out","broke up"],
+            correct:2
+          },
+          {
+            text:"I will ____ you up at seven o clock.",
+            options:["take","pick","pick up"],
+            correct:2
+          },
+          {
+            text:"He ____ up smoking last year.",
+            options:["gave","gave up","gave in"],
+            correct:1
+          },
+          {
+            text:"We need to ____ this word in the dictionary.",
+            options:["look at","look for","look up"],
+            correct:2
+          },
+          {
+            text:"Do not ____ up. Keep trying.",
+            options:["give","give up","break up"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:15,
@@ -905,7 +1507,48 @@ const topics = [
       "He was tired; however, he finished the work.",
       "She stayed home because she was ill."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the best linking word.",
+        questions:[
+          {
+            text:"____ it was raining, we went for a walk.",
+            options:["Because","Although","Therefore"],
+            correct:1
+          },
+          {
+            text:"I stayed at home ____ I felt sick.",
+            options:["because","although","however"],
+            correct:0
+          },
+          {
+            text:"He was tired; ____ he finished the project.",
+            options:["because","however","although"],
+            correct:1
+          },
+          {
+            text:"She studies hard ____ get good marks.",
+            options:["in order to","because","although"],
+            correct:0
+          },
+          {
+            text:"It was very late; ____ we went to bed.",
+            options:["however","because","therefore"],
+            correct:2
+          },
+          {
+            text:"____ he is very busy, he always helps me.",
+            options:["Because","Although","Therefore"],
+            correct:1
+          },
+          {
+            text:"She failed the test ____ she did not study.",
+            options:["because","although","however"],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:16,
@@ -923,7 +1566,48 @@ const topics = [
       "There is a little water.",
       "Do you have any friends here?"
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct word.",
+        questions:[
+          {
+            text:"There are ____ apples on the table.",
+            options:["much","many","little"],
+            correct:1
+          },
+          {
+            text:"We do not have ____ milk.",
+            options:["many","much","few"],
+            correct:1
+          },
+          {
+            text:"There are only ____ students in the classroom.",
+            options:["a little","a few","much"],
+            correct:1
+          },
+          {
+            text:"I drink ____ water every day.",
+            options:["many","much","few"],
+            correct:1
+          },
+          {
+            text:"We need ____ sugar for this cake.",
+            options:["a few","a little","many"],
+            correct:1
+          },
+          {
+            text:"There are ____ chairs but not enough.",
+            options:["few","a little","much"],
+            correct:0
+          },
+          {
+            text:"Do you have ____ questions",
+            options:["some","any","much"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:17,
@@ -937,7 +1621,48 @@ const topics = [
       "They asked him to come early.",
       "She told me to wait."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct complex object.",
+        questions:[
+          {
+            text:"I want you ____ this exercise.",
+            options:["do","to do","doing"],
+            correct:1
+          },
+          {
+            text:"She asked him ____ earlier.",
+            options:["to come","come","coming"],
+            correct:0
+          },
+          {
+            text:"My parents expect me ____ hard.",
+            options:["study","to study","studying"],
+            correct:1
+          },
+          {
+            text:"The teacher told us ____ quietly.",
+            options:["to work","work","working"],
+            correct:0
+          },
+          {
+            text:"They would like their son ____ a doctor.",
+            options:["be","being","to be"],
+            correct:2
+          },
+          {
+            text:"I did not want them ____ about the problem.",
+            options:["to know","know","knowing"],
+            correct:0
+          },
+          {
+            text:"Our coach allowed us ____ home early.",
+            options:["go","to go","going"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:18,
@@ -950,7 +1675,48 @@ const topics = [
       "I had my phone repaired.",
       "She got her hair cut yesterday."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct causative form.",
+        questions:[
+          {
+            text:"I ____ my car washed yesterday.",
+            options:["had","had got","had my car"],
+            correct:0
+          },
+          {
+            text:"She ____ her hair cut every month.",
+            options:["gets","gets her hair","gets her hair cut"],
+            correct:2
+          },
+          {
+            text:"We will ____ our house painted next year.",
+            options:["have","have get","have our house"],
+            correct:0
+          },
+          {
+            text:"He ____ his phone repaired last week.",
+            options:["got","got his phone repaired","got repaired"],
+            correct:1
+          },
+          {
+            text:"They ____ their photo taken at the studio.",
+            options:["had","had their photo taken","had taken"],
+            correct:1
+          },
+          {
+            text:"I am going to ____ my bike fixed.",
+            options:["have","get","have get"],
+            correct:1
+          },
+          {
+            text:"We ____ the windows cleaned every spring.",
+            options:["have","have got","get cleaned"],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
   {
     id:19,
@@ -963,7 +1729,60 @@ const topics = [
       "It was my mum who cooked dinner.",
       "It is this book that I like most."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct cleft sentence.",
+        questions:[
+          {
+            text:"____ my brother who fixed the computer.",
+            options:[
+              "It is",
+              "It was",
+              "There was"
+            ],
+            correct:1
+          },
+          {
+            text:"It was yesterday ____ we met.",
+            options:["who","that","when"],
+            correct:1
+          },
+          {
+            text:"____ my mother who taught me to read.",
+            options:[
+              "It is",
+              "It was",
+              "There is"
+            ],
+            correct:1
+          },
+          {
+            text:"It is English ____ I like most.",
+            options:["who","that","when"],
+            correct:1
+          },
+          {
+            text:"It was in London ____ they first met.",
+            options:["who","that","when"],
+            correct:1
+          },
+          {
+            text:"____ my best friend who helped me.",
+            options:[
+              "It was",
+              "There was",
+              "It is that"
+            ],
+            correct:0
+          },
+          {
+            text:"It is my room ____ needs cleaning.",
+            options:["who","that","where"],
+            correct:1
+          }
+        ]
+      }
+    ]
   },
   {
     id:20,
@@ -982,7 +1801,48 @@ const topics = [
       "She is tall enough to play basketball.",
       "It is such a nice day."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"Choose the correct quantifier.",
+        questions:[
+          {
+            text:"It is ____ cold to go outside.",
+            options:["so","such","too"],
+            correct:2
+          },
+          {
+            text:"She is not old ____ to drive a car.",
+            options:["too","enough","so"],
+            correct:1
+          },
+          {
+            text:"It is ____ a beautiful garden.",
+            options:["so","such","too"],
+            correct:1
+          },
+          {
+            text:"He is ____ tired that he cannot walk.",
+            options:["too","such","so"],
+            correct:0
+          },
+          {
+            text:"It was ____ an interesting film.",
+            options:["so","such","too"],
+            correct:1
+          },
+          {
+            text:"The box is not light ____ to carry.",
+            options:["too","enough","so"],
+            correct:1
+          },
+          {
+            text:"She is ____ kind.",
+            options:["too","such","so"],
+            correct:2
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -1056,6 +1916,7 @@ function handleLogin(){
     return;
   }
 
+  // teacher code (hidden from students on the screen)
   if(codeStr==="3234"){
     setTopInfo(`Logged in as <strong>TEACHER</strong> · code 3234`);
     renderTeacherTable();
@@ -1112,9 +1973,9 @@ function buildMainMenu(){
   topics.forEach(t=>{
     const div = document.createElement("div");
     div.className = "topic-card";
-    const color = topicColors[t.id] || "#005b73";
+    const color = topicColors[t.id] || "#7b1f3a";
     div.style.borderColor = color+"55";
-    div.style.background = "#f8fafc";
+    div.style.background = "#fdf7fa";
     div.innerHTML = `
       <div class="topic-card-title">${t.id}. ${t.title}</div>
       <div class="topic-card-sub">${t.level}</div>
@@ -1140,7 +2001,7 @@ function openTopic(id){
   const t = topics.find(x=>x.id===id);
   if(!t) return;
 
-  const color = topicColors[id] || "#005b73";
+  const color = topicColors[id] || "#7b1f3a";
   document.documentElement.style.setProperty("--topicColor",color);
 
   document.getElementById("topicHeaderTitle").textContent = `${id}. ${t.title}`;
